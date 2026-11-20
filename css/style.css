@@ -123,8 +123,6 @@ p{ margin: 0 0 1em; color: var(--text-muted); }
   border: 1px solid var(--border); object-fit: contain; background: #0a0a0b;
   padding: 4px;
 }
-.brand-dot{ color: var(--accent); }
-
 .main-nav{ display:flex; gap: 1.75rem; }
 .main-nav a{ color: var(--text-muted); font-size:.95rem; font-weight:500; transition: color var(--speed); position:relative; }
 .main-nav a:hover{ color: var(--text); }
