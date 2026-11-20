@@ -181,21 +181,12 @@ p{ margin: 0 0 1em; color: var(--text-muted); }
 }
 .hero-banner{
   width: 100%;
-  aspect-ratio: 1600 / 533;
+  aspect-ratio: 1600 / 583;
   background-image: url('../assets/hero-banner.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  mix-blend-mode: screen;
-}
-/* White theme: the logo's own black backdrop can't blend into a light
-   page, so it's shown as a framed plaque instead of trying to vanish. */
-[data-theme="white"] .hero-banner{ mix-blend-mode: normal; }
-[data-theme="white"] .hero-banner-wrap{
-  background: #0a0a0a;
-  border-radius: 18px;
-  padding: 1.5rem 1.75rem;
-  box-shadow: var(--shadow), 0 0 0 1px var(--border);
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.25));
 }
 @media (max-width: 560px){
   .hero-banner-wrap{ display:none; }
