@@ -21,6 +21,20 @@ document.addEventListener("DOMContentLoaded", () => {
         themeMenu.hidden = true;
         themeToggle.setAttribute("aria-expanded", "false");
       });
+      // Live preview: hovering a swatch shows that theme instantly;
+      // moving away without clicking reverts to the saved choice.
+      btn.addEventListener("mouseenter", () => {
+        window.ZainabiaTheme.applyTheme(btn.getAttribute("data-theme-choice"));
+      });
+      btn.addEventListener("mouseleave", () => {
+        window.ZainabiaTheme.applyTheme(window.ZainabiaTheme.getStoredChoice());
+      });
+      btn.addEventListener("focus", () => {
+        window.ZainabiaTheme.applyTheme(btn.getAttribute("data-theme-choice"));
+      });
+      btn.addEventListener("blur", () => {
+        window.ZainabiaTheme.applyTheme(window.ZainabiaTheme.getStoredChoice());
+      });
     });
 
     document.addEventListener("click", (e) => {

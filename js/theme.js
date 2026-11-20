@@ -25,15 +25,16 @@
 
   function highlightActive(choice) {
     document.querySelectorAll("[data-theme-choice]").forEach((btn) => {
-      btn.style.color =
+      btn.classList.toggle(
+        "is-active",
         btn.getAttribute("data-theme-choice") === choice
-          ? "var(--accent-soft)"
-          : "";
+      );
     });
   }
 
-  window.ZainabiaTheme = { applyTheme, setChoice, getStoredChoice };
+  window.ZainabiaTheme = { applyTheme, setChoice, getStoredChoice, highlightActive };
 
   // Apply immediately (before DOMContentLoaded) to avoid a flash of the wrong theme.
   applyTheme(getStoredChoice());
+  highlightActive(getStoredChoice());
 })();
