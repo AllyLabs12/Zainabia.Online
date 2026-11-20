@@ -1,12 +1,17 @@
 /* ==========================================================================
    Zainabia.Online — base styles + theme system
-   Themes: green (default), black (mourning), maroon (occasion)
-   Gold is a constant accent across all three.
+   Four static themes, visitor-selectable, no date logic:
+     White   — default white background, Saffron accent
+     Olive   — deep olive green, Golden accent
+     Night   — midnight black, Golden accent
+     Cherry  — red/maroon wine, Golden accent
    ========================================================================== */
 
 :root{
   --gold: #c9a227;
   --gold-soft: #e4c55e;
+  --saffron: #d98e2b;
+  --saffron-soft: #f0ad4e;
   --ink: #16181c;
   --paper: #fbfaf7;
   --radius: 14px;
@@ -17,51 +22,65 @@
   --speed: 220ms ease;
 }
 
-/* ---- Theme: Green (default) ---- */
-[data-theme="green"]{
-  --bg: #0e2a22;
-  --bg-alt: #123a2e;
-  --surface: #143a2f;
-  --surface-2: #1b4b3c;
-  --text: #f3f6f2;
-  --text-muted: #c4d4c9;
+/* ---- Theme: White (default) — white background, Saffron accent ---- */
+[data-theme="white"]{
+  --bg: #fbfaf7;
+  --bg-alt: #f2ece0;
+  --surface: #ffffff;
+  --surface-2: #f7f1e6;
+  --text: #201b12;
+  --text-muted: #5f574a;
+  --accent: var(--saffron);
+  --accent-soft: var(--saffron-soft);
+  --border: rgba(217,142,43,.32);
+  --shadow: 0 10px 30px -12px rgba(32,27,18,.18);
+  --hero-grad: radial-gradient(1200px 600px at 80% -10%, rgba(217,142,43,.18), transparent 60%),
+               linear-gradient(160deg, #fdfbf6 0%, #f3ead9 100%);
+}
+
+/* ---- Theme: Olive — olive green, Golden accent ---- */
+[data-theme="olive"]{
+  --bg: #2b2f1a;
+  --bg-alt: #343a1f;
+  --surface: #3a4022;
+  --surface-2: #454c28;
+  --text: #f5f4e9;
+  --text-muted: #cfd2b9;
   --accent: var(--gold);
   --accent-soft: var(--gold-soft);
   --border: rgba(201,162,39,.25);
-  --hero-grad: radial-gradient(1200px 600px at 80% -10%, rgba(201,162,39,.18), transparent 60%),
-               linear-gradient(160deg, #0e2a22 0%, #0a1f19 100%);
+  --hero-grad: radial-gradient(1200px 600px at 80% -10%, rgba(201,162,39,.2), transparent 60%),
+               linear-gradient(160deg, #2b2f1a 0%, #1f2214 100%);
 }
 
-/* ---- Theme: Black / Karbala (mourning) ---- */
-[data-theme="black"]{
-  --bg: #0a0a0b;
-  --bg-alt: #121113;
-  --surface: #151315;
-  --surface-2: #1d1a1c;
-  --text: #f1eeee;
-  --text-muted: #c9bdbd;
+/* ---- Theme: Night — midnight black, Golden accent ---- */
+[data-theme="night"]{
+  --bg: #07080c;
+  --bg-alt: #0d0f16;
+  --surface: #11131b;
+  --surface-2: #181b26;
+  --text: #f1f1f4;
+  --text-muted: #c3c5cf;
   --accent: var(--gold);
   --accent-soft: var(--gold-soft);
   --border: rgba(201,162,39,.22);
-  --hero-grad: radial-gradient(1200px 600px at 80% -10%, rgba(139,15,22,.25), transparent 60%),
-               linear-gradient(160deg, #0a0a0b 0%, #050506 100%);
+  --hero-grad: radial-gradient(1200px 600px at 80% -10%, rgba(90,100,170,.16), transparent 60%),
+               linear-gradient(160deg, #07080c 0%, #030406 100%);
 }
-[data-theme="black"] .brand-mark{ color: var(--accent); }
-[data-theme="black"] .hero-kicker{ color: #c0444c; }
 
-/* ---- Theme: Maroon (happy occasion) ---- */
-[data-theme="maroon"]{
-  --bg: #2b0e14;
-  --bg-alt: #3a141c;
-  --surface: #3d1620;
-  --surface-2: #4d1c29;
-  --text: #fbf1ee;
-  --text-muted: #e0c6c4;
+/* ---- Theme: Cherry — red/maroon wine, Golden accent ---- */
+[data-theme="cherry"]{
+  --bg: #2e0d14;
+  --bg-alt: #3d121b;
+  --surface: #41141f;
+  --surface-2: #531a28;
+  --text: #fbeeec;
+  --text-muted: #e3c3c2;
   --accent: var(--gold);
   --accent-soft: var(--gold-soft);
   --border: rgba(201,162,39,.28);
   --hero-grad: radial-gradient(1200px 600px at 80% -10%, rgba(201,162,39,.22), transparent 60%),
-               linear-gradient(160deg, #2b0e14 0%, #1d0a0f 100%);
+               linear-gradient(160deg, #2e0d14 0%, #1c080d 100%);
 }
 
 /* ---- Reset / base ---- */
