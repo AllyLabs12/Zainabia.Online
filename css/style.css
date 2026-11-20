@@ -20,9 +20,6 @@
   --font-display: 'Amiri', 'Inter', serif;
   --max-width: 1120px;
   --speed: 220ms ease;
-  --watermark-filter: none;
-  --watermark-opacity: .16;
-  --watermark-blend: normal;
 }
 
 /* ---- Theme: White (default) — off-white background, Saffron accent ---- */
@@ -39,8 +36,6 @@
   --shadow: 0 10px 30px -12px rgba(28,28,26,.16);
   --hero-grad: radial-gradient(1200px 600px at 80% -10%, rgba(217,142,43,.22), transparent 60%),
                linear-gradient(160deg, #fdfdfc 0%, #f1f1ed 100%);
-  --watermark-filter: brightness(.4) contrast(1.1);
-  --watermark-opacity: .22;
 }
 
 /* ---- Theme: Zaitoon — deep olive green, Golden accent ---- */
@@ -56,8 +51,6 @@
   --border: rgba(201,162,39,.25);
   --hero-grad: radial-gradient(1200px 600px at 80% -10%, rgba(201,162,39,.22), transparent 60%),
                linear-gradient(160deg, #1f2213 0%, #14160c 100%);
-  --watermark-blend: screen;
-  --watermark-opacity: .22;
 }
 
 /* ---- Theme: Night — midnight black, Golden accent ---- */
@@ -73,8 +66,6 @@
   --border: rgba(201,162,39,.22);
   --hero-grad: radial-gradient(1200px 600px at 80% -10%, rgba(90,100,170,.2), transparent 60%),
                linear-gradient(160deg, #07080c 0%, #030406 100%);
-  --watermark-blend: screen;
-  --watermark-opacity: .24;
 }
 
 /* ---- Theme: Cherry — rich royal maroon, Golden accent ---- */
@@ -90,8 +81,6 @@
   --border: rgba(201,162,39,.32);
   --hero-grad: radial-gradient(1100px 550px at 80% -10%, rgba(201,162,39,.2), transparent 55%),
                linear-gradient(160deg, #3d0812 0%, #28050c 100%);
-  --watermark-blend: screen;
-  --watermark-opacity: .22;
 }
 
 /* ---- Reset / base ---- */
@@ -186,19 +175,28 @@ p{ margin: 0 0 1em; color: var(--text-muted); }
   padding: 6.5rem 1.5rem 5rem;
   text-align:center;
 }
-.hero-watermark{
-  position:absolute; inset:0; pointer-events:none;
-  background-image: url('../assets/banner-watermark.jpg');
-  background-repeat: no-repeat;
-  background-position: center 38%;
-  background-size: min(780px, 72%) auto;
-  opacity: var(--watermark-opacity, .16);
-  mix-blend-mode: var(--watermark-blend, normal);
-  filter: var(--watermark-filter, none);
-  mask-image: radial-gradient(ellipse 60% 55% at center 38%, black 45%, transparent 85%);
-  -webkit-mask-image: radial-gradient(ellipse 60% 55% at center 38%, black 45%, transparent 85%);
-  mask-repeat: no-repeat;
+.hero-banner{
+  width: 100%;
+  max-width: 980px;
+  aspect-ratio: 1800 / 407;
+  margin: 0 auto 2.25rem;
+  background-image: url('../assets/hero-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: .92;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 22%, black 78%, transparent 100%);
   -webkit-mask-repeat: no-repeat;
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 22%, black 78%, transparent 100%);
+  mask-repeat: no-repeat;
+  mask-composite: intersect;
+}
+@media (max-width: 560px){
+  .hero-banner{ display:none; }
 }
 .hero-inner{ max-width: 760px; margin: 0 auto; position:relative; z-index:1; }
 .hero-kicker{
