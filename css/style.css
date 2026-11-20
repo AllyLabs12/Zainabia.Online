@@ -175,28 +175,30 @@ p{ margin: 0 0 1em; color: var(--text-muted); }
   padding: 6.5rem 1.5rem 5rem;
   text-align:center;
 }
+.hero-banner-wrap{
+  max-width: 760px;
+  margin: 0 auto 2.25rem;
+}
 .hero-banner{
   width: 100%;
-  max-width: 980px;
-  aspect-ratio: 1800 / 407;
-  margin: 0 auto 2.25rem;
-  background-image: url('../assets/hero-banner.jpg');
-  background-size: cover;
+  aspect-ratio: 1600 / 533;
+  background-image: url('../assets/hero-banner.png');
+  background-size: contain;
   background-position: center;
-  opacity: .92;
-  -webkit-mask-image:
-    linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%, black 22%, black 78%, transparent 100%);
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%, black 22%, black 78%, transparent 100%);
-  mask-repeat: no-repeat;
-  mask-composite: intersect;
+  background-repeat: no-repeat;
+  mix-blend-mode: screen;
+}
+/* White theme: the logo's own black backdrop can't blend into a light
+   page, so it's shown as a framed plaque instead of trying to vanish. */
+[data-theme="white"] .hero-banner{ mix-blend-mode: normal; }
+[data-theme="white"] .hero-banner-wrap{
+  background: #0a0a0a;
+  border-radius: 18px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow), 0 0 0 1px var(--border);
 }
 @media (max-width: 560px){
-  .hero-banner{ display:none; }
+  .hero-banner-wrap{ display:none; }
 }
 .hero-inner{ max-width: 760px; margin: 0 auto; position:relative; z-index:1; }
 .hero-kicker{
