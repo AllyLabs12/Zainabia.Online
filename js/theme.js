@@ -1,11 +1,11 @@
 /**
- * Theme controller: four static themes (white / olive / night / cherry).
+ * Theme controller: four static themes (white / zaitoon / night / cherry).
  * No date logic — the visitor's own choice persists in localStorage.
  */
 (function () {
   const STORAGE_KEY = "zainabia-theme";
   const DEFAULT_THEME = "white";
-  const VALID_THEMES = ["white", "olive", "night", "cherry"];
+  const VALID_THEMES = ["white", "zaitoon", "night", "cherry"];
   const root = document.documentElement;
 
   function applyTheme(choice) {

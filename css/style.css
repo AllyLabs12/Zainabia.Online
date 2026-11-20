@@ -1,10 +1,10 @@
 /* ==========================================================================
    Zainabia.Online — base styles + theme system
    Four static themes, visitor-selectable, no date logic:
-     White   — default white background, Saffron accent
-     Olive   — deep olive green, Golden accent
-     Night   — midnight black, Golden accent
-     Cherry  — red/maroon wine, Golden accent
+     White    — off-white background, Saffron accent
+     Zaitoon  — deep olive green, Golden accent
+     Night    — midnight black, Golden accent
+     Cherry   — rich royal maroon, Golden accent
    ========================================================================== */
 
 :root{
@@ -22,35 +22,35 @@
   --speed: 220ms ease;
 }
 
-/* ---- Theme: White (default) — white background, Saffron accent ---- */
+/* ---- Theme: White (default) — off-white background, Saffron accent ---- */
 [data-theme="white"]{
-  --bg: #fbfaf7;
-  --bg-alt: #f2ece0;
+  --bg: #f9f9f7;
+  --bg-alt: #f0f0ec;
   --surface: #ffffff;
-  --surface-2: #f7f1e6;
-  --text: #201b12;
-  --text-muted: #5f574a;
+  --surface-2: #f4f4f0;
+  --text: #1c1c1a;
+  --text-muted: #5a5a54;
   --accent: var(--saffron);
   --accent-soft: var(--saffron-soft);
   --border: rgba(217,142,43,.32);
-  --shadow: 0 10px 30px -12px rgba(32,27,18,.18);
-  --hero-grad: radial-gradient(1200px 600px at 80% -10%, rgba(217,142,43,.18), transparent 60%),
-               linear-gradient(160deg, #fdfbf6 0%, #f3ead9 100%);
+  --shadow: 0 10px 30px -12px rgba(28,28,26,.16);
+  --hero-grad: radial-gradient(1200px 600px at 80% -10%, rgba(217,142,43,.16), transparent 60%),
+               linear-gradient(160deg, #fdfdfc 0%, #f1f1ed 100%);
 }
 
-/* ---- Theme: Olive — olive green, Golden accent ---- */
-[data-theme="olive"]{
-  --bg: #2b2f1a;
-  --bg-alt: #343a1f;
-  --surface: #3a4022;
-  --surface-2: #454c28;
-  --text: #f5f4e9;
-  --text-muted: #cfd2b9;
+/* ---- Theme: Zaitoon — deep olive green, Golden accent ---- */
+[data-theme="zaitoon"]{
+  --bg: #1f2213;
+  --bg-alt: #262a17;
+  --surface: #2a2f19;
+  --surface-2: #343a1f;
+  --text: #f3f2e6;
+  --text-muted: #c6cab0;
   --accent: var(--gold);
   --accent-soft: var(--gold-soft);
   --border: rgba(201,162,39,.25);
-  --hero-grad: radial-gradient(1200px 600px at 80% -10%, rgba(201,162,39,.2), transparent 60%),
-               linear-gradient(160deg, #2b2f1a 0%, #1f2214 100%);
+  --hero-grad: radial-gradient(1200px 600px at 80% -10%, rgba(201,162,39,.18), transparent 60%),
+               linear-gradient(160deg, #1f2213 0%, #14160c 100%);
 }
 
 /* ---- Theme: Night — midnight black, Golden accent ---- */
@@ -68,19 +68,19 @@
                linear-gradient(160deg, #07080c 0%, #030406 100%);
 }
 
-/* ---- Theme: Cherry — red/maroon wine, Golden accent ---- */
+/* ---- Theme: Cherry — rich royal maroon, Golden accent ---- */
 [data-theme="cherry"]{
-  --bg: #2e0d14;
-  --bg-alt: #3d121b;
-  --surface: #41141f;
-  --surface-2: #531a28;
-  --text: #fbeeec;
-  --text-muted: #e3c3c2;
+  --bg: #3d0812;
+  --bg-alt: #4d0a16;
+  --surface: #4a0d19;
+  --surface-2: #5c1020;
+  --text: #fcebec;
+  --text-muted: #dba6ac;
   --accent: var(--gold);
   --accent-soft: var(--gold-soft);
-  --border: rgba(201,162,39,.28);
-  --hero-grad: radial-gradient(1200px 600px at 80% -10%, rgba(201,162,39,.22), transparent 60%),
-               linear-gradient(160deg, #2e0d14 0%, #1c080d 100%);
+  --border: rgba(201,162,39,.32);
+  --hero-grad: radial-gradient(1100px 550px at 80% -10%, rgba(201,162,39,.16), transparent 55%),
+               linear-gradient(160deg, #3d0812 0%, #28050c 100%);
 }
 
 /* ---- Reset / base ---- */
@@ -143,6 +143,7 @@ p{ margin: 0 0 1em; color: var(--text-muted); }
   background: var(--surface-2); border:1px solid var(--border); border-radius: 10px;
   padding:.4rem; display:flex; flex-direction:column; min-width: 180px; box-shadow: var(--shadow);
 }
+.theme-menu[hidden]{ display:none; }
 .theme-menu button{
   background:none; border:none; color:var(--text); text-align:left; padding:.5rem .6rem;
   border-radius: 6px; cursor:pointer; font-size:.88rem; font-family: var(--font-body);
