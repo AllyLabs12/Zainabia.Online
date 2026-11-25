@@ -32,6 +32,37 @@
   .ah-meta-row{ display:flex; gap: 1.4rem; justify-content:center; flex-wrap:wrap; font-size:.85rem; color: var(--text-muted); }
   .ah-meta-row b{ color: var(--text); }
 
+  .ah-divine-name{ margin: .5rem auto 2rem; width: 100%; max-width: 230px; }
+  .ah-divine-name img{
+    width: 100%; height: auto; display:block;
+    filter: drop-shadow(0 6px 16px rgba(0,0,0,.18));
+  }
+  /* Ink is pure black with a transparent background; invert it to gold-white
+     on the three dark themes so it reads clearly against the page. */
+  [data-theme="zaitoon"] .ah-divine-name img,
+  [data-theme="night"] .ah-divine-name img,
+  [data-theme="cherry"] .ah-divine-name img{
+    filter: invert(1) drop-shadow(0 6px 16px rgba(0,0,0,.45));
+  }
+
+  .ah-why{ max-width: 760px; margin: 0 auto; }
+  .ah-why-intro{ text-align: center; }
+  .ah-why-intro h2{ font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--text); }
+  .ah-why-intro p{ max-width: 680px; margin: 0 auto; font-size: 1rem; }
+  .ah-why-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.8rem; }
+  @media (max-width: 760px){ .ah-why-grid{ grid-template-columns: 1fr; } }
+  .ah-why-card{
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.4rem 1.5rem;
+  }
+  .ah-why-card h3{ font-size: 1.05rem; color: var(--text); margin-bottom:.5rem; }
+  .ah-why-card p{ font-size:.9rem; margin: 0; }
+  .ah-hadith{
+    margin: 2rem auto 0; max-width: 620px; padding: 1.1rem 1.4rem; border-radius: var(--radius);
+    background: var(--surface); border: 1px solid var(--border); font-style: italic; color: var(--text); text-align:center;
+  }
+  .ah-hadith cite{ display:block; margin-top:.5rem; font-style:normal; font-size:.8rem; color: var(--text-muted); }
+
   .ah-section{ padding: 3rem 0; }
   .ah-section-alt{ background: var(--bg-alt); }
   .ah-section-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom: 1.6rem; }
@@ -156,6 +187,9 @@
     <section class="ah-cover">
       <a class="ah-back-link" href="../index.html#resources">← Back to Resources</a>
       <p class="ah-kicker">Resources · Asma ul Husna</p>
+      <div class="ah-divine-name">
+        <img src="assets/allah-muhaqqaq.png" alt="The word Allah, written in Muhaqqaq calligraphy, followed by Jalla Jalaluhu — &quot;Glorious is His Majesty.&quot;" width="900" height="1185" loading="eager">
+      </div>
       <h1>The 99 Beautiful Names of Allah</h1>
       <p class="lede">
         Asma ul Husna (أسماء الله الحسنى) — the Most Beautiful Names — are the attributes
@@ -170,6 +204,44 @@
         <span><b>99</b> names</span>
         <span>Calligraphy · Romanized Urdu · English · Meaning</span>
         <span>Flashcards to help you memorize</span>
+      </div>
+    </section>
+
+    <section id="why" class="ah-section ah-section-alt">
+      <div class="ah-why">
+        <div class="ah-why-intro">
+          <h2>Why memorize the Names?</h2>
+          <p>The first human being, Adam (AS), was "taught all the Names" (2:31) — Allah made him conscious of
+            the attributes of divinity already placed within him. Learning Asma ul Husna is a continuation of
+            that same teaching: each Name is both a description of Allah and an invitation to the believer.</p>
+        </div>
+
+        <div class="ah-why-grid">
+          <div class="ah-why-card">
+            <h3>Knowledge</h3>
+            <p>To call on Allah correctly, you first have to know Him by what He has named Himself — not by
+              guesswork or habit. Memorizing the Names is how that knowledge becomes available the moment you
+              need it, in dua or in difficulty.</p>
+          </div>
+          <div class="ah-why-card">
+            <h3>Process</h3>
+            <p>It isn't enough to recite a Name or know its dictionary meaning. Each one asks to be reflected
+              on — Al-Hayy when you think about life, As-Sabur when you're tested — until the meaning settles
+              somewhere deeper than memory.</p>
+          </div>
+          <div class="ah-why-card">
+            <h3>Action</h3>
+            <p>The Names are meant to be lived, not just recited. Ar-Rahim asks for mercy toward others,
+              Al-'Adl asks for justice, Al-Karim asks for generosity — knowing the Name is the start of
+              carrying its quality into how you treat people.</p>
+          </div>
+        </div>
+
+        <div class="ah-hadith">
+          "Allah has ninety-nine Names — one hundred less one. Whoever preserves and takes account of them
+          will enter Paradise."
+          <cite>A widely reported hadith on the Names of Allah</cite>
+        </div>
       </div>
     </section>
 
