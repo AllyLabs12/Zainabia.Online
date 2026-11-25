@@ -1,0 +1,997 @@
+/* Asma ul Husna — the 99 Beautiful Names of Allah
+   Fields: n (order), ar (calligraphy), ur (Romanized Urdu / Ya-form),
+   en (English transliteration), meaning (short meaning), explain (longer note),
+   qref (Qur'anic reference), benefit (traditional benefit(s) of recitation).
+   Compiled from the site's shared Asma ul Husna reference materials. */
+const ASMA_UL_HUSNA = [
+{
+"n": 1,
+"ar": "ٱلرَّحْمَٰنُ",
+"ur": "Yā Rahmān-o",
+"en": "Ar-Raḥmān",
+"meaning": "The Most Merciful",
+"explain": "The One whose mercy encompasses every creature at every moment, without limit or condition.",
+"qref": "Beginning of every chapter except one, and in numerous other places. Name frequently used in Surah 55, Ar-Rahman.",
+"benefit": "Recite 100x after wajib salaa to develop a good memory, keen awareness and be freed of a heavy heart."
+},
+{
+"n": 2,
+"ar": "ٱلرَّحِيمُ",
+"ur": "Yā Rahīm-o",
+"en": "Ar-Raḥīm",
+"meaning": "The Most Compassionate",
+"explain": "The One who shows special, continuous, intimate mercy to the believers.",
+"qref": "Beginning of every chapter except one, and in numerous other places.",
+"benefit": "Recite 100x after Salatul Fajr for friendship. | Recite 100x after every salaa for safety from calamities."
+},
+{
+"n": 3,
+"ar": "ٱلْمَلِكُ",
+"ur": "Yā Malik-o",
+"en": "Al-Malik",
+"meaning": "The King and Owner of Dominion",
+"explain": "The One who possesses absolute authority and control over all existence.",
+"qref": "59:23, 20:114",
+"benefit": "Recite Ya Malik frequently and you may be treated with respect by others. Read after noon for abundant wealth. Prophet Khidr taught dua “Allahumma atal Malikul Haqq. Allazhiy laa ilaaha illaa anta. Ya Allahu, Ya Salaamu, Ya Shaafiy” followed by Ya Shaafiyal Quloob” 3x"
+},
+{
+"n": 4,
+"ar": "ٱلْقُدُّوسُ",
+"ur": "Yā Quddūs-o",
+"en": "Al-Quddūs",
+"meaning": "The Absolutely Pure",
+"explain": "The One free from every imperfection, flaw, or weakness.",
+"qref": "59:23, 62:1",
+"benefit": "Recite at sunset for expansion of the heart. Recite to free heart from thoughts that cause trouble, worry and pain."
+},
+{
+"n": 5,
+"ar": "ٱلسَّلَامُ",
+"ur": "Yā Salām-o",
+"en": "As-Salām",
+"meaning": "The Source of Peace",
+"explain": "The One from whom all safety, harmony, and tranquility originate.",
+"qref": "59:23",
+"benefit": "Recite Ya Salam 100x to regain health. Recite 160x and blow on sick person for shifa, followed by Ya Shaafiyal Quloob” 3x"
+},
+{
+"n": 6,
+"ar": "ٱلْمُؤْمِنُ",
+"ur": "Yā Mu’min-o",
+"en": "Al-Mu’min",
+"meaning": "The Granter of Security",
+"explain": "The One who gives faith, removes fear, and protects from harm.",
+"qref": "59:23",
+"benefit": "Recite Ya Mu’min to be freed from the harm of your idol/ ego. | Recite 36x when faced with danger and hostility. | Write on paper and keep for safety."
+},
+{
+"n": 7,
+"ar": "ٱلْمُهَيْمِنُ",
+"ur": "Yā Muhaymin-o",
+"en": "Al-Muhaymin",
+"meaning": "The Protector",
+"explain": "The One who watches over, guards, and maintains everything with perfect awareness.",
+"qref": "59:23",
+"benefit": "Recite after wudhoo 115x for inner illumination. | Recite 5000x for 7 days for success."
+},
+{
+"n": 8,
+"ar": "ٱلْعَزِيزُ",
+"ur": "Yā Aziz-o",
+"en": "Al-‘Azīz",
+"meaning": "The Almighty",
+"explain": "The One who is all‑powerful, unbeatable, and dominant.",
+"qref": "3:6, 4:158, 9:40, 48:7, 59:23",
+"benefit": "Recite ya ‘Azeez for forty days between wajib salaa, for independence. | 115x for acquaintance with the unseen."
+},
+{
+"n": 9,
+"ar": "ٱلْجَبَّارُ",
+"ur": "Yā Jabbar-o",
+"en": "Al-Jabbār",
+"meaning": "The Compeller",
+"explain": "The One who mends the broken, restores the weak, and enforces His will irresistibly.",
+"qref": "59:23",
+"benefit": "Recite Ya Jabbar 21x each time and you should not be compelled to do anything. | Recite for safety against tyrant."
+},
+{
+"n": 10,
+"ar": "ٱلْمُتَكَبِّرُ",
+"ur": "Yā Mutakabbir-o",
+"en": "Al-Mutakabbir",
+"meaning": "The Supreme in Greatness",
+"explain": "The One whose greatness is beyond human comprehension.",
+"qref": "59:23",
+"benefit": "Begin every act with Ya Mutakkabir for successful completion. | Recite 10x before intimacy for a righteous child."
+},
+{
+"n": 11,
+"ar": "ٱلْخَٰلِقُ",
+"ur": "Yā Khāliq-o",
+"en": "Al-Khāliq",
+"meaning": "The Creator",
+"explain": "The One who brings everything into existence with perfect precision and wisdom.",
+"qref": "6:102, 13:16, 39:62, 40:62, 59:24",
+"benefit": "Recite ya Khaliq at night to act for His sake. | If recited at night angels will pray till the end of the night."
+},
+{
+"n": 12,
+"ar": "ٱلْبَارِئُ",
+"ur": "Yā Bāri’-o",
+"en": "Al-Bāriʾ",
+"meaning": "The Evolver",
+"explain": "The One who shapes and perfects creation, giving each being its unique nature.",
+"qref": "59:24",
+"benefit": "Recite ya Baari’ frequently and hard work should become easy. For conceiving fast for 7 days and break fast with ‘Ya Khaaliq, Ya Baari’, Ya Musawwiru’ 21 times."
+},
+{
+"n": 13,
+"ar": "ٱلْمُصَوِّرُ",
+"ur": "Yā Musawwir-o",
+"en": "Al-Muṣawwir",
+"meaning": "The Fashioner",
+"explain": "The One who designs the appearance and beauty of all creation.",
+"qref": "59:24",
+"benefit": "Recite Ya Musawwir frequently and hard work should become easy."
+},
+{
+"n": 14,
+"ar": "ٱلْغَفَّارُ",
+"ur": "Yā Ghaffār-o",
+"en": "Al-Ghaffār",
+"meaning": "The Most Forgiving",
+"explain": "The One who repeatedly forgives sins, no matter how many times one returns.",
+"qref": "20:82, 38:66, 39:5, 40:42, 71:10",
+"benefit": "Recite to subdue anger. Recite 100x after Salatul Jumua’ for forgiveness of previous week’s faults."
+},
+{
+"n": 15,
+"ar": "ٱلْقَهَّارُ",
+"ur": "Yā Qahhār-o",
+"en": "Al-Qahhār",
+"meaning": "The Dominant Subduer",
+"explain": "The One whose power overwhelms all creation and cannot be resisted.",
+"qref": "13:16, 14:48, 38:65, 39:4, 40:16",
+"benefit": "Recite 100x after fajr salaa to overcome your enemy. Repeat frequently, to gain inner peace and be freed from being wronged by another."
+},
+{
+"n": 16,
+"ar": "ٱلْوَهَّابُ",
+"ur": "Yā Wahhāb-o",
+"en": "Al-Wahhāb",
+"meaning": "The Giver of Gifts",
+"explain": "The One who grants blessings freely and generously without being asked.",
+"qref": "3:8, 38:9, 38:35",
+"benefit": "Repeat Ya Wahhab 7x at midnight for dua to be answered."
+},
+{
+"n": 17,
+"ar": "ٱلرَّزَّاقُ",
+"ur": "Yā Razzāq-o",
+"en": "Ar-Razzāq",
+"meaning": "The Provider",
+"explain": "The One who sustains every creature with all forms of provision—seen and unseen.",
+"qref": "51:58",
+"benefit": "Recite 10x facing qibla and then 10x in the other 3 directions to remove poverty. Repeat 545x for increased sustenance. Go into seclusion and repeat 1000x to meet Prophet Khidr if your sustenance is halal. Write and hang in workplace to be successful. | Recite 100x after Salatul Jumua’ if stressed and depressed."
+},
+{
+"n": 18,
+"ar": "ٱلْفَتَّاحُ",
+"ur": "Yā Fattāh-o",
+"en": "Al-Fattāḥ",
+"meaning": "The Opener",
+"explain": "The One who opens doors of ease, solutions, and victory when all paths seem closed.",
+"qref": "34:26",
+"benefit": "With hands on your chest, repeat ya Fattah 70x after Salatul Fajr for the heart to be free of rust and be opened, given victory over the ego and be purified. 20"
+},
+{
+"n": 19,
+"ar": "ٱلْعَلِيمُ",
+"ur": "Yā Alīm-o",
+"en": "Al-ʿAlīm",
+"meaning": "The All‑Knowing",
+"explain": "The One whose knowledge covers everything—past, present, future, hidden, and seen.",
+"qref": "2:158, 3:92, 4:35, 24:41, 33:40",
+"benefit": "Recite ya ‘Aleem 100x after every wajib salaa for intuition. | For hidden knowledge, do sajda on Friday night and recite ya ‘Aleem 100x. | Recite ya ‘Aleem for the heart to be illuminated. | For hajat, go outside, pray 2 rakat salaa and then recite ya ‘Aleem 1000x."
+},
+{
+"n": 20,
+"ar": "ٱلْقَابِضُ",
+"ur": "Yā Qābid-o",
+"en": "Al-Qābiḍ",
+"meaning": "The Withholder",
+"explain": "The One who restricts sustenance or circumstances with perfect wisdom and purpose.",
+"qref": "2:245",
+"benefit": "For 4 days write Ya Qabidh on a piece of bread with your finger and eat it to be safe from hunger, thirst, pain and the punishment of the grave. | Recite 903x for safety from tyranny. 22"
+},
+{
+"n": 21,
+"ar": "ٱلْبَاسِطُ",
+"ur": "Yā Bāsit-o",
+"en": "Al-Bāsiṭ",
+"meaning": "The Expander",
+"explain": "The One who expands provision, relief, and spiritual openness.",
+"qref": "2:245",
+"benefit": "Recite frequently for peace of mind, freedom from stress, and to gain love and respect. | Recite ya Basit 10x after Salatul Fajr with open hands, palms up and then pass over face for self sufficency. Ism of the angel Israfeel."
+},
+{
+"n": 22,
+"ar": "ٱلْخَافِضُ",
+"ur": "Yā Khāfid-o",
+"en": "Al-Khāfiḍ",
+"meaning": "The Abaser",
+"explain": "The One who lowers the arrogant and humbles tyrants.",
+"qref": "95:5",
+"benefit": "Fast for three days and on the fourth day, recite Ya Khafidh 70,000 times in a gathering and you should be free from harm. | Recite 10x every day for honour."
+},
+{
+"n": 23,
+"ar": "ٱلرَّافِعُ",
+"ur": "Yā Rāfi‘-o",
+"en": "Ar-Rāfiʿ",
+"meaning": "The Exalter",
+"explain": "The One who elevates whom He wills in honor, rank, and status.",
+"qref": "58:11, 6:83",
+"benefit": "Recite Ya Rafi’ 100x on Thursday and Sunday night to attain a higher sense of honour, richness and merit."
+},
+{
+"n": 24,
+"ar": "ٱلْمُعِزُّ",
+"ur": "Yā Mu‘izz-o",
+"en": "Al-Muʿizz",
+"meaning": "The Bestower of Honor",
+"explain": "The One who grants dignity and strength to His servants.",
+"qref": "3:26",
+"benefit": "Repeat Ya Mu’izz 140 times after Maghrib salaa on Sunday and Thursday to develop dignity in eyes of others and fear no one but God."
+},
+{
+"n": 25,
+"ar": "ٱلْمُذِلُّ",
+"ur": "Yā Mudhill-o",
+"en": "Al-Mudhill",
+"meaning": "The Humiliator",
+"explain": "The One who removes false honor and exposes arrogance.",
+"qref": "3:26",
+"benefit": "Recite Ya Muzhill 75 times when you sense harm from a jealous person. If you go to sijda and say, “Oh God save me from the oppression of so and so…” and you should be safe."
+},
+{
+"n": 26,
+"ar": "ٱلسَّمِيعُ",
+"ur": "Yā Samī‘-o",
+"en": "As-Samīʿ",
+"meaning": "The All‑Hearing",
+"explain": "The One who hears every sound, whisper, and thought.",
+"qref": "2:127, 2:256, 8:17, 49:1",
+"benefit": "Recite Ya Samee’ 500x after Zhuhr salaa for hajat. | Recite so that one’s words have a greater effect on one’s listeners."
+},
+{
+"n": 27,
+"ar": "ٱلْبَصِيرُ",
+"ur": "Yā Basīr-o",
+"en": "Al-Baṣīr",
+"meaning": "The All‑Seeing",
+"explain": "The One who sees every detail, action, and hidden moment.",
+"qref": "4:58, 17:1, 42:11, 42:27",
+"benefit": "Recite 100x Ya Allahu, Ya Baseer before Salatul Jumua’ for success in any task. | Recite Ya Baseer 100x after Salatul Jumua’ to raise esteem, strength in eyesight and illumination of heart."
+},
+{
+"n": 28,
+"ar": "ٱلْحَكَمُ",
+"ur": "Yā Hakam-o",
+"en": "Al-Ḥakam",
+"meaning": "The Judge",
+"explain": "The One whose judgment is final, flawless, and perfectly wise.",
+"qref": "22:69",
+"benefit": "Recite Ya Hakam on Thursday night in the middle of the night frequently to know the hidden meanings in things."
+},
+{
+"n": 29,
+"ar": "ٱلْعَدْلُ",
+"ur": "Yā ‘Adl-o",
+"en": "Al-‘Adl",
+"meaning": "The Utterly Just",
+"explain": "The One who never wrongs anyone and whose justice is absolute.",
+"qref": "6:115",
+"benefit": "Write ya ‘Adl on a piece of bread on Thursday night for obedience."
+},
+{
+"n": 30,
+"ar": "ٱللَّطِيفُ",
+"ur": "Yā Latīf-o",
+"en": "Al-Laṭīf",
+"meaning": "The Subtle, The Most Gentle",
+"explain": "The One who arranges matters with delicate kindness, often in unseen ways.",
+"qref": "6:103, 22:63, 31:16, 33:34",
+"benefit": "Recite Ya Lateef 129x when stressed or depressed. | Recite “Allahu Lateefun bi ‘ibaadihi yarzuku man- yashaau wa huwal Qawiyyul ‘Azeez” (12:100) 9x daily for ease. | Recite 133x for abundance in sustenance. | After 2 rakaats salaa recite it 11x for deliverance from poverty, illness, sickness, loneliness and misery. 32"
+},
+{
+"n": 31,
+"ar": "ٱلْخَبِيرُ",
+"ur": "Yā Khabīr-o",
+"en": "Al-Khabīr",
+"meaning": "The All‑Aware",
+"explain": "The One fully aware of the inner realities of everything.",
+"qref": "6:18, 17:30, 49:13, 59:18",
+"benefit": "Recite Ya Khabeer frequently to be freed of bad habits. | Recite it for 7 days to perceive hidden secrets."
+},
+{
+"n": 32,
+"ar": "ٱلْحَلِيمُ",
+"ur": "Yā Halīm-o",
+"en": "Al-Ḥalīm",
+"meaning": "The Forbearing",
+"explain": "The One who delays punishment despite having full power to act immediately.",
+"qref": "2:235, 2:263, 4:12, 5:101, 17:44, 22:59, 33:51, 35:41, 64:17",
+"benefit": "Recite 88x for subsidence of anger. | Write ya Haleem on a piece of paper and put the paper wherever you plant something to preserve it from harm. | Recite on an apple and give to spouse who has fallen out of love to restore affection. | Recite on water for plants for better growth."
+},
+{
+"n": 33,
+"ar": "ٱلْعَظِيمُ",
+"ur": "Yā ‘Azīm-o",
+"en": "Al-ʿAẓīm",
+"meaning": "The Magnificent",
+"explain": "The One whose greatness surpasses all imagination.",
+"qref": "2:255, 42:4, 56:96",
+"benefit": "Recite ya ‘Azheem frequently to develop respect among people. | Recite 100x for success and protection from harm of enemies."
+},
+{
+"n": 34,
+"ar": "ٱلْغَفُورُ",
+"ur": "Yā Ghafūr-o",
+"en": "Al-Ghafūr",
+"meaning": "The Most Forgiving",
+"explain": "The One who forgives major, repeated, and hidden sins with vast mercy.",
+"qref": "2:173, 8:69, 16:110, 41:32",
+"benefit": "Recite Ya Ghafoor frequently for headaches, fever or temporary despair and despondency. | Recite 100x after Salatul Jumua’ for relief from a heavy heart due to sins and forgiveness of the sins."
+},
+{
+"n": 35,
+"ar": "ٱلشَّكُورُ",
+"ur": "Yā Shakūr-o",
+"en": "Ash-Shakūr",
+"meaning": "The Most Appreciative",
+"explain": "The One who rewards even the smallest good deed with immense blessings.",
+"qref": "35:30, 35:34, 42:23, 64:17",
+"benefit": "Recite 41 x to allievate difficulty."
+},
+{
+"n": 36,
+"ar": "ٱلْعَلِيُّ",
+"ur": "Yā ‘Aliyy-o",
+"en": "Al-ʿAlī",
+"meaning": "The Most High",
+"explain": "The One exalted above all creation in rank and essence.",
+"qref": "4:34, 31:30, 42:4, 42:51",
+"benefit": "Recite 41 x for relief from difficulty."
+},
+{
+"n": 37,
+"ar": "ٱلْكَبِيرُ",
+"ur": "Yā Kabīr-o",
+"en": "Al-Kabīr",
+"meaning": "The Most Great",
+"explain": "The One whose greatness is beyond all limits.",
+"qref": "13:9, 22:62, 31:30",
+"benefit": "Recite 232x over food and give to couple having marital problems If someone has lost his job or been demoted unjustly or has debts which cannot be paid – fast for 7 days and recite – Yaa Kabeeru antallazhee laa tahdil ‘uqulu liy wasfi ‘azhamatihi 1000x."
+},
+{
+"n": 38,
+"ar": "ٱلْحَفِيظُ",
+"ur": "Yā Hafīz-o",
+"en": "Al-Ḥafīẓ",
+"meaning": "The Preserver",
+"explain": "The One who protects and guards everything in existence.",
+"qref": "11:57, 34:21, 42:6",
+"benefit": "Recite 16x a day for protection from calamities."
+},
+{
+"n": 39,
+"ar": "ٱلْمُقِيتُ",
+"ur": "Yā Muqīt-o",
+"en": "Al-Muqīt",
+"meaning": "The Sustainer",
+"explain": "The One who ensures every creature receives exactly what it needs.",
+"qref": "4:85",
+"benefit": "Recite 7x on water and drink for fulfilment of hajat."
+},
+{
+"n": 40,
+"ar": "ٱلْحَسِيبُ",
+"ur": "Yā Hasīb-o",
+"en": "Al-Ḥasīb",
+"meaning": "The Reckoner",
+"explain": "The One who accounts for every action, intention, and detail perfectly.",
+"qref": "4:6, 4:86, 33:39",
+"benefit": "Repeat ya Haseeb 70x on Thursday for seven days and nights and the 71st time say, “Allah al-Haseeb,” “God is my Reckoner,” and you should be freed from fear of being robbed, or the jealousy of another or being harmed. | Write on bottle of colicky child."
+},
+{
+"n": 41,
+"ar": "ٱلْجَلِيلُ",
+"ur": "Yā Jalīl-o",
+"en": "Al-Jalīl",
+"meaning": "The Majestic",
+"explain": "The One whose glory and greatness are beyond all comprehension.",
+"qref": "55:27, 39:14, 7:143",
+"benefit": "Write Ya Jaleel on a piece of paper with saffron and musk ink. Wash the paper and drink self steem."
+},
+{
+"n": 42,
+"ar": "ٱلْكَرِيمُ",
+"ur": "Yā Karīm-o",
+"en": "Al-Karīm",
+"meaning": "The Most Generous",
+"explain": "The One who gives endlessly, honorably, and without limit.",
+"qref": "27:40, 82:6",
+"benefit": "Recite 270x for freedom from debt. Recite for frgiveness."
+},
+{
+"n": 43,
+"ar": "ٱلرَّقِيبُ",
+"ur": "Yā Raqīb-o",
+"en": "Ar-Raqīb",
+"meaning": "The Watchful",
+"explain": "The One who observes everything, guarding and protecting all.",
+"qref": "4:1, 5:117",
+"benefit": "Repeat 7x for yourself, family and property to be under Allah’s protection. | Recite to find lost thing. | Recite 312x to render bad vibes ineffective."
+},
+{
+"n": 44,
+"ar": "ٱلْمُجِيبُ",
+"ur": "Yā Mujīb-o",
+"en": "Al-Mujīb",
+"meaning": "The Answerer of Prayers",
+"explain": "The One who responds to supplications with wisdom and mercy.",
+"qref": "11:61",
+"benefit": "Recite Ya Mujeeb to continue to have faith. | Recite 55x at sunrise after salaa for hajat. | Reciting also helps stop gossip and slander."
+},
+{
+"n": 45,
+"ar": "ٱلْوَاسِعُ",
+"ur": "Yā Wāsi‘-o",
+"en": "Al-Wāsiʿ",
+"meaning": "The All‑Encompassing",
+"explain": "The One whose mercy, knowledge, and generosity extend over all things.",
+"qref": "2:268, 3:73, 5:54",
+"benefit": "Recite Ya Waasi’ frequently if you have difficulty earning a living. | Recite 137x to cure depression."
+},
+{
+"n": 46,
+"ar": "ٱلْحَكِيمُ",
+"ur": "Yā Hakīm-o",
+"en": "Al-Ḥakīm",
+"meaning": "The All‑Wise",
+"explain": "The One whose every action and decree is full of perfect wisdom.",
+"qref": "31:27, 46:2, 57:1, 66:2",
+"benefit": "Recite Ya Hakim continuously to overcome difficulties in work and for knowledge and wisdom."
+},
+{
+"n": 47,
+"ar": "ٱلْوَدُودُ",
+"ur": "Yā Wadūd-o",
+"en": "Al-Wadūd",
+"meaning": "The Most Loving",
+"explain": "The One who loves His creation with pure, unconditional love.",
+"qref": "11:90, 85:14",
+"benefit": "If there has been a quarrel between two people and one of the two repeats Ya Wadud 1000x over food and gives the food to the other to eat, the disagreement may be resolved."
+},
+{
+"n": 48,
+"ar": "ٱلْمَجِيدُ",
+"ur": "Yā Majīd-o",
+"en": "Al-Majīd",
+"meaning": "The Glorious",
+"explain": "The One who is noble, majestic, and infinitely honorable.",
+"qref": "11:73",
+"benefit": "Recite ya Majeed 100x at iftar on the 13th, 14th & 15th of the Lunar month to cure sickness especially psoriasis, heart disease and depression."
+},
+{
+"n": 49,
+"ar": "ٱلْبَاعِثُ",
+"ur": "Yā Bā‘ith-o",
+"en": "Al-Bāʿith",
+"meaning": "The Resurrector",
+"explain": "The One who will resurrect all creation for judgment.",
+"qref": "22:7",
+"benefit": "Recite Ya Bai’th 100x to gain taqwa and wisdom. | Recite frequently with hand on chest at bedtime. | Recite 7070x to clear name if wrongly accused."
+},
+{
+"n": 50,
+"ar": "ٱلشَّهِيدُ",
+"ur": "Yā Shahīd-o",
+"en": "As-Shahīd",
+"meaning": "The Witness",
+"explain": "The One who sees, hears, and knows everything openly and secretly.",
+"qref": "4:166, 22:17, 41:53, 48:28",
+"benefit": "Repeat Ya Shaheed 21x with your hand on the forehead of a rebellious child to calm him down. Assists in controlling one’s own disobedience."
+},
+{
+"n": 51,
+"ar": "ٱلْحَقُّ",
+"ur": "Yā Haqq-o",
+"en": "Al-Ḥaqq",
+"meaning": "The Truth",
+"explain": "The One whose existence is undeniable and whose words and promises are absolute truth.",
+"qref": "6:62, 22:6, 23:116, 24:25",
+"benefit": "Recite to find lost thing. | For sustenance recite 100x La Ilaha illallahul Mali- kul Haqqul Mubeen every day."
+},
+{
+"n": 52,
+"ar": "ٱلْوَكِيلُ",
+"ur": "Yā Wakīl-o",
+"en": "Al-Wakīl",
+"meaning": "The Trustee",
+"explain": "The One who manages all affairs and is fully reliable.",
+"qref": "3:173, 4:171, 28:28, 73:9",
+"benefit": "If you are afraid of drowning or being burned in a fire, repeat Ya Wakeel for protection."
+},
+{
+"n": 53,
+"ar": "ٱلْقَوِيُّ",
+"ur": "Yā Qawiyy-o",
+"en": "Al-Qawiyy",
+"meaning": "The All‑Powerful",
+"explain": "The One whose strength is limitless and cannot be overcome.",
+"qref": "22:40, 22:74, 42:19, 57:25",
+"benefit": "Recite Ya Qawiy for safety from an enemy. | Recite 116x for strength to do ibada."
+},
+{
+"n": 54,
+"ar": "ٱلْمَتِينُ",
+"ur": "Yā Matīn-o",
+"en": "Al-Matīn",
+"meaning": "The Firm",
+"explain": "The One whose power is solid, steady, and unshakable.",
+"qref": "51:58",
+"benefit": "Recite Ya Mateen for your troubles to disappear. | To increase breast milk write on a cup and drink water from it. | Recite 500x to eliminate tyranny and negativity from oneself."
+},
+{
+"n": 55,
+"ar": "ٱلْوَلِيُّ",
+"ur": "Yā Walī-o",
+"en": "Al-Waliyy",
+"meaning": "The Protecting Guardian",
+"explain": "The One who lovingly guides, protects, and supports His servants.",
+"qref": "4:45, 7:196, 42:28, 45:19",
+"benefit": "Recite Ya Waliy frequently to become a Friend of God. | Recite in the presence of a spouse who is ill of character."
+},
+{
+"n": 56,
+"ar": "ٱلْحَمِيدُ",
+"ur": "Yā Hamīd-o",
+"en": "Al-Ḥamīd",
+"meaning": "The Praiseworthy",
+"explain": "The One deserving of all praise for His perfection and blessings.",
+"qref": "14:8, 31:12, 31:26, 41:42",
+"benefit": "Repeat Ya Hameed be loved and praised. | Write on a cup and drink from it for refined speech."
+},
+{
+"n": 57,
+"ar": "ٱلْمُحْصِي",
+"ur": "Yā Muhsī-o",
+"en": "Al-Muḥṣī",
+"meaning": "The Accounter",
+"explain": "The One who records, counts, and preserves every detail.",
+"qref": "72:28, 78:29, 82:10-12",
+"benefit": "Recite Ya Muhsi 100x for ease on the Day of Judgement. | Recite 148x to assist in understanding and memorisation. Also gives courage for self criticism."
+},
+{
+"n": 58,
+"ar": "ٱلْمُبْدِئُ",
+"ur": "Yā Mubdi‘-o",
+"en": "Al-Mubdiʾ",
+"meaning": "The Originator",
+"explain": "The One who begins creation without any prior model.",
+"qref": "10:34, 27:64, 29:19, 85:13",
+"benefit": "Recite to make decisions when undecisive. | If a pregnant woman fears a miscarriage then place right hand on the stomach and recite Ya Mubdi’ 99x."
+},
+{
+"n": 59,
+"ar": "ٱلْمُعِيدُ",
+"ur": "Yā Mu‘īd-o",
+"en": "Al-Muʿīd",
+"meaning": "The Restorer",
+"explain": "The One who brings life back after death and returns creation as He wills.",
+"qref": "10:34, 27:64, 29:19, 85:13",
+"benefit": "Repeat Ya Mu’eed 70x for the safe return of a family member who is away."
+},
+{
+"n": 60,
+"ar": "ٱلْمُحْيِي",
+"ur": "Yā Muhyī-o",
+"en": "Al-Muḥyī",
+"meaning": "The Giver of Life",
+"explain": "The One who grants life to the living and revives hearts with faith.",
+"qref": "10:34, 27:64, 29:19, 85:13",
+"benefit": "If you are weighed down with a heavy burden repeat Ya Muhyi 7x daily. | Recite 68x after every salaa to cure a chronic illness."
+},
+{
+"n": 61,
+"ar": "ٱلْمُمِيتُ",
+"ur": "Yā Mumīt-o",
+"en": "Al-Mumīt",
+"meaning": "The Giver of Death",
+"explain": "The One who ends life with perfect wisdom and timing.",
+"qref": "3:156, 7:158, 15:23, 57:2",
+"benefit": "Recite Ya Mumeet frequently with your hands on your chest on falling asleep to control your passions and destroy your enemy."
+},
+{
+"n": 62,
+"ar": "ٱلْحَيُّ",
+"ur": "Yā Hayy-o",
+"en": "Al-Ḥayy",
+"meaning": "The Ever‑Living",
+"explain": "The One who is eternally alive, without beginning or end.",
+"qref": "2:255, 3:2, 25:58, 40:65",
+"benefit": "Recite Ya Hayy frequently for a long life and to cure sickness. | Recite 500x before sunrise for peace."
+},
+{
+"n": 63,
+"ar": "ٱلْقَيُّومُ",
+"ur": "Yā Qayyūm-o",
+"en": "Al-Qayyūm",
+"meaning": "The Self‑Sustaining",
+"explain": "The One who sustains and manages all creation without effort.",
+"qref": "2:255, 3:2, 20:111",
+"benefit": "Recite Ya Qayyum at the time of Fajr salaa for friendship. | Recite 16x daily for memorisation help. | Recite it in seclusion for affluence. | To remove lethargy and laziness recite Al Hayyu and Al Qayyum after Fajr salaa."
+},
+{
+"n": 64,
+"ar": "ٱلْوَاجِدُ",
+"ur": "Yā Wājid-o",
+"en": "Al-Wājid",
+"meaning": "The Perceiver",
+"explain": "The One who finds and knows all things without searching.",
+"qref": "38:44",
+"benefit": "Repeat Ya Waajid with every morsel of food to become resourceful."
+},
+{
+"n": 65,
+"ar": "ٱلْمَاجِدُ",
+"ur": "Yā Mājid-o",
+"en": "Al-Mājid",
+"meaning": "The Illustrious",
+"explain": "The One who is noble, honorable, and full of goodness.",
+"qref": "85:15, 11:73",
+"benefit": "Recite Ya Maajid 465x morning and night to be understood by others."
+},
+{
+"n": 66,
+"ar": "ٱلْوَاحِدُ",
+"ur": "Yā Wāhid-o",
+"en": "Al-Wāḥid",
+"meaning": "The One",
+"explain": "The One who is uniquely One in His essence and attributes.",
+"qref": "2:163, 5:73, 9:31, 18:110",
+"benefit": "Repeat Ya Waahid 1000x when you are alone and in a dark place to be free of fear and delusions. 68"
+},
+{
+"n": 67,
+"ar": "ٱلْأَحَدُ",
+"ur": "Yā Ahad-o",
+"en": "Al-Aḥad",
+"meaning": "The Unique",
+"explain": "The One who has no partner, equal, or rival.",
+"qref": "112:1",
+"benefit": "1000x for unification of nafs. | For pious children keep ism on self."
+},
+{
+"n": 68,
+"ar": "ٱلصَّمَدُ",
+"ur": "Yā Samad-o",
+"en": "Aṣ-Ṣamad",
+"meaning": "The Self‑Sufficient",
+"explain": "The One who needs nothing, while all creation depends on Him.",
+"qref": "112:2",
+"benefit": "Repeat 1000x to know the hidden meanings of things. | Recite 115x at dawn or at midnight while in sajda, to be safe from oppression. | Recite to improve character."
+},
+{
+"n": 69,
+"ar": "ٱلْقَادِرُ",
+"ur": "Yā Qādir-o",
+"en": "Al-Qādir",
+"meaning": "The All‑Able",
+"explain": "The One who has complete power over all things.",
+"qref": "6:65, 36:81, 46:33, 75:40",
+"benefit": "Recite Ya Qaadir while washing each limb during the wudhoo and no enemy should harm you. | If you face a difficulty recite 41x to be free from difficulty. | Recite 305x when love not responded to."
+},
+{
+"n": 70,
+"ar": "ٱلْمُقْتَدِرُ",
+"ur": "Yā Muqtadir-o",
+"en": "Al-Muqtadir",
+"meaning": "The All‑Powerful",
+"explain": "The One whose power is absolute and perfectly executed.",
+"qref": "6:65, 36:81, 46:33, 75:40",
+"benefit": "Repeat Ya Muqtadir frequently to become aware of the Truth. | Recite 744x to sharpen the memory."
+},
+{
+"n": 71,
+"ar": "ٱلْمُقَدِّمُ",
+"ur": "Yā Muqaddim-o",
+"en": "Al-Muqaddim",
+"meaning": "The Promoter",
+"explain": "The One who advances, elevates, and brings forward whom He wills.",
+"qref": "16:61, 17:34",
+"benefit": "Repeat when you are afraid of being alone in a frightening place. | Recite to present things in their right places."
+},
+{
+"n": 72,
+"ar": "ٱلْمُؤَخِّرُ",
+"ur": "Yā Mu’akhkhir-o",
+"en": "Al-Muʾakhkhir",
+"meaning": "The Delayer",
+"explain": "The One who holds back, postpones, or lowers whom He wills.",
+"qref": "71:4",
+"benefit": "Recite 100 times for tawba to be accepted. | Recite 1446x before sunrise for 7 days to prevent tyrant from gaining power."
+},
+{
+"n": 73,
+"ar": "ٱلْأَوَّلُ",
+"ur": "Yā Awwal-o",
+"en": "Al-Awwal",
+"meaning": "The First",
+"explain": "The One who existed before anything else.",
+"qref": "57:3",
+"benefit": "Recite Ya Awwal 40 times on Thursday night for fulfilment of needs. | Recite 1000 times for 40 Fridays for an overwhelming problem and for safe return from journey."
+},
+{
+"n": 74,
+"ar": "ٱلْآخِرُ",
+"ur": "Yā Ākhir-o",
+"en": "Al-Ākhir",
+"meaning": "The Last",
+"explain": "The One who remains after everything else perishes.",
+"qref": "57:3",
+"benefit": "Those who recite Ya Aakhir frequently should lead a good life and have a good end at the time of death. | Recite 1000 times on Friday for increased sustenance."
+},
+{
+"n": 75,
+"ar": "ٱلظَّاهِرُ",
+"ur": "Yā Zāhir-o",
+"en": "Aẓ-Ẓāhir",
+"meaning": "The Manifest",
+"explain": "The One whose existence is evident through His signs.",
+"qref": "57:3",
+"benefit": "Recite Ya Zhaahir 500x for divine Light to enter your heart."
+},
+{
+"n": 76,
+"ar": "ٱلْبَاطِنُ",
+"ur": "Yā Bātin-o",
+"en": "Al-Bāṭin",
+"meaning": "The Hidden",
+"explain": "The One who is unseen yet fully aware of all hidden realities.",
+"qref": "57:3",
+"benefit": "Recite Ya Baatin 22x to see the truth in things. Recite 33x for enlightenment. | For hajat pray 2 rakats salaa after which recite “Huwal Awwalu wal Aakhiru wazh Zhaahiru wal Baatin; wa huwa ‘alaa kulli shayin Qadeer”"
+},
+{
+"n": 77,
+"ar": "ٱلْوَالِي",
+"ur": "Yā Wālī-o",
+"en": "Al-Wālī",
+"meaning": "The Sole Planner",
+"explain": "The One who manages all affairs of creation.",
+"qref": "13:11, 22:7",
+"benefit": "Repeat Ya Waali in your home to be free from danger. | Recite 11x to subdue another’s anger."
+},
+{
+"n": 78,
+"ar": "ٱلْمُتَعَالِي",
+"ur": "Yā Muta‘ālī-o",
+"en": "Al-Mutaʿālī",
+"meaning": "The Exalted",
+"explain": "The One who is far above any imperfection or comparison.",
+"qref": "13:9",
+"benefit": "Repeat Ya Muta’ali to ease difficulties. | Recommended for women to recite during menstruation to relieve ailments. | If demoted recite 540x to be restored to honour. Also effective for interviews."
+},
+{
+"n": 79,
+"ar": "ٱلْبَرُّ",
+"ur": "Yā Barr-o",
+"en": "Al-Barr",
+"meaning": "The Source of Goodness",
+"explain": "The One whose kindness and goodness are vast and perfect.",
+"qref": "52:28",
+"benefit": "Repeat Ya Barr frequently to be blessed and be free from misfortune. | Recite 7x daily to create aversion to bad habits. | If recited 7x on a newborn baby it will give the child protection from calamities."
+},
+{
+"n": 80,
+"ar": "ٱلتَّوَابُ",
+"ur": "Yā Tawwāb-o",
+"en": "At-Tawwāb",
+"meaning": "The Accepter of Repentance",
+"explain": "The One who repeatedly accepts repentance and forgives.",
+"qref": "2:128, 4:64, 49:12, 110:3",
+"benefit": "Repeat Ya Tawwab many times for acceptance of tawba. | Recite frequently for accomplishment of a task. | Recite 10x in front of a tyrant to be free from oppression."
+},
+{
+"n": 81,
+"ar": "ٱلْمُنْتَقِمُ",
+"ur": "Yā Muntaqim-o",
+"en": "Al-Muntaqim",
+"meaning": "The Avenger",
+"explain": "The One who justly punishes oppressors and wrongdoers.",
+"qref": "32:22, 43:41, 44:16",
+"benefit": "Repeat Ya Muntaqim to be victorious against your enemy. | To remove a tyrant from power, recite Ya Muntaqimu and Ya Qahhaar 1000x."
+},
+{
+"n": 82,
+"ar": "ٱلْعَفُوُّ",
+"ur": "Yā ‘Afuww-o",
+"en": "Al-ʿAfūw",
+"meaning": "The Pardoner",
+"explain": "The One who erases sins completely, leaving no trace.",
+"qref": "4:99, 4:149, 22:60",
+"benefit": "Repeat Ya ‘Afw frequently for forgiveness."
+},
+{
+"n": 83,
+"ar": "ٱلرَّءُوفُ",
+"ur": "Yā Ra’ūf-o",
+"en": "Ar-Raʾūf",
+"meaning": "The Most Kind",
+"explain": "The One whose tenderness and compassion are unmatched.",
+"qref": "3:30, 9:117, 57:9, 59:10",
+"benefit": "Repeat Ya Ra’uf frequently to be blessed. | Recite also to gain affection of creation."
+},
+{
+"n": 84,
+"ar": "مَالِكُ ٱلْمُلْكِ",
+"ur": "Yā Mālik-ul-Mulk-o",
+"en": "Mālik al-Mulk",
+"meaning": "Owner of All Sovereignty",
+"explain": "The One who owns all power, authority, and dominion.",
+"qref": "3:26",
+"benefit": "Recite Ya Malik al Mulk to gain esteem and change doubts into reassurance. | Recite 212x daily to gain sustenance from unexpected means. 86"
+},
+{
+"n": 85,
+"ar": "ذُو ٱلْجَلَالِ وَٱلْإِكْرَامِ",
+"ur": "Yā Dhul-Jalāl-wal-Ikrām-o",
+"en": "Dhū al-Jalāli wa’l-Ikrām",
+"meaning": "Lord of Glory and Honor",
+"explain": "The One who is majestic, noble, and deserving of all honor.",
+"qref": "55:27, 55:78",
+"benefit": "Repeat Ya Dhul jalaal wal ikraam to develop self esteem."
+},
+{
+"n": 86,
+"ar": "ٱلْمُقْسِطُ",
+"ur": "Yā Muqsit-o",
+"en": "Al-Muqsiṭ",
+"meaning": "The Just",
+"explain": "The One who restores balance and fairness in all matters.",
+"qref": "7:29, 3:18",
+"benefit": "Repeat Ya Muqsit 100x to be free from the harm of your idol/ego and you should attain your purpose. | Recite 700x for hajat. | If the mind wanders in salaa recite 239x before salaa. | Also recite for anger and depression."
+},
+{
+"n": 87,
+"ar": "ٱلْجَامِعُ",
+"ur": "Yā Jāmi‘-o",
+"en": "Al-Jāmiʿ",
+"meaning": "The Gatherer",
+"explain": "The One who gathers creation, hearts, and scattered things.",
+"qref": "3:9",
+"benefit": "Repeat Ya Jaami’ to find lost things or be reconciled with someone who has separated. Do ghusl at Zhuhr anf lifting gaze towards heavens recite Ya Jaami’ 10x closing each finger as you do so to reconcile dispersed family."
+},
+{
+"n": 88,
+"ar": "ٱلْغَنِيُّ",
+"ur": "Yā Ghaniyy-o",
+"en": "Al-Ghaniyy",
+"meaning": "The Self‑Sufficient",
+"explain": "The One who is free of all needs while all creation depends on Him.",
+"qref": "3:97, 39:7, 47:38, 57:24",
+"benefit": "Repeat Ya Ghani frequently for contentment. | Recite 70x daily for abundance in rizq. | Recite and blow over body for shifaa from illness."
+},
+{
+"n": 89,
+"ar": "ٱلْمُغْنِيُ",
+"ur": "Yā Mughni-o",
+"en": "Al-Mughnī",
+"meaning": "The Enricher",
+"explain": "The One who enriches whomever He wills, spiritually and materially.",
+"qref": "9:28",
+"benefit": "Recite Ya Mughni 1000 x every Friday to become self-sufficient. | Recite 1121x every Friday for 10 Fridays to eliminate nervous tension. | Recite on hands and pass over afflicted part of body to recover. | For spiritual and material wealth, recite 11x Salawat, followed by 1111x Ya Mughni and end with 11x Salawat and Suratul Muzzammil."
+},
+{
+"n": 90,
+"ar": "ٱلْمَانِعُ",
+"ur": "Yā Māni‘-o",
+"en": "Al-Māniʿ",
+"meaning": "The Preventer of Harm",
+"explain": "The One who protects by withholding harm and difficulty.",
+"qref": "67:21",
+"benefit": "Repeat Ya Maani’ to have a good family life. | Recite 20x to subside anger. | Recite 161x to help relieve pain and fear. | Recite for safety during journeys. | Recite silently to rekindle affection between spouses."
+},
+{
+"n": 91,
+"ar": "ٱلضَّارُّ",
+"ur": "Yā Dārr-o",
+"en": "Aḍ-Ḍārr",
+"meaning": "The Creator of Harm",
+"explain": "The One who allows hardship for wise and purposeful reasons.",
+"qref": "6:17",
+"benefit": "Repeat Ya Dharr 100x on Thursday nights to grow closer to Allah. | Recite for safety from tyranny."
+},
+{
+"n": 92,
+"ar": "ٱلنَّافِعُ",
+"ur": "Yā Nāfi‘-o",
+"en": "An-Nāfiʿ",
+"meaning": "The Creator of Good",
+"explain": "The One who brings benefit, healing, and goodness.",
+"qref": "30:37",
+"benefit": "Recite Ya Nafi’ for 4 days to avoid harm. | Recite 41x for completion of task. | Provides safety on a journey. | Recite before intimacy for pious children."
+},
+{
+"n": 93,
+"ar": "ٱلنُّورُ",
+"ur": "Yā Nūr-o",
+"en": "An-Nūr",
+"meaning": "The Light",
+"explain": "The One who illuminates hearts, minds, and the universe.",
+"qref": "24:35",
+"benefit": "Recite Ya Nur 700 times on Thursday night for receive inner light. | Recite Surah Nur 7 times and Ya Nur 1000 times to gain light in your heart."
+},
+{
+"n": 94,
+"ar": "ٱلْهَادِي",
+"ur": "Yā Hādī-o",
+"en": "Al-Hādī",
+"meaning": "The Guide",
+"explain": "The One who guides to truth, righteousness, and clarity.",
+"qref": "22:54",
+"benefit": "Repeat Ya Haadi frequently to gain spiritual knowledge."
+},
+{
+"n": 95,
+"ar": "ٱلْبَدِيعُ",
+"ur": "Yā Badī‘-o",
+"en": "Al-Badīʿ",
+"meaning": "The Incomparable",
+"explain": "The One who creates uniquely, without model or imitation.",
+"qref": "2:117, 6:101",
+"benefit": "Repeat Ya Badi’ 1000 x by saying, “Ya Badi’ as-samawati’ wa ‘l-ardh,” for troubles. | Relieves depression and stress. | Recite before sleeping for guidance on feasibility of task. | For accomplishment of a task recite 1200x Ya Badi’ al ajaaib bil khayr. Ya Badi’ for 12 days."
+},
+{
+"n": 96,
+"ar": "ٱلْبَاقِي",
+"ur": "Yā Bāqī-o",
+"en": "Al-Bāqī",
+"meaning": "The Everlasting",
+"explain": "The One who remains forever while all else perishes.",
+"qref": "55:27",
+"benefit": "Recite Ya Baaqi on Thursday night to be free of difficulties. | Recite frequently for acceptance of duas."
+},
+{
+"n": 97,
+"ar": "ٱلْوَارِثُ",
+"ur": "Yā Wārith-o",
+"en": "Al-Wāriṯ",
+"meaning": "The Inheritor",
+"explain": "The One who inherits all after creation passes away.",
+"qref": "15:23",
+"benefit": "Recite Ya Waarith 100x at sunrise to be free of difficulties. | Recite it often to fulfil a task. | To remove worries recite 1000x between Maghrib and Isha salaa."
+},
+{
+"n": 98,
+"ar": "ٱلرَّشِيدُ",
+"ur": "Yā Rashīd-o",
+"en": "Ar-Rashīd",
+"meaning": "The Guide to the Right Path",
+"explain": "The One who directs with perfect wisdom and clarity.",
+"qref": "2:256",
+"benefit": "Repeat Ya Rasheed, 1000x between Maghrib and Isha Salaa to remove troubles, and for financial progress. | Recite also to make words effective."
+},
+{
+"n": 99,
+"ar": "ٱلصَّبُورُ",
+"ur": "Yā Sabūr-o",
+"en": "Aṣ-Ṣabūr",
+"meaning": "The Most Patient",
+"explain": "The One who delays punishment and gives endless chances.",
+"qref": "2:153, 3:200, 103:3",
+"benefit": "Repeat Ya Sabur 33x for relief from troubles, difficulties and sorrow. | Recite 100x before sunrise for safety from calamities and ‘tying’ the enemy’s tongue. | Repeat 298x for physical pain. Repeat frequently if unjustly accused. | In difficulty recite 1020x."
+}
+];

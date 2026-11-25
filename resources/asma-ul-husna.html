@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Asma ul Husna">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="The 99 Beautiful Names of Allah — Arabic calligraphy, Romanized Urdu, English transliteration and meaning, plus a flashcard deck to help you memorize them.">
+<title>Asma ul Husna — The 99 Names of Allah</title>
+<link rel="icon" type="image/png" href="../assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* ---- Asma ul Husna page — scoped styles (prefixed .ah-) ---- */
+  .ah-page{ max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+
+  .ah-cover{ padding: 3rem 0 2.5rem; text-align:center; }
+  .ah-back-link{ display:inline-flex; align-items:center; gap:.4rem; font-size:.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+  .ah-back-link:hover{ color: var(--accent-soft); }
+  .ah-kicker{ color: var(--accent-soft); letter-spacing:.08em; text-transform:uppercase; font-size:.8rem; font-weight:700; margin-bottom:.8rem; }
+  .ah-cover h1{ font-size: clamp(2rem, 4.5vw, 3rem); color: var(--text); margin-bottom:.5em; }
+  .ah-cover .lede{ max-width: 680px; margin: 0 auto 1.4rem; font-size: 1.05rem; }
+  .ah-ayah{
+    max-width: 620px; margin: 0 auto 1.6rem; padding: 1.1rem 1.4rem; border-radius: var(--radius);
+    background: var(--surface); border: 1px solid var(--border); font-style: italic; color: var(--text);
+  }
+  .ah-ayah cite{ display:block; margin-top:.5rem; font-style:normal; font-size:.8rem; color: var(--text-muted); }
+  .ah-meta-row{ display:flex; gap: 1.4rem; justify-content:center; flex-wrap:wrap; font-size:.85rem; color: var(--text-muted); }
+  .ah-meta-row b{ color: var(--text); }
+
+  .ah-section{ padding: 3rem 0; }
+  .ah-section-alt{ background: var(--bg-alt); }
+  .ah-section-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom: 1.6rem; }
+  .ah-section-head h2{ font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--text); margin:0; }
+  .ah-section-head p{ margin: .3rem 0 0; font-size:.95rem; }
+
+  .ah-search-wrap{ margin-bottom: 1.6rem; }
+  .ah-search{
+    width: 100%; max-width: 420px; padding:.75rem 1rem; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text);
+    font-family: var(--font-body); font-size:.95rem;
+  }
+  .ah-search:focus{ outline: 2px solid var(--accent); outline-offset: 1px; }
+  .ah-count{ font-size:.8rem; color: var(--text-muted); margin-top:.5rem; }
+
+  .ah-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  @media (max-width: 920px){ .ah-grid{ grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px){ .ah-grid{ grid-template-columns: 1fr; } }
+
+  .ah-card{
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.25rem 1.4rem; transition: border-color var(--speed), transform var(--speed);
+  }
+  .ah-card:hover{ border-color: var(--accent); }
+  .ah-card-head{ display:flex; align-items:center; justify-content:space-between; gap:.75rem; margin-bottom:.6rem; }
+  .ah-badge{
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width: 1.8rem; height: 1.8rem; padding: 0 .4rem; border-radius: 50%;
+    background: var(--accent); color: #1a1406; font-size:.78rem; font-weight:700; flex: none;
+  }
+  .ah-ar{ font-family: var(--font-display); font-size: 1.9rem; color: var(--text); line-height:1.2; }
+  .ah-ur{ font-style: italic; color: var(--accent-soft); font-size:.95rem; margin: 0 0 .15rem; }
+  .ah-en{ font-size: 1.05rem; color: var(--text); margin: 0 0 .3rem; font-family: var(--font-display); }
+  .ah-meaning{ font-size:.9rem; margin: 0 0 .8rem; }
+  .ah-more{
+    background:none; border:none; cursor:pointer; padding:0; font-size:.82rem; font-weight:600;
+    color: var(--accent-soft); font-family: var(--font-body);
+  }
+  .ah-more:hover{ color: var(--accent); }
+  .ah-detail{ margin-top:.8rem; padding-top:.8rem; border-top: 1px dashed var(--border); }
+  .ah-detail p{ font-size:.85rem; margin: 0 0 .6rem; }
+  .ah-detail-row b{ color: var(--text); }
+
+  /* ---- Flashcards ---- */
+  .ah-fc-wrap{ display:flex; flex-direction:column; align-items:center; gap: 1.2rem; }
+  .ah-fc-stage{ width: 100%; max-width: 420px; perspective: 1400px; }
+  .ah-fc-card{
+    position: relative; width: 100%; aspect-ratio: 4 / 3; cursor: pointer;
+    transform-style: preserve-3d; transition: transform .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .ah-fc-card.is-flipped{ transform: rotateY(180deg); }
+  .ah-fc-face{
+    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:.6rem; padding: 1.5rem; border-radius: var(--radius); backface-visibility: hidden;
+    background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); text-align:center;
+  }
+  .ah-fc-back{ transform: rotateY(180deg); }
+  .ah-fc-ar{ font-family: var(--font-display); font-size: 2.6rem; color: var(--text); }
+  .ah-fc-hint{ font-size:.75rem; color: var(--text-muted); letter-spacing:.04em; text-transform:uppercase; }
+  .ah-fc-back .ah-en{ font-size: 1.3rem; }
+
+  .ah-fc-controls{ display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; justify-content:center; }
+  .ah-fc-btn{
+    border: 1px solid var(--border); background: var(--surface); color: var(--text);
+    padding:.55rem 1rem; border-radius: 999px; font-size:.85rem; font-weight:600; cursor:pointer;
+    font-family: var(--font-body); transition: border-color var(--speed), color var(--speed), background var(--speed);
+  }
+  .ah-fc-btn:hover{ border-color: var(--accent); color: var(--accent-soft); }
+  .ah-fc-btn.is-on{ background: var(--accent); color:#1a1406; border-color: var(--accent); }
+  .ah-fc-status{ display:flex; gap:1rem; font-size:.82rem; color: var(--text-muted); }
+  .ah-fc-status b{ color: var(--text); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="Zainabia.Online — home">
+      <img class="brand-mark" src="../assets/logo-mark.png" alt="Zainabia.Online" width="48" height="48">
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html#resources">Resources</a>
+      <a href="../index.html#duas">Duas &amp; Ziarat</a>
+      <a href="../index.html#events">Events</a>
+      <a href="../index.html#community">Community</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav-mobile" class="mobile-nav" aria-label="Mobile">
+        <a href="../index.html">← Back to Zainabia.Online</a>
+        <a href="../index.html#resources">Resources</a>
+        <a href="../index.html#duas">Duas &amp; Ziarat</a>
+        <a href="../index.html#events">Events</a>
+        <a href="../index.html#community">Community</a>
+        <a href="../index.html#contact">Contact</a>
+        <div class="mobile-theme">
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Change theme">
+            <span class="theme-dot" aria-hidden="true"></span>
+            <span class="theme-label">Theme</span>
+          </button>
+          <div id="theme-menu" class="theme-menu" hidden>
+            <button class="theme-swatch theme-swatch-white" data-theme-choice="white" title="White — Saffron" aria-label="White — Saffron theme"></button>
+            <button class="theme-swatch theme-swatch-zaitoon" data-theme-choice="zaitoon" title="Zaitoon — Green &amp; Gold" aria-label="Zaitoon — Green and Gold theme"></button>
+            <button class="theme-swatch theme-swatch-night" data-theme-choice="night" title="Night — Midnight" aria-label="Night — Midnight theme"></button>
+            <button class="theme-swatch theme-swatch-cherry" data-theme-choice="cherry" title="Cherry — Maroon &amp; Gold" aria-label="Cherry — Maroon and Gold theme"></button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="ah-page">
+    <section class="ah-cover">
+      <a class="ah-back-link" href="../index.html#resources">← Back to Resources</a>
+      <p class="ah-kicker">Resources · Asma ul Husna</p>
+      <h1>The 99 Beautiful Names of Allah</h1>
+      <p class="lede">
+        Asma ul Husna (أسماء الله الحسنى) — the Most Beautiful Names — are the attributes
+        by which Allah has described Himself in the Qur'an and through the Ahlul Bayt (AS).
+        Each one is a doorway: to know the Name is to begin to reflect it.
+      </p>
+      <div class="ah-ayah">
+        "And to Allah belong the Most Beautiful Names, so call upon Him by them."
+        <cite>Surah Al-A'raf, 7:180</cite>
+      </div>
+      <div class="ah-meta-row">
+        <span><b>99</b> names</span>
+        <span>Calligraphy · Romanized Urdu · English · Meaning</span>
+        <span>Flashcards to help you memorize</span>
+      </div>
+    </section>
+
+    <section id="names" class="ah-section">
+      <div class="ah-section-head">
+        <div>
+          <h2>All 99 Names</h2>
+          <p>Each card shows the name in Arabic calligraphy, its Romanized Urdu invocation ("Yā …"), the English transliteration and meaning. Open a card for its Qur'anic reference and the traditionally reported benefit of reciting it.</p>
+        </div>
+      </div>
+      <div class="ah-search-wrap">
+        <input class="ah-search" id="ah-search" type="search" placeholder="Search by name or meaning…" aria-label="Search the 99 Names">
+        <p class="ah-count"><span id="ah-count">99</span> of 99 shown</p>
+      </div>
+      <div class="ah-grid" id="ah-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="flashcards" class="ah-section ah-section-alt">
+      <div class="ah-section-head">
+        <div>
+          <h2>Flashcards</h2>
+          <p>Tap the card (or press Space) to flip between the calligraphy and its meaning. Use Shuffle to test yourself out of order, and mark names you've memorized as you go.</p>
+        </div>
+      </div>
+      <div class="ah-fc-wrap">
+        <div class="ah-fc-stage" id="ah-fc-stage">
+          <div class="ah-fc-card" id="ah-fc-card" tabindex="0" role="button" aria-label="Flashcard — tap to flip"></div>
+        </div>
+        <div class="ah-fc-controls">
+          <button class="ah-fc-btn" id="ah-fc-prev" type="button">← Prev</button>
+          <button class="ah-fc-btn" id="ah-fc-flip" type="button">Flip</button>
+          <button class="ah-fc-btn" id="ah-fc-next" type="button">Next →</button>
+          <button class="ah-fc-btn" id="ah-fc-shuffle" type="button">Shuffle</button>
+          <button class="ah-fc-btn" id="ah-fc-learn" type="button">Mark as learned</button>
+        </div>
+        <div class="ah-fc-status">
+          <span id="ah-fc-pos"><b>1</b> / 99</span>
+          <span id="ah-fc-learned">0 learned</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Zainabia.Online — in service of Sayeda Zainab (SA).</p>
+    <p class="footer-year">&copy; <span id="year"></span> Zainabia.Online</p>
+  </div>
+</footer>
+
+<script src="../js/theme.js"></script>
+<script src="../js/main.js"></script>
+<script src="js/asma-ul-husna-data.js"></script>
+<script src="js/asma-ul-husna.js"></script>
+</body>
+</html>
