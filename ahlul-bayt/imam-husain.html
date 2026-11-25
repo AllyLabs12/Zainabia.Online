@@ -17,7 +17,8 @@
   .mpd-back-link{ display:inline-flex; align-items:center; gap:.4rem; font-size:.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
   .mpd-back-link:hover{ color: var(--accent-soft); }
   .mpd-kicker{ color: var(--accent-soft); letter-spacing:.08em; text-transform:uppercase; font-size:.8rem; font-weight:700; margin-bottom:.8rem; }
-  .mpd-ar{ font-family: var(--font-display); font-size: 2.6rem; color: var(--text); margin: .2rem 0 .5rem; }
+  .mpd-emblem-wrap{ display:flex; align-items:center; justify-content:center; margin: 0 auto .8rem; width: 120px; height: 120px; border-radius: 50%; background: #f7f3ea; border: 1px solid var(--border); box-shadow: inset 0 0 0 1px rgba(0,0,0,.04); }
+  .mpd-emblem{ display:block; width: 92px; height: 92px; object-fit: contain; }
   .mpd-cover h1{ font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--text); margin-bottom:.15em; }
   .mpd-honorific{ font-size: 1rem; color: var(--accent-soft); margin-bottom: 1rem; }
 
@@ -99,7 +100,7 @@
     <section class="mpd-cover">
       <a class="mpd-back-link" href="index.html">← Back to the Fourteen Masoomeen</a>
       <span class="mpd-kicker">Ahlul Bayt · Panjatan Pak</span>
-      <p class="mpd-ar">الحسين بن علي</p>
+      <span class="mpd-emblem-wrap"><img class="mpd-emblem" src="assets/emblems/imam-husain.png" alt="Imam Husain calligraphy emblem" width="92" height="92" loading="lazy"></span>
       <h1>Imam Husain ibn Ali</h1>
       <p class="mpd-honorific">(AS) · Masoom 5 of 14</p>
     </section>

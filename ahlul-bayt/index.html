@@ -65,7 +65,12 @@
     position:absolute; top:.6rem; right:.6rem; font-size:.62rem; font-weight:700; letter-spacing:.04em;
     text-transform:uppercase; color:#1a1406; background: var(--accent); padding:.2rem .5rem; border-radius: 999px;
   }
-  .mp-ar{ font-family: var(--font-display); font-size: 1.5rem; color: var(--text); margin: 1.1rem 0 .3rem; }
+  .mp-emblem-wrap{
+    display:flex; align-items:center; justify-content:center; margin: 1.1rem auto .5rem;
+    width: 70px; height: 70px; border-radius: 50%; background: #f7f3ea;
+    border: 1px solid var(--border); box-shadow: inset 0 0 0 1px rgba(0,0,0,.04);
+  }
+  .mp-emblem{ display:block; width: 54px; height: 54px; object-fit: contain; }
   .mp-en{ font-size: 1rem; color: var(--text); margin: 0 0 .15rem; font-weight:600; }
   .mp-honorific{ font-size:.78rem; color: var(--accent-soft); margin: 0 0 .4rem; }
   .mp-titles{ font-size:.8rem; margin: 0; }
@@ -151,7 +156,7 @@
         <a class="mp-card" href="rasul-allah.html">
           <span class="mp-order">1</span>
           <span class="mp-badge">Panjatan</span>
-          <p class="mp-ar">محمد رسول الله</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/rasul-allah.png" alt="Rasul Allah calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Rasool Allah</p>
           <p class="mp-honorific">(SAWW)</p>
           <p class="mp-titles">Al-Mustafa, Al-Amin, Khatam al-Anbiya (the Seal of the Prophets)</p>
@@ -159,7 +164,7 @@
         <a class="mp-card" href="imam-ali.html">
           <span class="mp-order">2</span>
           <span class="mp-badge">Panjatan</span>
-          <p class="mp-ar">علي بن أبي طالب</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-ali.png" alt="Imam Ali calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Ali ibn Abi Talib</p>
           <p class="mp-honorific">(AS)</p>
           <p class="mp-titles">Amir al-Mu'minin, Mawla, Asadullah, Haydar</p>
@@ -167,7 +172,7 @@
         <a class="mp-card" href="sayeda-fatima.html">
           <span class="mp-order">3</span>
           <span class="mp-badge">Panjatan</span>
-          <p class="mp-ar">فاطمة الزهراء</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/sayeda-fatima.png" alt="Sayeda Fatima calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Sayeda Fatima</p>
           <p class="mp-honorific">(SA)</p>
           <p class="mp-titles">Al-Zahra, Al-Siddiqah, Umm Abiha, Sayedat Nisa al-'Alamin (Leader of the Women of the Worlds)</p>
@@ -175,7 +180,7 @@
         <a class="mp-card" href="imam-hasan.html">
           <span class="mp-order">4</span>
           <span class="mp-badge">Panjatan</span>
-          <p class="mp-ar">الحسن بن علي</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-hasan.png" alt="Imam Hasan calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Hasan ibn Ali</p>
           <p class="mp-honorific">(AS)</p>
           <p class="mp-titles">Al-Mujtaba, Sibt (grandson of the Prophet)</p>
@@ -183,7 +188,7 @@
         <a class="mp-card" href="imam-husain.html">
           <span class="mp-order">5</span>
           <span class="mp-badge">Panjatan</span>
-          <p class="mp-ar">الحسين بن علي</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-husain.png" alt="Imam Husain calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Husain ibn Ali</p>
           <p class="mp-honorific">(AS)</p>
           <p class="mp-titles">Sayyid al-Shuhada (Master of the Martyrs)</p>
@@ -200,7 +205,7 @@
         <a class="mp-card" href="rasul-allah.html">
           <span class="mp-order">1</span>
           <span class="mp-badge">Panjatan</span>
-          <p class="mp-ar">محمد رسول الله</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/rasul-allah.png" alt="Rasul Allah calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Rasool Allah</p>
           <p class="mp-honorific">(SAWW)</p>
           <p class="mp-titles">Al-Mustafa, Al-Amin, Khatam al-Anbiya (the Seal of the Prophets)</p>
@@ -208,7 +213,7 @@
         <a class="mp-card" href="imam-ali.html">
           <span class="mp-order">2</span>
           <span class="mp-badge">Panjatan</span>
-          <p class="mp-ar">علي بن أبي طالب</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-ali.png" alt="Imam Ali calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Ali ibn Abi Talib</p>
           <p class="mp-honorific">(AS)</p>
           <p class="mp-titles">Amir al-Mu'minin, Mawla, Asadullah, Haydar</p>
@@ -216,7 +221,7 @@
         <a class="mp-card" href="sayeda-fatima.html">
           <span class="mp-order">3</span>
           <span class="mp-badge">Panjatan</span>
-          <p class="mp-ar">فاطمة الزهراء</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/sayeda-fatima.png" alt="Sayeda Fatima calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Sayeda Fatima</p>
           <p class="mp-honorific">(SA)</p>
           <p class="mp-titles">Al-Zahra, Al-Siddiqah, Umm Abiha, Sayedat Nisa al-'Alamin (Leader of the Women of the Worlds)</p>
@@ -224,7 +229,7 @@
         <a class="mp-card" href="imam-hasan.html">
           <span class="mp-order">4</span>
           <span class="mp-badge">Panjatan</span>
-          <p class="mp-ar">الحسن بن علي</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-hasan.png" alt="Imam Hasan calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Hasan ibn Ali</p>
           <p class="mp-honorific">(AS)</p>
           <p class="mp-titles">Al-Mujtaba, Sibt (grandson of the Prophet)</p>
@@ -232,7 +237,7 @@
         <a class="mp-card" href="imam-husain.html">
           <span class="mp-order">5</span>
           <span class="mp-badge">Panjatan</span>
-          <p class="mp-ar">الحسين بن علي</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-husain.png" alt="Imam Husain calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Husain ibn Ali</p>
           <p class="mp-honorific">(AS)</p>
           <p class="mp-titles">Sayyid al-Shuhada (Master of the Martyrs)</p>
@@ -240,7 +245,7 @@
         <a class="mp-card" href="imam-zainul-abideen.html">
           <span class="mp-order">6</span>
           
-          <p class="mp-ar">علي بن الحسين</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-zainul-abideen.png" alt="Imam Zainul Abideen calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Ali ibn Husain</p>
           <p class="mp-honorific">(AS)</p>
           <p class="mp-titles">Zain al-Abidin (Ornament of the Worshippers), Al-Sajjad (the Prostrating One)</p>
@@ -248,7 +253,7 @@
         <a class="mp-card" href="imam-muhammad-baqir.html">
           <span class="mp-order">7</span>
           
-          <p class="mp-ar">محمد بن علي</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-muhammad-baqir.png" alt="Imam Muhammad Baqir calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Muhammad ibn Ali</p>
           <p class="mp-honorific">(AS)</p>
           <p class="mp-titles">Al-Baqir (the Splitter of Knowledge)</p>
@@ -256,7 +261,7 @@
         <a class="mp-card" href="imam-jafar-sadiq.html">
           <span class="mp-order">8</span>
           
-          <p class="mp-ar">جعفر بن محمد</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-jafar-sadiq.png" alt="Imam Jafar Sadiq calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Ja'far ibn Muhammad</p>
           <p class="mp-honorific">(AS)</p>
           <p class="mp-titles">Al-Sadiq (the Truthful)</p>
@@ -264,7 +269,7 @@
         <a class="mp-card" href="imam-musa-kazim.html">
           <span class="mp-order">9</span>
           
-          <p class="mp-ar">موسى بن جعفر</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-musa-kazim.png" alt="Imam Musa Kazim calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Musa ibn Ja'far</p>
           <p class="mp-honorific">(AS)</p>
           <p class="mp-titles">Al-Kazim (the Restrainer of Anger)</p>
@@ -272,7 +277,7 @@
         <a class="mp-card" href="imam-ali-ridha.html">
           <span class="mp-order">10</span>
           
-          <p class="mp-ar">علي بن موسى</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-ali-ridha.png" alt="Imam Ali Ridha calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Ali ibn Musa</p>
           <p class="mp-honorific">(AS)</p>
           <p class="mp-titles">Al-Ridha</p>
@@ -280,7 +285,7 @@
         <a class="mp-card" href="imam-muhammad-taqi.html">
           <span class="mp-order">11</span>
           
-          <p class="mp-ar">محمد بن علي</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-muhammad-taqi.png" alt="Imam Muhammad Taqi calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Muhammad ibn Ali</p>
           <p class="mp-honorific">(AS)</p>
           <p class="mp-titles">Al-Taqi, Al-Jawad (the Generous)</p>
@@ -288,7 +293,7 @@
         <a class="mp-card" href="imam-ali-naqi.html">
           <span class="mp-order">12</span>
           
-          <p class="mp-ar">علي بن محمد</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-ali-naqi.png" alt="Imam Ali Naqi calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Ali ibn Muhammad</p>
           <p class="mp-honorific">(AS)</p>
           <p class="mp-titles">Al-Naqi, Al-Hadi (the Guide)</p>
@@ -296,7 +301,7 @@
         <a class="mp-card" href="imam-hasan-askari.html">
           <span class="mp-order">13</span>
           
-          <p class="mp-ar">الحسن بن علي</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-hasan-askari.png" alt="Imam Hasan Askari calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Hasan ibn Ali</p>
           <p class="mp-honorific">(AS)</p>
           <p class="mp-titles">Al-Askari</p>
@@ -304,7 +309,7 @@
         <a class="mp-card" href="imam-mahdi.html">
           <span class="mp-order">14</span>
           
-          <p class="mp-ar">محمد بن الحسن</p>
+          <span class="mp-emblem-wrap"><img class="mp-emblem" src="assets/emblems/imam-mahdi.png" alt="Imam Mahdi calligraphy emblem" width="64" height="64" loading="lazy"></span>
           <p class="mp-en">Imam Muhammad ibn Hasan</p>
           <p class="mp-honorific">(AJTF)</p>
           <p class="mp-titles">Al-Mahdi, Al-Hujjah, Al-Qa'im, Sahib al-Zaman (Master of the Age)</p>
