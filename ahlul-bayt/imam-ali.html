@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Imam Ali ibn Abi Talib (AS) — Amir al-Mu'minin, Mawla, Asadullah, Haydar.">
+<title>Imam Ali ibn Abi Talib (AS) — The Fourteen Masoomeen — Zainabia.Online</title>
+<link rel="icon" type="image/png" href="../assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* ---- Masoom detail page — scoped styles (prefixed .mpd-) ---- */
+  .mpd-page{ max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+  .mpd-cover{ padding: 3rem 0 2rem; text-align:center; }
+  .mpd-back-link{ display:inline-flex; align-items:center; gap:.4rem; font-size:.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+  .mpd-back-link:hover{ color: var(--accent-soft); }
+  .mpd-kicker{ color: var(--accent-soft); letter-spacing:.08em; text-transform:uppercase; font-size:.8rem; font-weight:700; margin-bottom:.8rem; }
+  .mpd-ar{ font-family: var(--font-display); font-size: 2.6rem; color: var(--text); margin: .2rem 0 .5rem; }
+  .mpd-cover h1{ font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--text); margin-bottom:.15em; }
+  .mpd-honorific{ font-size: 1rem; color: var(--accent-soft); margin-bottom: 1rem; }
+
+  .mpd-facts{
+    display:grid; grid-template-columns: repeat(2, 1fr); gap: .9rem;
+    max-width: 620px; margin: 0 auto 1rem; text-align:left;
+  }
+  @media (max-width: 560px){ .mpd-facts{ grid-template-columns: 1fr; } }
+  .mpd-fact{ background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: .9rem 1.1rem; }
+  .mpd-fact-label{ font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color: var(--text-muted); margin: 0 0 .25rem; }
+  .mpd-fact-value{ font-size:.95rem; color: var(--text); margin:0; }
+
+  .mpd-section{ padding: 2.2rem 0; border-top: 1px dashed var(--border); }
+  .mpd-section h2{ font-size: 1.25rem; color: var(--text); margin-bottom:.6rem; }
+  .mpd-soon{
+    display:inline-flex; align-items:center; gap:.5rem; font-size:.88rem; color: var(--text-muted);
+    background: var(--bg-alt); border: 1px solid var(--border); border-radius: 999px; padding: .5rem 1rem;
+  }
+
+  .mpd-pager{
+    display:flex; justify-content:space-between; gap:1rem; padding: 2rem 0 3rem; flex-wrap:wrap;
+  }
+  .mpd-pager a{
+    flex:1; min-width:140px; font-size:.85rem; color: var(--text-muted); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: .8rem 1rem; transition: border-color var(--speed), color var(--speed);
+  }
+  .mpd-pager a:hover{ border-color: var(--accent); color: var(--accent-soft); }
+  .mpd-pager .mpd-next{ text-align:right; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="Zainabia.Online — home">
+      <img class="brand-mark" src="../assets/logo-mark.png" alt="Zainabia.Online" width="48" height="48">
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html#resources">Resources</a>
+      <a href="../index.html#ahlul-bayt">Ahlul Bayt</a>
+      <a href="../index.html#duas">Duas &amp; Ziarat</a>
+      <a href="../index.html#events">Events</a>
+      <a href="../index.html#community">Community</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav-mobile" class="mobile-nav" aria-label="Mobile">
+        <a href="../index.html">← Back to Zainabia.Online</a>
+        <a href="../index.html#resources">Resources</a>
+        <a href="../index.html#ahlul-bayt">Ahlul Bayt</a>
+        <a href="../index.html#duas">Duas &amp; Ziarat</a>
+        <a href="../index.html#events">Events</a>
+        <a href="../index.html#community">Community</a>
+        <a href="../index.html#contact">Contact</a>
+        <div class="mobile-theme">
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Change theme">
+            <span class="theme-dot" aria-hidden="true"></span>
+            <span class="theme-label">Theme</span>
+          </button>
+          <div id="theme-menu" class="theme-menu" hidden>
+            <button class="theme-swatch theme-swatch-white" data-theme-choice="white" title="White — Saffron" aria-label="White — Saffron theme"></button>
+            <button class="theme-swatch theme-swatch-zaitoon" data-theme-choice="zaitoon" title="Zaitoon — Green &amp; Gold" aria-label="Zaitoon — Green and Gold theme"></button>
+            <button class="theme-swatch theme-swatch-night" data-theme-choice="night" title="Night — Midnight" aria-label="Night — Midnight theme"></button>
+            <button class="theme-swatch theme-swatch-cherry" data-theme-choice="cherry" title="Cherry — Maroon &amp; Gold" aria-label="Cherry — Maroon and Gold theme"></button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="mpd-page">
+    <section class="mpd-cover">
+      <a class="mpd-back-link" href="index.html">← Back to the Fourteen Masoomeen</a>
+      <span class="mpd-kicker">Ahlul Bayt · Panjatan Pak</span>
+      <p class="mpd-ar">علي بن أبي طالب</p>
+      <h1>Imam Ali ibn Abi Talib</h1>
+      <p class="mpd-honorific">(AS) · Masoom 2 of 14</p>
+    </section>
+
+    <div class="mpd-facts">
+      <div class="mpd-fact">
+        <p class="mpd-fact-label">Full name</p>
+        <p class="mpd-fact-value">Ali ibn Abi Talib</p>
+      </div>
+      <div class="mpd-fact">
+        <p class="mpd-fact-label">Kunya</p>
+        <p class="mpd-fact-value">Abu al-Hasan</p>
+      </div>
+      <div class="mpd-fact">
+        <p class="mpd-fact-label">Titles &amp; Laqab</p>
+        <p class="mpd-fact-value">Amir al-Mu'minin, Mawla, Asadullah, Haydar</p>
+      </div>
+      <div class="mpd-fact">
+        <p class="mpd-fact-label">Relation</p>
+        <p class="mpd-fact-value">First Imam; cousin and son-in-law of Rasool Allah (SAWW); husband of Sayeda Fatima (SA).</p>
+      </div>
+    </div>
+
+    <section class="mpd-section">
+      <h2>Biography</h2>
+      <span class="mpd-soon">📝 Content coming soon</span>
+    </section>
+
+    <section class="mpd-section">
+      <h2>Imamate &amp; Life Events</h2>
+      <span class="mpd-soon">📝 Content coming soon</span>
+    </section>
+
+    <section class="mpd-section">
+      <h2>Sayings &amp; Hadith</h2>
+      <span class="mpd-soon">📝 Content coming soon</span>
+    </section>
+
+    <section class="mpd-section">
+      <h2>Ziarat &amp; Dua</h2>
+      <span class="mpd-soon">📝 Content coming soon</span>
+    </section>
+
+    <nav class="mpd-pager" aria-label="Browse Masoomeen">
+      <a class="mpd-prev" href="rasul-allah.html">← Rasool Allah (SAWW)</a>
+      <a class="mpd-next" href="sayeda-fatima.html">Sayeda Fatima (SA) →</a>
+    </nav>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Zainabia.Online — in service of Sayeda Zainab (SA).</p>
+    <p class="footer-year">&copy; <span id="year"></span> Zainabia.Online</p>
+  </div>
+</footer>
+
+<script src="../js/theme.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>
