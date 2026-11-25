@@ -14,6 +14,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Literata:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
 <style>
 @font-face {
   font-family: 'PDMS Saleem Quran';
@@ -23,8 +25,13 @@
   font-display: swap;
 }
 
-/* ===================== Design tokens ===================== */
-:root{
+/* ===================== Design tokens =====================
+   Scoped to .tg-page (not :root) so this guide's own palette never
+   collides with css/style.css's site-wide theme tokens of the same
+   name — the site header above keeps its own White/Zaitoon/Night/
+   Cherry colours while everything inside .tg-page follows its own
+   look, keyed to the SAME data-theme value set on <html> by theme.js. */
+.tg-page{
   --bg: #f6f4ec;
   --surface: #ffffff;
   --surface-2: #fbfaf5;
@@ -64,26 +71,11 @@
   --font-arabic: 'PDMS Saleem Quran', 'Noto Naskh Arabic', 'Geeza Pro', 'Scheherazade New', serif;
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#15170f; --surface:#1d2017; --surface-2:#1a1c14;
-    --text:#ece7d8; --text-muted:#aba88f; --border:#34382a;
-    --accent:#4fb79c; --accent-ink:#bfe9db; --accent-soft:#1f2e28;
-    --gold:#d8b45b; --gold-soft:#2c2816;
-    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.4);
-    --l1:#4fb79c; --l1-soft:#1f2e28; --l2:#79a9d6; --l2-soft:#1c2733;
-    --l3:#c6a3f2; --l3-soft:#2a2135; --l4:#ea9fae; --l4-soft:#332025;
-    --l5:#eec16e; --l5-soft:#332a18; --l6:#9adf9d; --l6-soft:#1f2b1f;
-    --l7:#eca877; --l7-soft:#332619; --l8:#9fb0ee; --l8-soft:#20233a;
-    --l9:#ec9aa6; --l9-soft:#332025; --l10:#b7c0d0; --l10-soft:#282b33;
-    --tj-ikhfa:#5bc2f2; --tj-ikhfa-soft:#16323f; --tj-ghunnah:#f4a655; --tj-ghunnah-soft:#3a2714;
-    --tj-ikhfameem:#ef5cc4; --tj-ikhfameem-soft:#3a1830; --tj-idghaam:#6fd98b; --tj-idghaam-soft:#17301f;
-    --tj-qalqalah:#f06a6c; --tj-qalqalah-soft:#3a1819; --tj-qalb:#7891e0; --tj-qalb-soft:#1c2440;
-    --tj-idghaammeem:#b6e37c; --tj-idghaammeem-soft:#283a16; --tj-neutral:#b4b1a2; --tj-neutral-soft:#2a2920;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"]{
+/* Dark-background site themes (Zaitoon, Night, Cherry) get the guide's
+   dark palette; White gets the default above. This follows whichever
+   theme the visitor picked on the main site (data-theme on <html>,
+   shared via js/theme.js + localStorage) instead of OS dark mode. */
+[data-theme="zaitoon"] .tg-page, [data-theme="night"] .tg-page, [data-theme="cherry"] .tg-page{
   --bg:#15170f; --surface:#1d2017; --surface-2:#1a1c14;
   --text:#ece7d8; --text-muted:#aba88f; --border:#34382a;
   --accent:#4fb79c; --accent-ink:#bfe9db; --accent-soft:#1f2e28;
@@ -105,7 +97,7 @@
 *{box-sizing:border-box;}
 html{font-size:16px;}
 html,body{margin:0;padding:0; max-width:100%; overflow-x:hidden;}
-body{
+.tg-page{
   background:var(--bg); color:var(--text);
   font-family:var(--font-body); font-size:20px; line-height:1.74;
   -webkit-font-smoothing:antialiased;
@@ -197,7 +189,7 @@ a{color:var(--accent-ink); text-decoration-color:var(--accent); }
 .toc{
   width:280px; flex:0 0 280px; background:var(--surface-2);
   border-right:1px solid var(--border);
-  padding:28px 20px; position:sticky; top:0; height:100vh; overflow-y:auto;
+  padding:28px 20px; position:sticky; top:86px; height:calc(100vh - 86px); overflow-y:auto;
 }
 .toc-title{font-family:var(--font-display); font-size:1.15rem; font-weight:700; margin-bottom:4px;}
 .toc-sub{font-size:0.86rem; color:var(--text-muted); margin-bottom:18px;}
@@ -306,14 +298,10 @@ section.level{margin-bottom:64px; scroll-margin-top:24px;}
 .sources{font-size:0.86rem; color:var(--text-muted); border-top:1px solid var(--border); margin-top:70px; padding-top:18px;}
 
 .weight{display:inline-flex; align-items:center; gap:6px; font-weight:600; font-size:0.9rem; padding:3px 11px; border-radius:999px;}
-:root[data-theme="light"] .weight.heavy, .weight.heavy{background:#f3ead0; color:#7a5a0c;}
-:root[data-theme="light"] .weight.light, .weight.light{background:#e4f0ec; color:#0e6b5c;}
-:root[data-theme="dark"] .weight.heavy{background:#3a2a12; color:#f0d9a8;}
-:root[data-theme="dark"] .weight.light{background:#102a26; color:#bfe9db;}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) .weight.heavy{background:#3a2a12; color:#f0d9a8;}
-  :root:not([data-theme="light"]) .weight.light{background:#102a26; color:#bfe9db;}
-}
+.weight.heavy{background:#f3ead0; color:#7a5a0c;}
+.weight.light{background:#e4f0ec; color:#0e6b5c;}
+[data-theme="zaitoon"] .weight.heavy, [data-theme="night"] .weight.heavy, [data-theme="cherry"] .weight.heavy{background:#3a2a12; color:#f0d9a8;}
+[data-theme="zaitoon"] .weight.light, [data-theme="night"] .weight.light, [data-theme="cherry"] .weight.light{background:#102a26; color:#bfe9db;}
 
 /* ===================== Responsive ===================== */
 /* Mobile is the default experience below; the min-width query further
@@ -321,14 +309,17 @@ section.level{margin-bottom:64px; scroll-margin-top:24px;}
 .toc-backdrop{display:none;}
 
 @media (max-width: 860px){
+  /* Offset below the sticky site header (~86px tall) so the guide's own
+     contents toggle/sidebar never sits under it. */
   .toc{
-    position:fixed; left:0; top:0; z-index:40; width:min(270px, 82vw);
+    position:fixed; left:0; top:86px; z-index:40; width:min(270px, 82vw);
+    height:calc(100vh - 86px);
     transform:translateX(-100%); transition:transform .22s ease; box-shadow:var(--shadow);
-    padding-top:76px;
+    padding-top:20px;
   }
   .toc.open{transform:translateX(0);}
   .toc-toggle{
-    display:flex; position:fixed; top:14px; left:14px; z-index:50;
+    display:flex; position:fixed; top:100px; left:14px; z-index:50;
     width:44px; height:44px; border-radius:10px; background:var(--surface); border:1px solid var(--border);
     align-items:center; justify-content:center; box-shadow:var(--shadow); cursor:pointer; font-size:1.2rem;
   }
@@ -338,7 +329,7 @@ section.level{margin-bottom:64px; scroll-margin-top:24px;}
   }
   .toc-backdrop.open{opacity:1; visibility:visible;}
   body.toc-locked{overflow:hidden;}
-  main{padding:88px 18px 70px;}
+  main{padding:160px 18px 70px;}
   .cover h1{font-size:2.1rem;}
   .cover p.lede{font-size:1.08rem;}
   .level-tag{margin-left:0;}
@@ -348,7 +339,7 @@ section.level{margin-bottom:64px; scroll-margin-top:24px;}
 }
 
 @media (max-width: 420px){
-  main{padding:82px 14px 60px;}
+  main{padding:150px 14px 60px;}
   .cover h1{font-size:1.8rem;}
   .card{padding:16px 14px;}
 }
@@ -370,6 +361,51 @@ section.level{margin-bottom:64px; scroll-margin-top:24px;}
 </head>
 <body>
 
+<a class="skip-link" href="#cover">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="Zainabia.Online — home">
+      <img class="brand-mark" src="../assets/logo-mark.png" alt="Zainabia.Online" width="48" height="48">
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html#resources">Resources</a>
+      <a href="../index.html#duas">Duas &amp; Ziarat</a>
+      <a href="../index.html#events">Events</a>
+      <a href="../index.html#community">Community</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav-mobile" class="mobile-nav" aria-label="Mobile">
+        <a href="../index.html">← Back to Zainabia.Online</a>
+        <a href="../index.html#resources">Resources</a>
+        <a href="../index.html#duas">Duas &amp; Ziarat</a>
+        <a href="../index.html#events">Events</a>
+        <a href="../index.html#community">Community</a>
+        <a href="../index.html#contact">Contact</a>
+        <div class="mobile-theme">
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Change theme">
+            <span class="theme-dot" aria-hidden="true"></span>
+            <span class="theme-label">Theme</span>
+          </button>
+          <div id="theme-menu" class="theme-menu" hidden>
+            <button class="theme-swatch theme-swatch-white" data-theme-choice="white" title="White — Saffron" aria-label="White — Saffron theme"></button>
+            <button class="theme-swatch theme-swatch-zaitoon" data-theme-choice="zaitoon" title="Zaitoon — Green &amp; Gold" aria-label="Zaitoon — Green and Gold theme"></button>
+            <button class="theme-swatch theme-swatch-night" data-theme-choice="night" title="Night — Midnight" aria-label="Night — Midnight theme"></button>
+            <button class="theme-swatch theme-swatch-cherry" data-theme-choice="cherry" title="Cherry — Maroon &amp; Gold" aria-label="Cherry — Maroon and Gold theme"></button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="tg-page">
 <button class="toc-toggle" id="tocToggle" type="button" aria-label="Toggle contents" aria-expanded="false" aria-controls="toc">☰</button>
 <div class="toc-backdrop" id="tocBackdrop"></div>
 <div class="shell">
@@ -823,7 +859,10 @@ section.level{margin-bottom:64px; scroll-margin-top:24px;}
     <div class="sources">Colour key (Levels 3, 4, 6 &amp; 7): Ikhfa / Ghunnah / Ikhfa Meem Saakin / Idghaam / Qalqala / Qalb / Idghaam Meem Saakin — see the Color Key section near the top. Arabic is set in one consistent Naskh typeface throughout; a dedicated IndoPak‑calligraphy web font isn't available through this page's font source, so letterforms are close to, but not pixel‑identical to, a printed IndoPak Qur'an.</div>
   </main>
 </div>
+</div>
 
+<script src="../js/theme.js"></script>
+<script src="../js/main.js"></script>
 <script>
 // mobile TOC drawer: toggle button, tap-outside backdrop, Escape key, scroll lock
 const toggle = document.getElementById('tocToggle');

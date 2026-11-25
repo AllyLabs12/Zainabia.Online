@@ -20,6 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
         window.ZainabiaTheme.setChoice(btn.getAttribute("data-theme-choice"));
         themeMenu.hidden = true;
         themeToggle.setAttribute("aria-expanded", "false");
+        // Picking a theme is a completed action — close the whole mobile
+        // side menu too, not just the theme swatch dropdown.
+        if (mobileNav) {
+          mobileNav.classList.remove("open");
+          if (navToggle) navToggle.setAttribute("aria-expanded", "false");
+        }
       });
       // Live preview: hovering a swatch shows that theme instantly;
       // moving away without clicking reverts to the saved choice.
