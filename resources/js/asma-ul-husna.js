@@ -34,7 +34,7 @@
     function cardHTML(item) {
       return (
         '<div class="ah-card" data-n="' + item.n + '" data-search="' +
-        (item.en + " " + item.ur + " " + item.meaning + " " + (item.urm || "")).toLowerCase().replace(/"/g, "&quot;") +
+        (item.en + " " + item.ur + " " + item.meaning).toLowerCase().replace(/"/g, "&quot;") +
         '">' +
           '<div class="ah-card-head">' +
             '<span class="ah-badge">' + item.n + "</span>" +
@@ -43,7 +43,6 @@
           '<p class="ah-ur">' + item.ur + "</p>" +
           '<h3 class="ah-en">' + item.en + "</h3>" +
           '<p class="ah-meaning">' + item.meaning + "</p>" +
-          (item.urm ? '<p class="ah-urm">' + item.urm + " <span>(Urdu)</span></p>" : "") +
           '<button class="ah-more" type="button" aria-expanded="false">More detail +</button>' +
           '<div class="ah-detail" hidden>' +
             (item.explain ? "<p>" + item.explain + "</p>" : "") +
@@ -125,7 +124,6 @@
           '<p class="ah-ur">' + item.ur + "</p>" +
           '<h3 class="ah-en">' + item.en + "</h3>" +
           '<p class="ah-meaning">' + item.meaning + "</p>" +
-          (item.urm ? '<p class="ah-urm">' + item.urm + " <span>(Urdu)</span></p>" : "") +
         "</div>";
       posEl.textContent = (pos + 1) + " / " + order.length;
       learnedEl.textContent = learned.size + " learned";
