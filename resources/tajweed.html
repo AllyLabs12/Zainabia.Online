@@ -378,6 +378,10 @@ section.level{margin-bottom:64px; scroll-margin-top:24px;}
     </nav>
 
     <div class="header-actions">
+      <div class="aa-wrap">
+        <button class="aa-toggle" id="aa-toggle" type="button" aria-label="Reading preferences" aria-haspopup="true" aria-expanded="false" aria-controls="aa-panel">Aa</button>
+        <div class="aa-panel" id="aa-panel" hidden></div>
+      </div>
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav-mobile">
         <span></span><span></span><span></span>
       </button>
@@ -904,6 +908,7 @@ section.level{margin-bottom:64px; scroll-margin-top:24px;}
 
 <script src="../js/theme.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/display-controls.js"></script>
 <script>
 // mobile TOC drawer: toggle button, tap-outside backdrop, Escape key, scroll lock
 const toggle = document.getElementById('tocToggle');
