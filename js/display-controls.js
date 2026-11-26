@@ -34,12 +34,13 @@
     general:
       '.aiq-article > h2, .aiq-article > h3, .aiq-article > p, .aiq-article li, table.aiq-table th, .aiq-count, .aiq-general, ' +
       '.nj-article h2, .nj-article h3, .nj-article h4, .nj-article > p, .nj-article li, .nj-omit-item, .nj-label, .nj-level, table.nj-table th, table.nj-table td:not(.nj-translit-cell), .nj-general, ' +
+      '.ah-page h1, .ah-page h2, .ah-page h3:not(.ah-en), .ah-page p:not(.ah-ur):not(.ah-meaning), .ah-badge, .ah-search, .ah-count, .ah-more, .ah-fc-hint, .ah-fc-btn, .ah-fc-status, ' +
       '[data-art="general"]',
-    ar: '.aiq-ar, .aiq-ar-cell, .nj-ar, [data-art="ar"]',
+    ar: '.aiq-ar, .aiq-ar-cell, .nj-ar, .ah-ar, .ah-fc-ar, [data-art="ar"]',
     translit:
-      '.aiq-translit, .aiq-glance-phrase, .nj-translit, table.nj-table .nj-translit-cell, [data-art="translit"]',
+      '.aiq-translit, .aiq-glance-phrase, .nj-translit, table.nj-table .nj-translit-cell, .ah-en, .ah-ur, [data-art="translit"]',
     meaning:
-      'table.aiq-table tbody td:nth-child(3), .aiq-urdu, .aiq-glance-item p, .aiq-meaning, .nj-meaning, [data-art="meaning"]'
+      'table.aiq-table tbody td:nth-child(3), .aiq-urdu, .aiq-glance-item p, .aiq-meaning, .nj-meaning, .ah-meaning, [data-art="meaning"]'
   };
 
   function defaultState() {
@@ -200,4 +201,23 @@
   }
 
   apply();
+
+  // Some pages (e.g. the Asma ul Husna grid and flashcards) render
+  // their Arabic/transliteration/meaning content from JavaScript
+  // after this script runs, so the first apply() above can run before
+  // that content exists. Re-apply whenever the page's DOM changes so
+  // newly-added content picks up the current settings automatically —
+  // this also covers any future page that renders content this way.
+  if (window.MutationObserver) {
+    var reapplyScheduled = false;
+    var observer = new MutationObserver(function () {
+      if (reapplyScheduled) return;
+      reapplyScheduled = true;
+      (window.requestAnimationFrame || window.setTimeout)(function () {
+        reapplyScheduled = false;
+        apply();
+      });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
 })();
