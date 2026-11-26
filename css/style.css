@@ -293,8 +293,8 @@ p{ margin: 0 0 1em; color: var(--text-muted); }
 .aa-toggle:hover, .aa-toggle[aria-expanded="true"]{ border-color: var(--accent); color: var(--accent-soft); }
 .aa-panel{
   position:absolute; top: calc(100% + 10px); right: 0;
-  width: min(248px, calc(100vw - 2rem));
-  max-height: calc(100vh - 100px); overflow-y:auto;
+  width: min(300px, calc(100vw - 2rem));
+  max-height: calc(100vh - 100px); overflow-y:auto; overflow-x:hidden;
   background: color-mix(in srgb, var(--surface) 62%, transparent);
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
@@ -306,20 +306,21 @@ p{ margin: 0 0 1em; color: var(--text-muted); }
 }
 .aa-panel[hidden]{ display:none; }
 .aa-row{
-  display:flex; align-items:center; justify-content:space-between; gap:.6rem;
+  display:flex; align-items:center; justify-content:space-between; gap:.5rem;
   padding: .3rem .1rem;
 }
-.aa-check{ display:flex; align-items:center; gap:.45rem; font-size:.82rem; font-weight:600; color:var(--text); cursor:pointer; }
-.aa-check input{ width:.95rem; height:.95rem; accent-color: var(--accent); cursor:pointer; }
-.aa-size{ display:flex; align-items:center; gap:.4rem; }
+.aa-check{ display:flex; align-items:center; gap:.4rem; font-size:.8rem; font-weight:600; color:var(--text); cursor:pointer; white-space:nowrap; }
+.aa-check input{ width:.9rem; height:.9rem; accent-color: var(--accent); cursor:pointer; flex-shrink:0; }
+.aa-size{ display:flex; align-items:center; gap:.3rem; flex-shrink:0; }
 .aa-size button{
-  width:1.5rem; height:1.5rem; border-radius:50%; border:1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  width:1.4rem; height:1.4rem; border-radius:50%; border:1px solid color-mix(in srgb, var(--border) 70%, transparent);
   background: color-mix(in srgb, var(--bg-alt) 70%, transparent);
-  color: var(--text); font-size:.68rem; font-weight:700; cursor:pointer; font-family: var(--font-body);
+  color: var(--text); font-size:.64rem; font-weight:700; cursor:pointer; font-family: var(--font-body);
   transition: border-color var(--speed), color var(--speed);
+  flex-shrink:0; padding:0;
 }
 .aa-size button:hover{ border-color: var(--accent); color: var(--accent-soft); }
-.aa-pct{ font-size:.68rem; color: var(--text-muted); min-width:2.2rem; text-align:center; }
+.aa-pct{ font-size:.66rem; color: var(--text-muted); min-width:2rem; text-align:center; flex-shrink:0; }
 .aa-reset{
   justify-self:start; background:none; border:none; padding:.2rem .1rem 0; font-size:.72rem; font-weight:600;
   color: var(--accent-soft); cursor:pointer; font-family: var(--font-body); text-decoration: underline; text-underline-offset:2px;
