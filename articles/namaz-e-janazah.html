@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Namaz e Janazah (Salat al-Janazah) — the complete method of the funeral prayer: preparation, intention, the five Takbirs, a shorter common version, and etiquettes after the prayer.">
+<title>Namaz e Janazah (Funeral Prayer) — Articles &amp; Lessons — Zainabia.Online</title>
+<link rel="icon" type="image/png" href="../assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* ---- Namaz e Janazah — scoped styles (prefixed .nj-) ---- */
+  .nj-page{ max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+  .nj-cover{ padding: 3rem 0 2rem; text-align:center; }
+  .nj-back-link{ display:inline-flex; align-items:center; gap:.4rem; font-size:.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+  .nj-back-link:hover{ color: var(--accent-soft); }
+  .nj-kicker{ color: var(--accent-soft); letter-spacing:.08em; text-transform:uppercase; font-size:.8rem; font-weight:700; margin-bottom:.8rem; }
+  .nj-cover h1{ font-size: clamp(1.9rem, 4.2vw, 2.7rem); color: var(--text); margin-bottom:.3em; }
+  .nj-cover .nj-subtitle{ font-size: 1.05rem; color: var(--text-muted); max-width: 640px; margin: 0 auto; }
+
+  .nj-article{ padding-bottom: 3rem; }
+  .nj-article h2{ font-size: clamp(1.3rem, 2.8vw, 1.6rem); color: var(--text); margin: 2.6rem 0 .8rem; }
+  .nj-article h2:first-child{ margin-top: 0; }
+  .nj-article h3{ font-size: 1.05rem; color: var(--text); margin: 1.6rem 0 .6rem; }
+  .nj-article p{ font-size: 1rem; margin-bottom: 1rem; }
+  .nj-article ul{ margin: 0 0 1.2rem 1.2rem; padding: 0; }
+  .nj-article li{ font-size: .97rem; margin-bottom: .4rem; }
+
+  .nj-omit-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; margin: 1rem 0 1.6rem; }
+  @media (max-width: 620px){ .nj-omit-grid{ grid-template-columns: 1fr 1fr; } }
+  .nj-omit-item{
+    display:flex; align-items:center; gap:.5rem; font-size:.88rem; color: var(--text-muted);
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: .6rem .8rem;
+  }
+  .nj-omit-item .nj-x{ color: var(--accent-soft); font-weight:700; }
+
+  .nj-callout{
+    margin: 1rem 0 1.6rem; padding: 1.1rem 1.4rem; border-radius: var(--radius);
+    background: var(--surface); border: 1px solid var(--border); color: var(--text); text-align:center;
+  }
+  .nj-callout .nj-ar{ display:block; font-family: var(--font-display); font-size: 1.3rem; margin-bottom:.4rem; }
+  .nj-callout .nj-translit{ display:block; font-style: italic; color: var(--text-muted); margin-bottom:.4rem; }
+
+  .nj-step{
+    position: relative; margin: 0 0 1.4rem; padding: 1.3rem 1.4rem 1.3rem 3.2rem;
+    border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border);
+  }
+  .nj-step-num{
+    position:absolute; top: 1.2rem; left: 1.1rem;
+    display:inline-flex; align-items:center; justify-content:center; width: 1.7rem; height: 1.7rem;
+    border-radius: 50%; background: var(--accent); color: #1a1406; font-size:.8rem; font-weight:700;
+  }
+  .nj-step h4{ font-size:.95rem; color: var(--text); margin: 0 0 .6rem; }
+  .nj-phrase{ margin: 0 0 .9rem; }
+  .nj-phrase:last-child{ margin-bottom: 0; }
+  .nj-phrase .nj-label{ font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--text-muted); display:block; margin-bottom:.2rem; }
+  .nj-phrase .nj-ar{ display:block; font-family: var(--font-display); font-size: 1.25rem; color: var(--text); line-height:1.5; }
+  .nj-phrase .nj-translit{ display:block; font-style: italic; color: var(--accent-soft); font-size:.9rem; margin: .15rem 0; }
+  .nj-phrase .nj-meaning{ font-size:.92rem; color: var(--text-muted); margin: .25rem 0 0; }
+  .nj-variant{ margin-top:.8rem; padding-top:.8rem; border-top: 1px dashed var(--border); font-size:.88rem; color: var(--text-muted); }
+  .nj-variant b{ color: var(--text); }
+
+  .nj-table-wrap{ overflow-x:auto; margin: 0 0 1.6rem; border: 1px solid var(--border); border-radius: var(--radius); }
+  table.nj-table{ width: 100%; border-collapse: collapse; font-size:.92rem; background: var(--surface); }
+  table.nj-table th, table.nj-table td{ padding: .7rem .9rem; text-align:left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  table.nj-table th{ font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--text-muted); background: var(--bg-alt); font-weight:700; }
+  table.nj-table tr:last-child td{ border-bottom:none; }
+  table.nj-table .nj-translit-cell{ font-style: italic; color: var(--accent-soft); }
+
+  .nj-nav-footer{ margin-top: 2.5rem; padding-top: 1.6rem; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="Zainabia.Online — home">
+      <img class="brand-mark" src="../assets/logo-mark.png" alt="Zainabia.Online" width="48" height="48">
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html#resources">Resources</a>
+      <a href="../index.html#duas">Duas &amp; Ziarat</a>
+      <a href="../index.html#events">Events</a>
+      <a href="../index.html#community">Community</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav-mobile" class="mobile-nav" aria-label="Mobile">
+        <a href="../index.html">← Back to Zainabia.Online</a>
+        <a href="../index.html#resources">Resources</a>
+        <a href="../index.html#duas">Duas &amp; Ziarat</a>
+        <a href="../index.html#events">Events</a>
+        <a href="../index.html#community">Community</a>
+        <a href="../index.html#contact">Contact</a>
+        <div class="mobile-theme">
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Change theme">
+            <span class="theme-dot" aria-hidden="true"></span>
+            <span class="theme-label">Theme</span>
+          </button>
+          <div id="theme-menu" class="theme-menu" hidden>
+            <button class="theme-swatch theme-swatch-white" data-theme-choice="white" title="White — Saffron" aria-label="White — Saffron theme"></button>
+            <button class="theme-swatch theme-swatch-zaitoon" data-theme-choice="zaitoon" title="Zaitoon — Green &amp; Gold" aria-label="Zaitoon — Green and Gold theme"></button>
+            <button class="theme-swatch theme-swatch-night" data-theme-choice="night" title="Night — Midnight" aria-label="Night — Midnight theme"></button>
+            <button class="theme-swatch theme-swatch-cherry" data-theme-choice="cherry" title="Cherry — Maroon &amp; Gold" aria-label="Cherry — Maroon and Gold theme"></button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="nj-page">
+    <section class="nj-cover">
+      <a class="nj-back-link" href="index.html">← Back to Articles &amp; Lessons</a>
+      <p class="nj-kicker">Articles &amp; Lessons</p>
+      <h1>Namaz e Janazah (Funeral Prayer)</h1>
+      <p class="nj-subtitle">Salat al-Janazah — the complete method</p>
+    </section>
+
+    <article class="nj-article">
+      <h2>Introduction</h2>
+      <p>Salat al-Janazah is a prayer of supplication and intercession for the deceased. Unlike the daily prayers, it contains none of the following:</p>
+      <div class="nj-omit-grid">
+        <div class="nj-omit-item"><span class="nj-x">✕</span> Adhan</div>
+        <div class="nj-omit-item"><span class="nj-x">✕</span> Iqamah</div>
+        <div class="nj-omit-item"><span class="nj-x">✕</span> Ruku' (bowing)</div>
+        <div class="nj-omit-item"><span class="nj-x">✕</span> Sujud (prostration)</div>
+        <div class="nj-omit-item"><span class="nj-x">✕</span> Tashahhud</div>
+        <div class="nj-omit-item"><span class="nj-x">✕</span> Salam</div>
+      </div>
+      <p>It consists of five Takbirs (Allahu Akbar) with specific recitations between them.</p>
+
+      <h2>Before the Prayer</h2>
+      <h3>1. Preparation of the Deceased</h3>
+      <p>The deceased should be:</p>
+      <ul>
+        <li>Ghusl (ritually washed)</li>
+        <li>Kafan (shrouded)</li>
+        <li>Placed facing the Qiblah</li>
+      </ul>
+
+      <h3>2. Arrangement</h3>
+      <ul>
+        <li>The congregation forms rows behind the Imam.</li>
+        <li>The body is placed in front of the congregation.</li>
+        <li>The Imam stands near the chest of a male deceased, or near the middle of a female deceased.</li>
+      </ul>
+
+      <h3>Niyyah (Intention)</h3>
+      <p>Silently intend:</p>
+      <div class="nj-callout">
+        "I offer Salat al-Janazah seeking nearness to Allah and praying for the forgiveness of this deceased."
+      </div>
+      <p>No verbal intention is required.</p>
+
+      <h2>The Five Takbirs</h2>
+
+      <div class="nj-step">
+        <span class="nj-step-num">1</span>
+        <h4>First Takbir</h4>
+        <div class="nj-phrase">
+          <span class="nj-label">Say</span>
+          <span class="nj-ar">الله أكبر</span>
+          <span class="nj-translit">Allahu Akbar</span>
+        </div>
+        <div class="nj-phrase">
+          <span class="nj-label">Then recite — Shahadatayn</span>
+          <span class="nj-ar">أشهد أن لا إله إلا الله وحده لا شريك له وأشهد أن محمدًا عبده ورسوله</span>
+          <span class="nj-translit">Ashhadu an la ilaha illallahu wahdahu la sharika lah, wa ashhadu anna Muhammadan 'abduhu wa rasuluh.</span>
+          <p class="nj-meaning">"I bear witness that there is no god except Allah alone without partner, and I bear witness that Muhammad is His servant and Messenger."</p>
+        </div>
+      </div>
+
+      <div class="nj-step">
+        <span class="nj-step-num">2</span>
+        <h4>Second Takbir</h4>
+        <div class="nj-phrase">
+          <span class="nj-label">Say</span>
+          <span class="nj-ar">الله أكبر</span>
+          <span class="nj-translit">Allahu Akbar</span>
+        </div>
+        <div class="nj-phrase">
+          <span class="nj-label">Then recite — Salawat</span>
+          <span class="nj-ar">اللهم صل على محمد وآل محمد</span>
+          <span class="nj-translit">Allahumma salli 'ala Muhammadin wa Aali Muhammad</span>
+          <p class="nj-meaning">"O Allah, send Your blessings upon Muhammad and the Family of Muhammad."</p>
+        </div>
+      </div>
+
+      <div class="nj-step">
+        <span class="nj-step-num">3</span>
+        <h4>Third Takbir</h4>
+        <div class="nj-phrase">
+          <span class="nj-label">Say</span>
+          <span class="nj-ar">الله أكبر</span>
+          <span class="nj-translit">Allahu Akbar</span>
+        </div>
+        <div class="nj-phrase">
+          <span class="nj-label">Then pray for all believers</span>
+          <span class="nj-ar">اللهم اغفر للمؤمنين والمؤمنات والمسلمين والمسلمات الأحياء منهم والأموات</span>
+          <span class="nj-translit">Allahummaghfir lil-mu'minina wal-mu'minat wal-muslimina wal-muslimat al-ahya'i minhum wal-amwat.</span>
+          <p class="nj-meaning">"O Allah, forgive the believing men and women, the Muslim men and women, the living among them and the deceased."</p>
+        </div>
+      </div>
+
+      <div class="nj-step">
+        <span class="nj-step-num">4</span>
+        <h4>Fourth Takbir</h4>
+        <div class="nj-phrase">
+          <span class="nj-label">Say</span>
+          <span class="nj-ar">الله أكبر</span>
+          <span class="nj-translit">Allahu Akbar</span>
+        </div>
+        <div class="nj-phrase">
+          <span class="nj-label">Then pray specifically for the deceased — for a male</span>
+          <span class="nj-ar">اللهم إن هذا عبدك وابن عبدك وابن أمتك نزل بك وأنت خير منزول به، اللهم إنا لا نعلم منه إلا خيراً وأنت أعلم به منا، اللهم إن كان محسناً فزد في إحسانه وإن كان مسيئاً فتجاوز عن سيئاته واغفر له وارحمه</span>
+          <p class="nj-meaning">"O Allah, this is Your servant and the son of Your servant and Your maidservant. He has come before You, and You are the best host. We know nothing of him except good, and You know him better than we do. If he was righteous, increase him in righteousness, and if he erred, overlook his faults. Forgive him and have mercy on him."</p>
+        </div>
+        <div class="nj-variant">
+          <b>For a female:</b> replace هذا عبدك with هذه أمتك, and له with لها.
+        </div>
+      </div>
+
+      <div class="nj-step">
+        <span class="nj-step-num">5</span>
+        <h4>Fifth Takbir</h4>
+        <div class="nj-phrase">
+          <span class="nj-label">Say</span>
+          <span class="nj-ar">الله أكبر</span>
+          <span class="nj-translit">Allahu Akbar</span>
+        </div>
+        <p class="nj-meaning" style="margin-top:.8rem;">The prayer is complete. There is no Salam.</p>
+      </div>
+
+      <h2>A Shorter Common Version</h2>
+      <p>Many believers recite the minimum recommended form:</p>
+      <div class="nj-table-wrap">
+        <table class="nj-table">
+          <thead>
+            <tr><th>Takbir</th><th>Say</th><th>Then recite</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>First</td>
+              <td class="nj-translit-cell">Allahu Akbar</td>
+              <td>Shahadatayn</td>
+            </tr>
+            <tr>
+              <td>Second</td>
+              <td class="nj-translit-cell">Allahu Akbar</td>
+              <td class="nj-translit-cell">Allahumma salli 'ala Muhammadin wa Aali Muhammad</td>
+            </tr>
+            <tr>
+              <td>Third</td>
+              <td class="nj-translit-cell">Allahu Akbar</td>
+              <td class="nj-translit-cell">Allahummaghfir lil-mu'minina wal-mu'minat</td>
+            </tr>
+            <tr>
+              <td>Fourth</td>
+              <td class="nj-translit-cell">Allahu Akbar</td>
+              <td><span class="nj-translit-cell" style="display:block;">Allahummaghfir lihadha al-mayyit</span>(O Allah, forgive this deceased.)</td>
+            </tr>
+            <tr>
+              <td>Fifth</td>
+              <td class="nj-translit-cell">Allahu Akbar</td>
+              <td>Prayer ends.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>If the Deceased Is a Child</h2>
+      <p>A special supplication is recited asking Allah to make the child a source of reward and intercession for the parents.</p>
+
+      <h2>Etiquettes After the Prayer</h2>
+      <p>After completing Salat al-Janazah it is recommended to:</p>
+      <ul>
+        <li>Join the funeral procession if possible.</li>
+        <li>Participate in the burial.</li>
+        <li>Recite Surah al-Fatihah for the deceased.</li>
+        <li>Recite Salawat abundantly.</li>
+        <li>Pray for all Marhumeen.</li>
+      </ul>
+
+      <p>A commonly recited dua is:</p>
+      <div class="nj-callout">
+        <span class="nj-ar">اللهم اغفر له وارحمه وعافه واعف عنه</span>
+        <span class="nj-translit">Allahummaghfir lahu warhamhu wa 'afihi wa'fu 'anhu</span>
+        "O Allah, forgive him, have mercy on him, grant him well-being, and pardon him."
+      </div>
+      <p style="font-size:.9rem; color:var(--text-muted);">For a female, replace <em>lahu</em> with <em>laha</em>.</p>
+
+      <div class="nj-callout">
+        <span class="nj-ar">اللهم صل على محمد وآل محمد</span>
+        <span class="nj-translit">Allahumma salli 'ala Muhammadin wa Aali Muhammad</span>
+        <span style="display:block; margin-top:.5rem;">الفاتحة لروح جميع المؤمنين والمؤمنات خصوصاً آبائنا وأمهاتنا ومراجعنا وعلمائنا وشهدائنا 🤲🏻</span>
+      </div>
+    </article>
+
+    <div class="nj-nav-footer">
+      <a class="nj-back-link" href="index.html">← Back to Articles &amp; Lessons</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Dedicated to the memory of <strong>Sayeda Zainab (SA)</strong>, in the path of <strong>Imam-e-Zamana (AJ)</strong> — may this humble effort be accepted.</p>
+    <p class="footer-fateha">Please recite Surah Fateha for <strong>Syed Ali Mohammed ibn Syed Ahsan</strong> and <strong>all our Marhumeen</strong>.<br>Through the honour and salutation of <strong>Prophet Muhammad ﷺ and his purified family (ع)</strong>, may <strong>Allah</strong> grant them Maghfirah and elevate their ranks, Insha’Allah.</p>
+    <p class="footer-year">&copy; <span id="year"></span> Zainabia.Online</p>
+    <p class="footer-disclaimer">Disclaimer: This content is provided for educational purposes only and may contain unintentional errors, omissions, or inaccuracies. Readers are encouraged to verify religious matters with a qualified scholar or their Marja’. Any <a href="mailto:hello@zainabia.online">corrections, feedback, or suggestions</a> for improvement are sincerely welcomed and appreciated.</p>
+  </div>
+</footer>
+
+<script src="../js/theme.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>
