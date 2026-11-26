@@ -21,11 +21,14 @@
   .aiq-cover .aiq-subtitle{ font-size: 1.05rem; color: var(--text-muted); max-width: 640px; margin: 0 auto; }
 
   .aiq-article{ padding-bottom: 3rem; }
-  .aiq-article h2{ font-size: clamp(1.3rem, 2.8vw, 1.6rem); color: var(--text); margin: 2.6rem 0 .8rem; }
-  .aiq-article h2:first-child{ margin-top: 0; }
-  .aiq-article p{ font-size: 1rem; margin-bottom: 1rem; }
+  .aiq-article > h2{ font-size: calc(clamp(1.3rem, 2.8vw, 1.6rem) * var(--aiq-scale-general, 1)); color: var(--text); margin: 2.6rem 0 .8rem; }
+  .aiq-article > h2:first-child{ margin-top: 0; }
+  .aiq-article > h3{ font-size: calc(1.05rem * var(--aiq-scale-general, 1)); color: var(--text); margin-bottom:.6rem; }
+  .aiq-article > p{ font-size: calc(1rem * var(--aiq-scale-general, 1)); margin-bottom: 1rem; }
   .aiq-article ul{ margin: 0 0 1.2rem 1.2rem; padding: 0; }
-  .aiq-article li{ font-size: .97rem; margin-bottom: .4rem; }
+  .aiq-article li{ font-size: calc(.97rem * var(--aiq-scale-general, 1)); margin-bottom: .4rem; }
+  .aiq-general{ font-size: calc(.8rem * var(--aiq-scale-general, 1)); }
+  .aiq-meaning{ font-size: calc(.8rem * var(--aiq-scale-meaning, 1)); }
 
   .aiq-callout{
     margin: 1.4rem 0; padding: 1.1rem 1.4rem; border-radius: var(--radius);
@@ -33,26 +36,36 @@
     text-align: center;
   }
   .aiq-callout .aiq-ar{
-    display:block; font-style:normal; font-family: var(--font-display); font-size: 1.6rem; line-height: 2.3;
+    display:block; font-style:normal; font-family: var(--font-display);
+    font-size: calc(1.6rem * var(--aiq-scale-ar, 1)); line-height: 2.3;
     direction: rtl; margin-bottom:.5rem;
   }
-  .aiq-callout cite{ display:block; margin-top:.5rem; font-style:normal; font-size:.8rem; color: var(--text-muted); }
+  .aiq-callout .aiq-translit{
+    display:block; font-style: italic; color: var(--text-muted); margin: 0 0 .4rem;
+    font-size: calc(1rem * var(--aiq-scale-translit, 1));
+  }
+  .aiq-callout cite.aiq-general{ display:block; margin-top:.5rem; font-style:normal; color: var(--text-muted); }
+  .aiq-callout cite.aiq-meaning{ display:block; margin-top:.5rem; font-style:normal; color: var(--text-muted); }
 
   .aiq-table-wrap{ overflow-x: auto; margin: 0 0 1.6rem; border: 1px solid var(--border); border-radius: var(--radius); }
   table.aiq-table{ width: 100%; border-collapse: collapse; font-size: .92rem; background: var(--surface); }
   table.aiq-table th, table.aiq-table td{ padding: .75rem .9rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
   table.aiq-table th{
-    font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted);
+    font-size: calc(.72rem * var(--aiq-scale-general, 1)); letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted);
     background: var(--bg-alt); font-weight: 700;
   }
   table.aiq-table tr:last-child td{ border-bottom: none; }
   table.aiq-table .aiq-ar-cell{
-    font-family: var(--font-display); font-size: 1.55rem; line-height: 1.9; color: var(--text);
+    font-family: var(--font-display); font-size: calc(1.55rem * var(--aiq-scale-ar, 1)); line-height: 1.9; color: var(--text);
     white-space: nowrap; direction: rtl;
   }
-  table.aiq-table .aiq-translit{ color: var(--text); font-weight: 600; }
-  table.aiq-table .aiq-urdu{ display:block; font-style: italic; color: var(--accent-soft); font-size: .85rem; margin-top:.15rem; }
-  table.aiq-table .aiq-count{ color: var(--text-muted); font-size: .85rem; white-space: nowrap; }
+  table.aiq-table .aiq-translit{ color: var(--text); font-weight: 600; font-size: calc(1em * var(--aiq-scale-translit, 1)); }
+  table.aiq-table .aiq-urdu{
+    display:block; font-style: italic; color: var(--accent-soft); margin-top:.15rem;
+    font-size: calc(.85rem * var(--aiq-scale-meaning, 1));
+  }
+  table.aiq-table tbody td:nth-child(3){ font-size: calc(1em * var(--aiq-scale-meaning, 1)); }
+  table.aiq-table .aiq-count{ color: var(--text-muted); font-size: calc(.85rem * var(--aiq-scale-general, 1)); white-space: nowrap; }
 
   .aiq-glance-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-bottom: 1.6rem; }
   @media (max-width: 620px){ .aiq-glance-grid{ grid-template-columns: 1fr; } }
@@ -60,9 +73,15 @@
     background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
     padding: 1rem 1.2rem;
   }
-  .aiq-glance-item .aiq-glance-phrase{ font-weight: 700; color: var(--text); margin-bottom: .3rem; font-size: .95rem; }
-  .aiq-glance-item p{ font-size: .88rem; margin: 0; color: var(--text-muted); }
-  .aiq-glance-item .aiq-urdu{ display:block; font-style: italic; color: var(--accent-soft); margin-top:.3rem; font-size: .85rem; }
+  .aiq-glance-item .aiq-glance-phrase{
+    font-weight: 700; color: var(--text); margin-bottom: .3rem;
+    font-size: calc(.95rem * var(--aiq-scale-translit, 1));
+  }
+  .aiq-glance-item p{ font-size: calc(.88rem * var(--aiq-scale-meaning, 1)); margin: 0; color: var(--text-muted); }
+  .aiq-glance-item .aiq-urdu{
+    display:block; font-style: italic; color: var(--accent-soft); margin-top:.3rem;
+    font-size: calc(.85rem * var(--aiq-scale-meaning, 1));
+  }
 
   .aiq-nav-footer{ margin-top: 2.5rem; padding-top: 1.6rem; border-top: 1px solid var(--border); }
 </style>
@@ -122,6 +141,13 @@
       <p class="aiq-subtitle">The Call to Prayer and the Immediate Call to Stand for Prayer</p>
     </section>
 
+    <div class="art-controls" id="art-controls">
+      <button class="art-controls-toggle" id="art-controls-toggle" type="button" aria-expanded="false" aria-controls="art-controls-panel">
+        <span aria-hidden="true">⚙</span> Display settings
+      </button>
+      <div class="art-controls-panel" id="art-controls-panel" hidden></div>
+    </div>
+
     <article class="aiq-article">
       <h2>Introduction</h2>
       <p>Prayer (Salah) is the central act of worship in Islam and serves as a direct connection between the servant and Allah. Before each obligatory prayer, two beautiful proclamations are traditionally recited: Adhan and Iqamah.</p>
@@ -142,7 +168,7 @@
         <li>The importance of prayer as the best of deeds</li>
       </ul>
 
-      <h3 style="font-size:1.05rem; color:var(--text); margin-bottom:.6rem;">Adhan — text and meanings</h3>
+      <h3>Adhan — text and meanings</h3>
       <div class="aiq-table-wrap">
         <table class="aiq-table">
           <thead>
@@ -212,11 +238,11 @@
       <p>While it closely resembles the Adhan, it is shorter and contains the additional phrase:</p>
       <div class="aiq-callout">
         <span class="aiq-ar">قَدْ قَامَتِ الصَّلَاةُ</span>
-        Qad Qamatis-Salah
-        <cite>which announces that the prayer has now commenced</cite>
+        <span class="aiq-translit">Qad Qamatis-Salah</span>
+        <cite class="aiq-general">which announces that the prayer has now commenced</cite>
       </div>
 
-      <h3 style="font-size:1.05rem; color:var(--text); margin-bottom:.6rem;">Iqamah — text and meanings</h3>
+      <h3>Iqamah — text and meanings</h3>
       <div class="aiq-table-wrap">
         <table class="aiq-table">
           <thead>
@@ -337,8 +363,8 @@
 
       <div class="aiq-callout">
         <span class="aiq-ar">اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَآلِ مُحَمَّدٍ</span>
-        Allahumma salli 'ala Muhammadin wa Aali Muhammad
-        <cite>O Allah, send Your blessings upon Muhammad and the Family of Muhammad.</cite>
+        <span class="aiq-translit">Allahumma salli 'ala Muhammadin wa Aali Muhammad</span>
+        <cite class="aiq-meaning">O Allah, send Your blessings upon Muhammad and the Family of Muhammad.</cite>
       </div>
 
       <h2>Special Note Regarding Funeral Prayers (Salat al-Janazah)</h2>
@@ -363,5 +389,6 @@
 
 <script src="../js/theme.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/display-controls.js"></script>
 </body>
 </html>

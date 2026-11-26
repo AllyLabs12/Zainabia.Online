@@ -21,17 +21,18 @@
   .nj-cover .nj-subtitle{ font-size: 1.05rem; color: var(--text-muted); max-width: 640px; margin: 0 auto; }
 
   .nj-article{ padding-bottom: 3rem; }
-  .nj-article h2{ font-size: clamp(1.3rem, 2.8vw, 1.6rem); color: var(--text); margin: 2.6rem 0 .8rem; }
+  .nj-article h2{ font-size: calc(clamp(1.3rem, 2.8vw, 1.6rem) * var(--nj-scale-general, 1)); color: var(--text); margin: 2.6rem 0 .8rem; }
   .nj-article h2:first-child{ margin-top: 0; }
-  .nj-article h3{ font-size: 1.05rem; color: var(--text); margin: 1.6rem 0 .6rem; }
-  .nj-article p{ font-size: 1rem; margin-bottom: 1rem; }
+  .nj-article h3{ font-size: calc(1.05rem * var(--nj-scale-general, 1)); color: var(--text); margin: 1.6rem 0 .6rem; }
+  .nj-article > p{ font-size: calc(1rem * var(--nj-scale-general, 1)); margin-bottom: 1rem; }
   .nj-article ul{ margin: 0 0 1.2rem 1.2rem; padding: 0; }
-  .nj-article li{ font-size: .97rem; margin-bottom: .4rem; }
+  .nj-article li{ font-size: calc(.97rem * var(--nj-scale-general, 1)); margin-bottom: .4rem; }
+  .nj-general{ font-size: calc(1rem * var(--nj-scale-general, 1)); }
 
   .nj-omit-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; margin: 1rem 0 1.6rem; }
   @media (max-width: 620px){ .nj-omit-grid{ grid-template-columns: 1fr 1fr; } }
   .nj-omit-item{
-    display:flex; align-items:center; gap:.5rem; font-size:.88rem; color: var(--text-muted);
+    display:flex; align-items:center; gap:.5rem; font-size: calc(.88rem * var(--nj-scale-general, 1)); color: var(--text-muted);
     background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
     padding: .6rem .8rem;
   }
@@ -42,10 +43,17 @@
     background: var(--surface); border: 1px solid var(--border); color: var(--text); text-align:center;
   }
   .nj-callout .nj-ar{
-    display:block; font-family: var(--font-display); font-size: 1.55rem; line-height: 2.3;
+    display:block; font-family: var(--font-display); font-size: calc(1.55rem * var(--nj-scale-ar, 1)); line-height: 2.3;
     direction: rtl; margin-bottom:.5rem;
   }
-  .nj-callout .nj-translit{ display:block; font-style: italic; color: var(--text-muted); margin-bottom:.4rem; }
+  .nj-callout .nj-translit{
+    display:block; font-style: italic; color: var(--text-muted); margin-bottom:.4rem;
+    font-size: calc(1rem * var(--nj-scale-translit, 1));
+  }
+  .nj-callout .nj-meaning{
+    display:block; font-size: calc(.92rem * var(--nj-scale-meaning, 1)); color: var(--text-muted); margin: 0;
+  }
+  .nj-callout .nj-general{ display:block; font-size: calc(1rem * var(--nj-scale-general, 1)); font-style: normal; }
 
   .nj-step{
     position: relative; margin: 0 0 1.4rem; padding: 1.3rem 1.4rem 1.3rem 3.2rem;
@@ -56,26 +64,33 @@
     display:inline-flex; align-items:center; justify-content:center; width: 1.7rem; height: 1.7rem;
     border-radius: 50%; background: var(--accent); color: #1a1406; font-size:.8rem; font-weight:700;
   }
-  .nj-step h4{ font-size:.95rem; color: var(--text); margin: 0 0 .6rem; }
+  .nj-step h4{ font-size: calc(.95rem * var(--nj-scale-general, 1)); color: var(--text); margin: 0 0 .6rem; }
   .nj-phrase{ margin: 0 0 .9rem; }
   .nj-phrase:last-child{ margin-bottom: 0; }
-  .nj-phrase .nj-label{ font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--text-muted); display:block; margin-bottom:.2rem; }
+  .nj-phrase .nj-label{
+    font-size: calc(.72rem * var(--nj-scale-general, 1)); letter-spacing:.04em; text-transform:uppercase;
+    color: var(--text-muted); display:block; margin-bottom:.2rem;
+  }
   .nj-phrase .nj-ar{
-    display:block; font-family: var(--font-display); font-size: 1.6rem; color: var(--text);
+    display:block; font-family: var(--font-display); font-size: calc(1.6rem * var(--nj-scale-ar, 1)); color: var(--text);
     line-height: 2.5; direction: rtl; text-align: right; word-spacing: .15em;
   }
-  .nj-phrase .nj-translit{ display:block; font-style: italic; color: var(--accent-soft); font-size:.9rem; margin: .15rem 0; }
-  .nj-phrase .nj-meaning{ font-size:.92rem; color: var(--text-muted); margin: .25rem 0 0; }
+  .nj-phrase .nj-translit{
+    display:block; font-style: italic; color: var(--accent-soft); margin: .15rem 0;
+    font-size: calc(.9rem * var(--nj-scale-translit, 1));
+  }
+  .nj-phrase .nj-meaning{ font-size: calc(.92rem * var(--nj-scale-meaning, 1)); color: var(--text-muted); margin: .25rem 0 0; }
 
   .nj-table-wrap{ overflow-x:auto; margin: 0 0 1.6rem; border: 1px solid var(--border); border-radius: var(--radius); }
   table.nj-table{ width: 100%; border-collapse: collapse; font-size:.92rem; background: var(--surface); }
   table.nj-table th, table.nj-table td{ padding: .7rem .9rem; text-align:left; border-bottom: 1px solid var(--border); vertical-align: top; }
-  table.nj-table th{ font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--text-muted); background: var(--bg-alt); font-weight:700; }
+  table.nj-table th{ font-size: calc(.72rem * var(--nj-scale-general, 1)); letter-spacing:.04em; text-transform:uppercase; color: var(--text-muted); background: var(--bg-alt); font-weight:700; }
   table.nj-table tr:last-child td{ border-bottom:none; }
-  table.nj-table .nj-translit-cell{ font-style: italic; color: var(--accent-soft); }
+  table.nj-table td:not(.nj-translit-cell){ font-size: calc(1em * var(--nj-scale-general, 1)); }
+  table.nj-table .nj-translit-cell{ font-style: italic; color: var(--accent-soft); font-size: calc(1em * var(--nj-scale-translit, 1)); }
 
   .nj-level{
-    display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase;
+    display:inline-block; font-size: calc(.66rem * var(--nj-scale-general, 1)); font-weight:700; letter-spacing:.03em; text-transform:uppercase;
     padding:.15rem .55rem; border-radius:999px; margin-bottom:.35rem;
   }
   .nj-level-ob{ background: var(--bg-alt); color: var(--text-muted); border:1px solid var(--border); }
@@ -139,6 +154,13 @@
       <p class="nj-subtitle">Salat al-Janazah — the complete method</p>
     </section>
 
+    <div class="art-controls" id="art-controls">
+      <button class="art-controls-toggle" id="art-controls-toggle" type="button" aria-expanded="false" aria-controls="art-controls-panel">
+        <span aria-hidden="true">⚙</span> Display settings
+      </button>
+      <div class="art-controls-panel" id="art-controls-panel" hidden></div>
+    </div>
+
     <article class="nj-article">
       <h2>Introduction</h2>
       <p>Salat al-Janazah is a prayer of supplication and intercession for the deceased. Unlike the daily prayers, it contains none of the following:</p>
@@ -171,7 +193,7 @@
       <h3>Niyyah (Intention)</h3>
       <p>Silently intend:</p>
       <div class="nj-callout">
-        "I offer Salat al-Janazah seeking nearness to Allah and praying for the forgiveness of this deceased."
+        <span class="nj-general">"I offer Salat al-Janazah seeking nearness to Allah and praying for the forgiveness of this deceased."</span>
       </div>
       <p>No verbal intention is required.</p>
 
@@ -347,16 +369,16 @@
       <div class="nj-callout">
         <span class="nj-ar">اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ وَعَافِهِ وَاعْفُ عَنْهُ</span>
         <span class="nj-translit">Allahummaghfir lahu warhamhu wa 'afihi wa'fu 'anhu</span>
-        "O Allah, forgive him, have mercy on him, grant him well-being, and pardon him."
+        <span class="nj-meaning">"O Allah, forgive him, have mercy on him, grant him well-being, and pardon him."</span>
       </div>
-      <p style="font-size:.9rem; color:var(--text-muted);">For a female, replace <em>lahu</em> with <em>laha</em>.</p>
+      <p>For a female, replace <em>lahu</em> with <em>laha</em>.</p>
 
       <div class="nj-callout">
         <span class="nj-ar">اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَآلِ مُحَمَّدٍ</span>
         <span class="nj-translit">Allahumma salli 'ala Muhammadin wa Aali Muhammad</span>
         <span class="nj-ar" style="display:block; margin-top:.8rem;">الْفَاتِحَةُ لِرُوحِ جَمِيعِ الْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ خُصُوصًا آبَائِنَا وَأُمَّهَاتِنَا وَمَرَاجِعِنَا وَعُلَمَائِنَا وَشُهَدَائِنَا 🤲🏻</span>
         <span class="nj-translit">Al-Fatiha li-ruhi jami'il-mu'minina wal-mu'minat, khususan aba'ina wa ummahatina wa maraji'ina wa 'ulama'ina wa shuhada'ina.</span>
-        <span style="display:block; font-size:.88rem; color:var(--text-muted);">"Al-Fatiha for the souls of all believing men and women — especially our fathers, our mothers, our maraji', our scholars, and our martyrs."</span>
+        <span class="nj-meaning" style="display:block;">"Al-Fatiha for the souls of all believing men and women — especially our fathers, our mothers, our maraji', our scholars, and our martyrs."</span>
       </div>
     </article>
 
@@ -377,5 +399,6 @@
 
 <script src="../js/theme.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/display-controls.js"></script>
 </body>
 </html>

@@ -279,3 +279,32 @@ p{ margin: 0 0 1em; color: var(--text-muted); }
 }
 .footer-disclaimer a{ color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .footer-disclaimer a:hover{ color: var(--accent-soft); }
+
+/* ---- Article display settings (Show/Hide + text-size controls) ---- */
+.art-controls{ margin: 0 0 1.8rem; }
+.art-controls-toggle{
+  display:inline-flex; align-items:center; gap:.45rem; background: var(--surface); border:1px solid var(--border);
+  border-radius: 999px; padding:.5rem 1.1rem; font-size:.85rem; font-weight:600; color: var(--text);
+  cursor:pointer; font-family: var(--font-body); transition: border-color var(--speed), color var(--speed);
+}
+.art-controls-toggle:hover{ border-color: var(--accent); color: var(--accent-soft); }
+.art-controls-panel{
+  margin-top:.8rem; padding:1.1rem 1.3rem; border:1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); display:grid; gap:.9rem;
+}
+.art-controls-row{ display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+.art-controls-check{ display:flex; align-items:center; gap:.55rem; font-size:.92rem; font-weight:600; color:var(--text); cursor:pointer; }
+.art-controls-check input{ width:1.05rem; height:1.05rem; accent-color: var(--accent); cursor:pointer; }
+.art-controls-size{ display:flex; align-items:center; gap:.6rem; }
+.art-controls-size button{
+  width:1.9rem; height:1.9rem; border-radius:50%; border:1px solid var(--border); background: var(--bg-alt);
+  color: var(--text); font-size:.78rem; font-weight:700; cursor:pointer; font-family: var(--font-body);
+  transition: border-color var(--speed), color var(--speed);
+}
+.art-controls-size button:hover{ border-color: var(--accent); color: var(--accent-soft); }
+.art-controls-pct{ font-size:.78rem; color: var(--text-muted); min-width:2.8rem; text-align:center; }
+.art-controls-reset{
+  justify-self:start; background:none; border:none; padding:0; font-size:.8rem; font-weight:600;
+  color: var(--accent-soft); cursor:pointer; font-family: var(--font-body); text-decoration: underline; text-underline-offset:2px;
+}
+.art-controls-reset:hover{ color: var(--accent); }
