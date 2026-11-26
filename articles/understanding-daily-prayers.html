@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Understanding Daily Prayers (Salat) — the end-to-end meaning of every act and action in prayer, from intention to the final salam, with Arabic, transliteration, and meaning.">
+<title>Understanding Daily Prayers — Articles &amp; Lessons — Zainabia.Online</title>
+<link rel="icon" type="image/png" href="../assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=20261126e">
+<style>
+  /* ---- Understanding Daily Prayers — scoped styles (prefixed .udp-) ---- */
+  .udp-page{ max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+  .udp-cover{ padding: 3rem 0 2rem; text-align:center; }
+  .udp-back-link{ display:inline-flex; align-items:center; gap:.4rem; font-size:.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+  .udp-back-link:hover{ color: var(--accent-soft); }
+  .udp-kicker{ color: var(--accent-soft); letter-spacing:.08em; text-transform:uppercase; font-size:.8rem; font-weight:700; margin-bottom:.8rem; }
+  .udp-cover h1{ font-size: clamp(1.9rem, 4.2vw, 2.7rem); color: var(--text); margin-bottom:.3em; }
+  .udp-cover .udp-subtitle{ font-size: 1.05rem; color: var(--text-muted); max-width: 640px; margin: 0 auto; }
+
+  .udp-article{ padding-bottom: 3rem; }
+  .udp-article > h2{ font-size: calc(clamp(1.3rem, 2.8vw, 1.6rem) * var(--site-scale-general, 1)); color: var(--text); margin: 2.6rem 0 .8rem; }
+  .udp-article > h2:first-child{ margin-top: 0; }
+  .udp-article > h3{ font-size: calc(1.05rem * var(--site-scale-general, 1)); color: var(--text); margin-bottom:.6rem; }
+  .udp-article > p{ font-size: calc(1rem * var(--site-scale-general, 1)); margin-bottom: 1rem; }
+  .udp-article ul, .udp-article ol{ margin: 0 0 1.2rem 1.2rem; padding: 0; }
+  .udp-article li{ font-size: calc(.97rem * var(--site-scale-general, 1)); margin-bottom: .4rem; }
+  .udp-general{ font-size: calc(.8rem * var(--site-scale-general, 1)); }
+  .udp-meaning{ font-size: calc(.8rem * var(--site-scale-meaning, 1)); }
+
+  .udp-callout{
+    margin: 1.4rem 0; padding: 1.1rem 1.4rem; border-radius: var(--radius);
+    background: var(--surface); border: 1px solid var(--border); font-style: italic; color: var(--text);
+    text-align: center;
+  }
+  .udp-callout .udp-ar{
+    display:block; font-style:normal; font-family: var(--font-display);
+    font-size: calc(1.6rem * var(--site-scale-ar, 1)); line-height: 2.3;
+    direction: rtl; margin-bottom:.5rem;
+  }
+  .udp-callout .udp-translit{
+    display:block; font-style: italic; color: var(--text-muted); margin: 0 0 .4rem;
+    font-size: calc(1rem * var(--site-scale-translit, 1));
+  }
+  .udp-callout cite.udp-general{ display:block; margin-top:.5rem; font-style:normal; color: var(--text-muted); }
+  .udp-callout cite.udp-meaning{ display:block; margin-top:.5rem; font-style:normal; color: var(--text-muted); }
+
+  .udp-step{
+    margin: 0 0 1.8rem; padding: 1.3rem 1.4rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface);
+  }
+  .udp-step-head{ display:flex; align-items:baseline; gap:.6rem; margin-bottom:.6rem; flex-wrap:wrap; }
+  .udp-step-num{
+    display:inline-flex; align-items:center; justify-content:center; width:1.8em; height:1.8em; border-radius:50%;
+    background: var(--accent-soft); color: var(--bg); font-weight:700; font-size: calc(.85rem * var(--site-scale-general, 1)); flex-shrink:0;
+  }
+  .udp-step-head h3{ margin:0; font-size: calc(1.1rem * var(--site-scale-general, 1)); color: var(--text); }
+  .udp-step-arabic-name{ font-family: var(--font-display); font-size: calc(1.3rem * var(--site-scale-ar, 1)); color: var(--accent-soft); direction: rtl; }
+  .udp-step p{ font-size: calc(.97rem * var(--site-scale-general, 1)); margin: 0 0 .7rem; }
+  .udp-step p:last-child{ margin-bottom: 0; }
+  .udp-step .udp-meaning-note{ color: var(--text-muted); font-size: calc(.92rem * var(--site-scale-meaning, 1)); }
+
+  .udp-table-wrap{ overflow-x: auto; margin: 0 0 1.6rem; border: 1px solid var(--border); border-radius: var(--radius); }
+  table.udp-table{ width: 100%; border-collapse: collapse; font-size: .92rem; background: var(--surface); }
+  table.udp-table th, table.udp-table td{ padding: .75rem .9rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  table.udp-table th{
+    font-size: calc(.72rem * var(--site-scale-general, 1)); letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted);
+    background: var(--bg-alt); font-weight: 700;
+  }
+  table.udp-table tr:last-child td{ border-bottom: none; }
+  table.udp-table .udp-ar-cell{
+    font-family: var(--font-display); font-size: calc(1.55rem * var(--site-scale-ar, 1)); line-height: 1.9; color: var(--text);
+    white-space: nowrap; direction: rtl;
+  }
+  table.udp-table .udp-translit{ color: var(--text); font-weight: 600; font-size: calc(1em * var(--site-scale-translit, 1)); }
+  table.udp-table .udp-urdu{
+    display:block; font-style: italic; color: var(--accent-soft); margin-top:.15rem;
+    font-size: calc(.85rem * var(--site-scale-meaning, 1));
+  }
+  table.udp-table tbody td:nth-child(3){ font-size: calc(1em * var(--site-scale-meaning, 1)); }
+  table.udp-table .udp-count{ color: var(--text-muted); font-size: calc(.85rem * var(--site-scale-general, 1)); white-space: nowrap; }
+
+  .udp-glance-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-bottom: 1.6rem; }
+  @media (max-width: 620px){ .udp-glance-grid{ grid-template-columns: 1fr; } }
+  .udp-glance-item{
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1rem 1.2rem;
+  }
+  .udp-glance-item .udp-glance-phrase{
+    font-weight: 700; color: var(--text); margin-bottom: .3rem;
+    font-size: calc(.95rem * var(--site-scale-translit, 1));
+  }
+  .udp-glance-item p{ font-size: calc(.88rem * var(--site-scale-meaning, 1)); margin: 0; color: var(--text-muted); }
+  .udp-glance-item .udp-urdu{
+    display:block; font-style: italic; color: var(--accent-soft); margin-top:.3rem;
+    font-size: calc(.85rem * var(--site-scale-meaning, 1));
+  }
+
+  .udp-order-list{ margin: 0 0 1.6rem 1.3rem; padding:0; }
+  .udp-order-list li{ font-size: calc(.95rem * var(--site-scale-general, 1)); margin-bottom:.35rem; }
+
+  .udp-nav-footer{ margin-top: 2.5rem; padding-top: 1.6rem; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="Zainabia.Online — home">
+      <img class="brand-mark" src="../assets/logo-mark.png" alt="Zainabia.Online" width="48" height="48">
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html#resources">Resources</a>
+      <a href="../index.html#duas">Duas &amp; Ziarat</a>
+      <a href="../index.html#events">Events</a>
+      <a href="../index.html#community">Community</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="aa-wrap">
+        <button class="aa-toggle" id="aa-toggle" type="button" aria-label="Reading preferences" aria-haspopup="true" aria-expanded="false" aria-controls="aa-panel">Aa</button>
+        <div class="aa-panel" id="aa-panel" hidden></div>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav-mobile" class="mobile-nav" aria-label="Mobile">
+        <a href="../index.html">← Back to Zainabia.Online</a>
+        <a href="../index.html#resources">Resources</a>
+        <a href="../index.html#duas">Duas &amp; Ziarat</a>
+        <a href="../index.html#events">Events</a>
+        <a href="../index.html#community">Community</a>
+        <a href="../index.html#contact">Contact</a>
+        <div class="mobile-theme">
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Change theme">
+            <span class="theme-dot" aria-hidden="true"></span>
+            <span class="theme-label">Theme</span>
+          </button>
+          <div id="theme-menu" class="theme-menu" hidden>
+            <button class="theme-swatch theme-swatch-white" data-theme-choice="white" title="White — Saffron" aria-label="White — Saffron theme"></button>
+            <button class="theme-swatch theme-swatch-zaitoon" data-theme-choice="zaitoon" title="Zaitoon — Green &amp; Gold" aria-label="Zaitoon — Green and Gold theme"></button>
+            <button class="theme-swatch theme-swatch-night" data-theme-choice="night" title="Night — Midnight" aria-label="Night — Midnight theme"></button>
+            <button class="theme-swatch theme-swatch-cherry" data-theme-choice="cherry" title="Cherry — Maroon &amp; Gold" aria-label="Cherry — Maroon and Gold theme"></button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="udp-page">
+    <section class="udp-cover">
+      <a class="udp-back-link" href="index.html">← Back to Articles &amp; Lessons</a>
+      <p class="udp-kicker">Articles &amp; Lessons</p>
+      <h1>Understanding Daily Prayers</h1>
+      <p class="udp-subtitle">The end-to-end meaning of every act and action in Salat — from intention to the final salam</p>
+    </section>
+
+    <article class="udp-article">
+      <h2>Introduction</h2>
+      <p>Salat (Namaz) is the second pillar of practice and the most frequently repeated act of worship in a believer's life — performed five times daily at Fajr, Zuhr, Asr, Maghrib, and Isha. It is described as the "pillar of religion" (Amud al-Din): if it is accepted, the rest of one's deeds are considered, and if it is rejected, the rest are not looked at.</p>
+      <p>Salat is not a sequence of movements to be rushed through. Each posture and phrase carries its own meaning, moving the believer through remembrance, humility, surrender, and gratitude — a complete conversation with Allah compressed into a few minutes, repeated throughout the day.</p>
+      <p>This guide walks through every act of prayer in order, with the Arabic, transliteration, and meaning of what is said at each stage, so that Salat can be offered with understanding (hudhoor-e-qalb — presence of the heart) rather than by memory alone.</p>
+
+      <h2>The Order of Prayer, at a Glance</h2>
+      <p>Each unit of prayer is called a Rak'ah. A two-Rak'ah prayer (like Fajr) repeats the cycle below twice; a four-Rak'ah prayer (like Zuhr, Asr, and Isha) repeats it with a short seated Tashahhud after the second Rak'ah as well as the last.</p>
+      <ol class="udp-order-list">
+        <li>Niyyah — Intention</li>
+        <li>Qiyam &amp; Takbiratul Ihram — Standing and the Opening Allahu Akbar</li>
+        <li>Qira'at — Surah Al-Hamd, followed by another Surah (first two Rak'ahs only)</li>
+        <li>Qunoot — a recommended supplication with raised hands (before the second Rak'ah's Ruku)</li>
+        <li>Ruku — Bowing</li>
+        <li>Qawmah — Rising from Ruku</li>
+        <li>Sujud — Two Prostrations, with a brief sitting (Jalsa) between them</li>
+        <li>Tashahhud — Testimony of Faith, after the second and final Rak'ah</li>
+        <li>Salam — The Closing Greeting of Peace</li>
+      </ol>
+
+      <h2>1. Niyyah — Intention</h2>
+      <div class="udp-step">
+        <div class="udp-step-head">
+          <span class="udp-step-num">1</span>
+          <h3>Niyyah</h3>
+          <span class="udp-step-arabic-name">نِيَّة</span>
+        </div>
+        <p>Prayer begins before the first word is spoken. Niyyah is the silent intention of the heart — not recited aloud — to perform this specific prayer (for example, the obligatory Zuhr prayer) purely and only for the sake of Allah's nearness (Qurbatan ilallah).</p>
+        <p class="udp-meaning-note">Meaning: every act of worship in Islam is judged by its intention. Niyyah turns a set of physical movements into an act of devotion, reminding the believer that they are standing before Allah by choice, not habit.</p>
+      </div>
+
+      <h2>2. Qiyam &amp; Takbiratul Ihram — Standing and the Opening Takbir</h2>
+      <div class="udp-step">
+        <div class="udp-step-head">
+          <span class="udp-step-num">2</span>
+          <h3>Qiyam</h3>
+          <span class="udp-step-arabic-name">قِيَام</span>
+        </div>
+        <p>The believer stands upright, facing the Qiblah, feet together, hands resting at the sides (in the Shia method, unlike some other schools, the hands are not folded during Qiyam). This standing posture is itself an act of worship — a declaration of readiness before Allah.</p>
+      </div>
+      <div class="udp-step">
+        <div class="udp-step-head">
+          <span class="udp-step-num"></span>
+          <h3>Takbiratul Ihram</h3>
+          <span class="udp-step-arabic-name">تَكْبِيرَةُ الْإِحْرَام</span>
+        </div>
+        <p>Raising both hands to the ears and declaring <strong>Allahu Akbar</strong> (Allah is the Greatest) formally opens the prayer. It is called Takbiratul Ihram — the Takbir of Sanctification — because from this moment, ordinary speech, eating, and unrelated movement become forbidden until the prayer is closed with Salam, just as certain acts become forbidden to a pilgrim in the state of Ihram.</p>
+        <div class="udp-callout">
+          <span class="udp-ar">اللَّهُ أَكْبَرُ</span>
+          <span class="udp-translit">Allahu Akbar</span>
+          <cite class="udp-general">Allah is Greater — greater than every description, every comparison, and every worldly concern that might distract the heart.</cite>
+        </div>
+        <p class="udp-meaning-note">It is recommended (mustahab) to recite Allahu Akbar seven times in total at the start of prayer, with brief supplications between repetitions, though reciting it once is sufficient to begin.</p>
+      </div>
+
+      <h2>3. Qira'at — The Recitation</h2>
+      <div class="udp-step">
+        <div class="udp-step-head">
+          <span class="udp-step-num">3</span>
+          <h3>Surah Al-Hamd (Al-Fatiha)</h3>
+          <span class="udp-step-arabic-name">سُورَةُ الْحَمْد</span>
+        </div>
+        <p>Every Rak'ah opens with Surah Al-Hamd, the opening chapter of the Qur'an. It is structured as a dialogue: the believer praises Allah, affirms that worship and help are sought from Him alone, and then asks to be guided on the straight path.</p>
+        <div class="udp-table-wrap">
+          <table class="udp-table">
+            <thead><tr><th>Arabic</th><th>Transliteration</th><th>English translation</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="udp-ar-cell">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</td>
+                <td><span class="udp-translit">Bismillahir Rahmanir Raheem</span><span class="udp-urdu">Shuru Allah ke naam se jo bada meherban, nihayat reham karne wala hai</span></td>
+                <td>In the Name of Allah, the All-Beneficent, the All-Merciful</td>
+              </tr>
+              <tr>
+                <td class="udp-ar-cell">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</td>
+                <td><span class="udp-translit">Alhamdu lillahi Rabbil 'Alameen</span><span class="udp-urdu">Tamam tareefein Allah ke liye hain jo tamam jahano ka Rab hai</span></td>
+                <td>All praise is for Allah, Lord of all the worlds</td>
+              </tr>
+              <tr>
+                <td class="udp-ar-cell">الرَّحْمَٰنِ الرَّحِيمِ</td>
+                <td><span class="udp-translit">Ar-Rahmanir Raheem</span><span class="udp-urdu">Bada meherban, nihayat reham karne wala</span></td>
+                <td>The All-Beneficent, the All-Merciful</td>
+              </tr>
+              <tr>
+                <td class="udp-ar-cell">مَالِكِ يَوْمِ الدِّينِ</td>
+                <td><span class="udp-translit">Maaliki Yawmid-Deen</span><span class="udp-urdu">Jaza ke din ka malik</span></td>
+                <td>Master of the Day of Judgement</td>
+              </tr>
+              <tr>
+                <td class="udp-ar-cell">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</td>
+                <td><span class="udp-translit">Iyyaka na'budu wa iyyaka nasta'een</span><span class="udp-urdu">Hum sirf teri ibadat karte hain aur sirf tujh se madad mangte hain</span></td>
+                <td>You alone do we worship, and You alone do we ask for help</td>
+              </tr>
+              <tr>
+                <td class="udp-ar-cell">اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ</td>
+                <td><span class="udp-translit">Ihdinas-Siratal Mustaqeem</span><span class="udp-urdu">Humein seedha raasta dikha</span></td>
+                <td>Guide us to the straight path</td>
+              </tr>
+              <tr>
+                <td class="udp-ar-cell">صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</td>
+                <td><span class="udp-translit">Siratal-latheena an'amta 'alayhim ghayril-maghdoobi 'alayhim walad-dalleen</span><span class="udp-urdu">Un logo ka raasta jin par tu ne inaam kiya, un ka nahin jin par ghazab hua, aur na hi gumrahon ka</span></td>
+                <td>The path of those You have favoured, not of those who incur wrath, nor of those who go astray</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="udp-step">
+        <div class="udp-step-head">
+          <span class="udp-step-num"></span>
+          <h3>A Second Surah</h3>
+          <span class="udp-step-arabic-name">سُورَة</span>
+        </div>
+        <p>In the first and second Rak'ah of every prayer, Surah Al-Hamd is followed by one complete additional Surah of the Qur'an (commonly Surah Al-Ikhlas or Surah Al-Qadr). In the third and fourth Rak'ahs, the believer may instead recite Surah Al-Hamd alone, or the Tasbihat-e-Arba'ah.</p>
+        <div class="udp-callout">
+          <span class="udp-ar">سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلَا إِلَٰهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ</span>
+          <span class="udp-translit">Subhanallahi wal-hamdu lillahi wa la ilaha illallahu wallahu akbar</span>
+          <cite class="udp-general">Glory be to Allah, all praise is for Allah, there is no god but Allah, and Allah is the Greatest — the Tasbihat-e-Arba'ah, recited quietly in the third and fourth Rak'ahs.</cite>
+        </div>
+      </div>
+
+      <h2>4. Qunoot — The Raised-Hand Supplication</h2>
+      <div class="udp-step">
+        <div class="udp-step-head">
+          <span class="udp-step-num">4</span>
+          <h3>Qunoot</h3>
+          <span class="udp-step-arabic-name">قُنُوت</span>
+        </div>
+        <p>Before bowing into Ruku in the second Rak'ah of every prayer, it is strongly recommended to pause in Qiyam, raise both open hands to the level of the face (palms facing upward, as if asking), and supplicate in any language — in one's own words, or with a transmitted dua.</p>
+        <p class="udp-meaning-note">Meaning: Qunoot is the most personal moment of the obligatory prayer — a direct, unscripted plea placed in the middle of formal worship, a reminder that Salat is not only remembrance but also a channel for every need of the heart.</p>
+      </div>
+
+      <h2>5. Ruku — Bowing</h2>
+      <div class="udp-step">
+        <div class="udp-step-head">
+          <span class="udp-step-num">5</span>
+          <h3>Ruku</h3>
+          <span class="udp-step-arabic-name">رُكُوع</span>
+        </div>
+        <p>The believer bows forward until the palms rest flat on the knees and the back is held level, as if a vessel of water could sit upon it without spilling. In this posture — the body bent in submission — the following is recited, usually three times:</p>
+        <div class="udp-callout">
+          <span class="udp-ar">سُبْحَانَ رَبِّيَ الْعَظِيمِ وَبِحَمْدِهِ</span>
+          <span class="udp-translit">Subhana Rabbiyal 'Adheemi wa bihamdih</span>
+          <cite class="udp-general">Glory be to my Lord, the Magnificent, and praise be to Him.</cite>
+        </div>
+        <p class="udp-meaning-note">Meaning: where Takbir declares Allah's greatness in words, Ruku declares it with the body — bowing the spine that is normally held upright for everything else, before the One Being deserving of such humility.</p>
+      </div>
+
+      <h2>6. Qawmah — Rising from Ruku</h2>
+      <div class="udp-step">
+        <div class="udp-step-head">
+          <span class="udp-step-num">6</span>
+          <h3>Qawmah</h3>
+          <span class="udp-step-arabic-name">قَوْمَة</span>
+        </div>
+        <p>Rising fully upright from Ruku, before moving to prostration, the believer pauses and says:</p>
+        <div class="udp-table-wrap">
+          <table class="udp-table">
+            <thead><tr><th>Arabic</th><th>Transliteration</th><th>English translation</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="udp-ar-cell">سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ</td>
+                <td><span class="udp-translit">Sami'allahu liman hamidah</span><span class="udp-urdu">Allah ne sun li us ki jis ne us ki hamd ki</span></td>
+                <td>Allah hears the one who praises Him</td>
+              </tr>
+              <tr>
+                <td class="udp-ar-cell">اَللَّهُمَّ رَبَّنَا لَكَ الْحَمْدُ</td>
+                <td><span class="udp-translit">Allahumma Rabbana lakal hamd</span><span class="udp-urdu">Aey Allah, hamare Rab, saari tareef teray liye hai</span></td>
+                <td>O Allah, our Lord, all praise belongs to You</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="udp-meaning-note">Meaning: the moment of standing fully upright again — after humbling the body in Ruku — is itself treated as an independent pillar of prayer (a Rukn), a brief return to dignity before the deeper humility of Sujud.</p>
+      </div>
+
+      <h2>7. Sujud — Prostration</h2>
+      <div class="udp-step">
+        <div class="udp-step-head">
+          <span class="udp-step-num">7</span>
+          <h3>Sujud</h3>
+          <span class="udp-step-arabic-name">سُجُود</span>
+        </div>
+        <p>Sujud is the deepest point of physical humility in prayer: the forehead, both palms, both knees, and both big toes touch the ground together — seven points of the body lowered to the earth before Allah. It is performed twice in every Rak'ah, with a brief sitting between the two.</p>
+        <p>A distinguishing practice in Shia jurisprudence is that the forehead must rest on natural earth, stone, or an unprocessed plant material — commonly a small tablet of baked clay known as a Turbah (Mohr), often made from the soil of Karbala in remembrance of the sacrifice of Imam Husain (AS) — rather than on a carpet, cloth, or anything worn or eaten.</p>
+        <div class="udp-callout">
+          <span class="udp-ar">سُبْحَانَ رَبِّيَ الْأَعْلَى وَبِحَمْدِهِ</span>
+          <span class="udp-translit">Subhana Rabbiyal A'la wa bihamdih</span>
+          <cite class="udp-general">Glory be to my Lord, the Most High, and praise be to Him — recited (usually three times) in each of the two prostrations.</cite>
+        </div>
+        <p class="udp-meaning-note">Meaning: if Ruku humbles the body, Sujud humbles it entirely — the highest part of the body, the forehead carrying the intellect and pride, is placed lowest, on the ground itself. It is described in Hadith as the point at which a servant is nearest to Allah.</p>
+      </div>
+      <div class="udp-step">
+        <div class="udp-step-head">
+          <span class="udp-step-num"></span>
+          <h3>Jalsa — Sitting Between the Two Prostrations</h3>
+          <span class="udp-step-arabic-name">جَلْسَة</span>
+        </div>
+        <p>Between the first and second Sujud, the believer sits back briefly, resting on the left thigh, and says:</p>
+        <div class="udp-callout">
+          <span class="udp-ar">أَسْتَغْفِرُ اللَّهَ رَبِّي وَأَتُوبُ إِلَيْهِ</span>
+          <span class="udp-translit">Astaghfirullaha Rabbi wa atubu ilayh</span>
+          <cite class="udp-general">I seek the forgiveness of Allah, my Lord, and I turn to Him in repentance.</cite>
+        </div>
+        <p class="udp-meaning-note">Meaning: even between two acts of worship, the believer pauses to seek forgiveness — a reminder that no deed, however devoted, replaces the ongoing need for Allah's mercy.</p>
+      </div>
+
+      <h2>8. Tashahhud — The Testimony of Faith</h2>
+      <div class="udp-step">
+        <div class="udp-step-head">
+          <span class="udp-step-num">8</span>
+          <h3>Tashahhud</h3>
+          <span class="udp-step-arabic-name">تَشَهُّد</span>
+        </div>
+        <p>After the second Rak'ah of every prayer (and again after the final Rak'ah), the believer sits and recites the Tashahhud — bearing witness to the oneness of Allah and the prophethood of Muhammad (SAWW), and sending blessings upon him and his purified family.</p>
+        <div class="udp-table-wrap">
+          <table class="udp-table">
+            <thead><tr><th>Arabic</th><th>Transliteration</th><th>English translation</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="udp-ar-cell">أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ</td>
+                <td><span class="udp-translit">Ashhadu an la ilaha illallahu wahdahu la shareeka lah</span><span class="udp-urdu">Main gawahi deta hoon ke Allah ke siwa koi mabood nahin, woh akela hai, us ka koi shareek nahin</span></td>
+                <td>I bear witness that there is no god except Allah, alone, without partner</td>
+              </tr>
+              <tr>
+                <td class="udp-ar-cell">وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ</td>
+                <td><span class="udp-translit">Wa ashhadu anna Muhammadan 'abduhu wa Rasuluh</span><span class="udp-urdu">Aur main gawahi deta hoon ke Muhammad ﷺ us ke banday aur Rasool hain</span></td>
+                <td>And I bear witness that Muhammad is His servant and Messenger</td>
+              </tr>
+              <tr>
+                <td class="udp-ar-cell">اَللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَآلِ مُحَمَّدٍ</td>
+                <td><span class="udp-translit">Allahumma salli 'ala Muhammadin wa Aali Muhammad</span><span class="udp-urdu">Aey Allah, Muhammad ﷺ aur Aal-e-Muhammad (ع) par apni rehmat nazil farma</span></td>
+                <td>O Allah, send Your blessings upon Muhammad and the Family of Muhammad</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="udp-meaning-note">Meaning: Tashahhud renews the two testimonies that define a Muslim's faith, and links every prayer back to the Prophet (SAWW) and his Ahlul Bayt (AS), through whom guidance was conveyed to humanity.</p>
+      </div>
+
+      <h2>9. Salam — The Closing Greeting of Peace</h2>
+      <div class="udp-step">
+        <div class="udp-step-head">
+          <span class="udp-step-num">9</span>
+          <h3>Salam</h3>
+          <span class="udp-step-arabic-name">سَلَام</span>
+        </div>
+        <p>After the Tashahhud of the final Rak'ah, the prayer is closed with the Salam — a greeting of peace that releases the believer from the state of prayer, much as Takbiratul Ihram had placed them into it.</p>
+        <div class="udp-table-wrap">
+          <table class="udp-table">
+            <thead><tr><th>Arabic</th><th>Transliteration</th><th>English translation</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="udp-ar-cell">اَلسَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ</td>
+                <td><span class="udp-translit">Assalamu 'alayka ayyuhan-Nabiyyu wa rahmatullahi wa barakatuh</span><span class="udp-urdu">Aey Nabi ﷺ, aap par salam ho, aur Allah ki rehmat aur barkatein</span></td>
+                <td>Peace be upon you, O Prophet, and the mercy of Allah and His blessings</td>
+              </tr>
+              <tr>
+                <td class="udp-ar-cell">اَلسَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ</td>
+                <td><span class="udp-translit">Assalamu 'alayna wa 'ala 'ibadillahis-saliheen</span><span class="udp-urdu">Hum par aur Allah ke neik bandon par salam ho</span></td>
+                <td>Peace be upon us and upon the righteous servants of Allah</td>
+              </tr>
+              <tr>
+                <td class="udp-ar-cell">اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ</td>
+                <td><span class="udp-translit">Assalamu 'alaykum wa rahmatullahi wa barakatuh</span><span class="udp-urdu">Aap sab par salam ho, aur Allah ki rehmat aur barkatein</span></td>
+                <td>Peace be upon you all, and the mercy of Allah and His blessings</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="udp-meaning-note">Meaning: the final Salam greets the Prophet (SAWW), every righteous servant of Allah past and present, and those present in prayer — closing an act of private devotion with a reminder of the wider community of believers it belongs to.</p>
+      </div>
+
+      <h2>Meanings at a Glance</h2>
+      <p>A short summary (Mukhtasar Tafsir-e-Mafhoom) of what each stage of prayer expresses.</p>
+      <div class="udp-glance-grid">
+        <div class="udp-glance-item">
+          <p class="udp-glance-phrase">Niyyah</p>
+          <p>Prayer is offered for Allah's nearness alone, not out of habit.</p>
+          <span class="udp-urdu">Namaz sirf Allah ki qurbat ke liye hai</span>
+        </div>
+        <div class="udp-glance-item">
+          <p class="udp-glance-phrase">Takbiratul Ihram</p>
+          <p>Allah is greater than everything that could distract the heart from Him.</p>
+          <span class="udp-urdu">Allah har us cheez se bara hai jo dil ko behka sake</span>
+        </div>
+        <div class="udp-glance-item">
+          <p class="udp-glance-phrase">Qira'at (Al-Hamd)</p>
+          <p>Praise, worship, and help belong to Allah alone; guidance is asked from Him.</p>
+          <span class="udp-urdu">Tareef, ibadat aur madad sirf Allah se hai</span>
+        </div>
+        <div class="udp-glance-item">
+          <p class="udp-glance-phrase">Qunoot</p>
+          <p>A personal, open plea placed in the middle of formal worship.</p>
+          <span class="udp-urdu">Namaz ke darmiyan dil ki khaalis dua</span>
+        </div>
+        <div class="udp-glance-item">
+          <p class="udp-glance-phrase">Ruku</p>
+          <p>The body bows in humility before the Magnificent.</p>
+          <span class="udp-urdu">Jism Allah ki azmat ke saamne jhukta hai</span>
+        </div>
+        <div class="udp-glance-item">
+          <p class="udp-glance-phrase">Qawmah</p>
+          <p>Standing upright again, every praise is attributed to Allah.</p>
+          <span class="udp-urdu">Dobara khade ho kar saari tareef Allah ko di jaati hai</span>
+        </div>
+        <div class="udp-glance-item">
+          <p class="udp-glance-phrase">Sujud</p>
+          <p>The forehead touches the earth — the nearest a servant comes to Allah.</p>
+          <span class="udp-urdu">Pesaani zameen par, banda Allah ke sab se qareeb</span>
+        </div>
+        <div class="udp-glance-item">
+          <p class="udp-glance-phrase">Tashahhud</p>
+          <p>Faith is renewed, linked to the Prophet ﷺ and his purified family (ع).</p>
+          <span class="udp-urdu">Imaan ka iqrar, Rasool ﷺ aur Aal (ع) se wabasta</span>
+        </div>
+        <div class="udp-glance-item">
+          <p class="udp-glance-phrase">Salam</p>
+          <p>Peace is sent to the Prophet ﷺ and to every righteous servant of Allah.</p>
+          <span class="udp-urdu">Salam Rasool ﷺ aur tamam neik bandon ke liye</span>
+        </div>
+      </div>
+
+      <h2>Conclusion</h2>
+      <p>From the silent Niyyah of the heart to the final Salam, every act of Salat carries a believer through praise, humility, supplication, and peace. It is a complete, repeated journey — Qiyam reminding the body it stands by choice, Ruku and Sujud reminding it that true dignity lies in humility before Allah, and the Tashahhud and Salam reminding the believer of the Prophet ﷺ, his family (ع), and the wider community of faith they belong to.</p>
+      <p>Offered with presence of heart (hudhoor-e-qalb), five times a day, Salat becomes less a duty to complete and more a conversation returned to — again and again, at its appointed times.</p>
+
+      <div class="udp-callout">
+        <span class="udp-ar">اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَآلِ مُحَمَّدٍ</span>
+        <span class="udp-translit">Allahumma salli 'ala Muhammadin wa Aali Muhammad</span>
+        <cite class="udp-meaning">O Allah, send Your blessings upon Muhammad and the Family of Muhammad.</cite>
+      </div>
+
+      <h2>Related Reading</h2>
+      <p>Before Salat begins, the Adhan and Iqamah are traditionally recited as the call and final summons to prayer.</p>
+      <p><a href="understanding-adhan-and-iqamah.html">Read Understanding Adhan and Iqamah →</a></p>
+    </article>
+
+    <div class="udp-nav-footer">
+      <a class="udp-back-link" href="index.html">← Back to Articles &amp; Lessons</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Dedicated to the memory of <strong>Sayeda Zainab (SA)</strong>, in the path of <strong>Imam-e-Zamana (AJ)</strong> — may this humble effort be accepted.</p>
+    <p class="footer-fateha">Please recite Surah Fateha for <strong>Syed Ali Mohammed ibn Syed Ahsan</strong> and <strong>all our Marhumeen</strong>.<br>Through the honour and salutation of <strong>Prophet Muhammad ﷺ and his purified family (ع)</strong>, may <strong>Allah</strong> grant them Maghfirah and elevate their ranks, Insha’Allah.</p>
+    <p class="footer-year">&copy; <span id="year"></span> Zainabia.Online</p>
+    <p class="footer-disclaimer">Disclaimer: This content is provided for educational purposes only and may contain unintentional errors, omissions, or inaccuracies. Readers are encouraged to verify religious matters with a qualified scholar or their Marja’. Any <a href="mailto:hello@zainabia.online">corrections, feedback, or suggestions</a> for improvement are sincerely welcomed and appreciated.</p>
+  </div>
+</footer>
+
+<script src="../js/theme.js?v=20261126e"></script>
+<script src="../js/main.js?v=20261126e"></script>
+<script src="../js/display-controls.js?v=20261126e"></script>
+</body>
+</html>
