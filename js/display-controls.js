@@ -2,22 +2,22 @@
  * Global reading preferences ("Aa") for Zainabia.Online.
  *
  * Lets a reader independently show/hide and resize four kinds of
- * text across the whole site — English (general page prose), Arabic,
- * Transliteration, and Meaning (the translation tied to a quoted
- * Arabic phrase). The control lives once in the shared header (the
- * "Aa" button next to the hamburger menu) and applies via CSS custom
- * properties + element selectors that any current or future article
- * page can opt into just by using the matching classes — no changes
- * to this file are needed when a new article is added.
+ * text on the page they're reading — English (general page prose),
+ * Arabic, Transliteration, and Meaning (the translation tied to a
+ * quoted Arabic phrase). The control lives once in the shared header
+ * (the "Aa" button next to the hamburger menu) and applies via CSS
+ * custom properties + element selectors that any current or future
+ * article page can opt into just by using the matching classes — no
+ * changes to this file are needed when a new article is added.
  *
- * Settings persist across the whole site via a single localStorage key.
+ * Settings are deliberately temporary: they live only in memory for
+ * this page view and reset to defaults on reload or navigation —
+ * nothing is written to localStorage or any other storage.
  */
 (function () {
   var toggleBtn = document.getElementById("aa-toggle");
   var panel = document.getElementById("aa-panel");
   if (!toggleBtn || !panel) return;
-
-  var STORAGE_KEY = "zainabia-reading-prefs";
 
   var CATEGORY_ORDER = ["general", "ar", "translit", "meaning"];
   var LABELS = {
@@ -52,29 +52,12 @@
     return { show: show, scale: scale };
   }
 
+  // In-memory only — no localStorage read on load, so every page
+  // view starts from the defaults below.
   var state = defaultState();
-  try {
-    var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
-    if (saved && saved.show && saved.scale) {
-      CATEGORY_ORDER.forEach(function (key) {
-        if (typeof saved.show[key] === "boolean") state.show[key] = saved.show[key];
-        if (typeof saved.scale[key] === "number") state.scale[key] = saved.scale[key];
-      });
-    }
-  } catch (e) {
-    /* ignore — fall back to defaults */
-  }
 
   function clampScale(n) {
     return Math.max(0.7, Math.min(1.8, Math.round(n * 100) / 100));
-  }
-
-  function persist() {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    } catch (e) {
-      /* storage unavailable — settings just won't persist */
-    }
   }
 
   function apply() {
@@ -85,7 +68,6 @@
         el.style.display = state.show[key] ? "" : "none";
       });
     });
-    persist();
   }
 
   // Build the panel UI once.
@@ -133,15 +115,10 @@
     panel.appendChild(row);
   });
 
-  var heading = document.createElement("p");
-  heading.className = "aa-heading";
-  heading.textContent = "Reading preferences";
-  panel.insertBefore(heading, panel.firstChild);
-
   var resetBtn = document.createElement("button");
   resetBtn.type = "button";
   resetBtn.className = "aa-reset";
-  resetBtn.textContent = "Reset to defaults";
+  resetBtn.textContent = "Reset";
   panel.appendChild(resetBtn);
 
   panel.addEventListener("change", function (e) {
