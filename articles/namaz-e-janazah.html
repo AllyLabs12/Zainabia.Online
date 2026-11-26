@@ -60,8 +60,6 @@
   .nj-phrase .nj-ar{ display:block; font-family: var(--font-display); font-size: 1.25rem; color: var(--text); line-height:1.5; }
   .nj-phrase .nj-translit{ display:block; font-style: italic; color: var(--accent-soft); font-size:.9rem; margin: .15rem 0; }
   .nj-phrase .nj-meaning{ font-size:.92rem; color: var(--text-muted); margin: .25rem 0 0; }
-  .nj-variant{ margin-top:.8rem; padding-top:.8rem; border-top: 1px dashed var(--border); font-size:.88rem; color: var(--text-muted); }
-  .nj-variant b{ color: var(--text); }
 
   .nj-table-wrap{ overflow-x:auto; margin: 0 0 1.6rem; border: 1px solid var(--border); border-radius: var(--radius); }
   table.nj-table{ width: 100%; border-collapse: collapse; font-size:.92rem; background: var(--surface); }
@@ -69,6 +67,13 @@
   table.nj-table th{ font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--text-muted); background: var(--bg-alt); font-weight:700; }
   table.nj-table tr:last-child td{ border-bottom:none; }
   table.nj-table .nj-translit-cell{ font-style: italic; color: var(--accent-soft); }
+
+  .nj-level{
+    display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase;
+    padding:.15rem .55rem; border-radius:999px; margin-bottom:.35rem;
+  }
+  .nj-level-ob{ background: var(--bg-alt); color: var(--text-muted); border:1px solid var(--border); }
+  .nj-level-mu{ background: var(--accent); color:#1a1406; }
 
   .nj-nav-footer{ margin-top: 2.5rem; padding-top: 1.6rem; border-top: 1px solid var(--border); }
 </style>
@@ -165,6 +170,7 @@
       <p>No verbal intention is required.</p>
 
       <h2>The Five Takbirs</h2>
+      <p>Each Takbir pairs an <strong>obligatory (wajib)</strong> line — the minimum required to fulfil the prayer — with a longer <strong>recommended (mustahab)</strong> version. Either may be recited; the mustahab wording is simply the fuller, more complete supplication.</p>
 
       <div class="nj-step">
         <span class="nj-step-num">1</span>
@@ -175,10 +181,16 @@
           <span class="nj-translit">Allahu Akbar</span>
         </div>
         <div class="nj-phrase">
-          <span class="nj-label">Then recite — Shahadatayn</span>
-          <span class="nj-ar">أشهد أن لا إله إلا الله وحده لا شريك له وأشهد أن محمدًا عبده ورسوله</span>
-          <span class="nj-translit">Ashhadu an la ilaha illallahu wahdahu la sharika lah, wa ashhadu anna Muhammadan 'abduhu wa rasuluh.</span>
-          <p class="nj-meaning">"I bear witness that there is no god except Allah alone without partner, and I bear witness that Muhammad is His servant and Messenger."</p>
+          <span class="nj-level nj-level-ob">Obligatory</span>
+          <span class="nj-ar">أشهد أن لا إله إلا الله وأن محمدًا رسول الله</span>
+          <span class="nj-translit">Ashhadu an la ilaha illallah wa anna Muhammadan Rasulullah.</span>
+          <p class="nj-meaning">"I witness that there is no god but Allah, and I witness that Muhammad is the Messenger of Allah."</p>
+        </div>
+        <div class="nj-phrase">
+          <span class="nj-level nj-level-mu">Mustahab — recommended</span>
+          <span class="nj-ar">أشهد أن لا إله إلا الله وحده لا شريك له وأشهد أن محمدًا عبده ورسوله أرسله بالحق بشيرًا ونذيرًا بين يدي الساعة</span>
+          <span class="nj-translit">Ashhadu an la ilaha illallahu wahdahu la sharika lah, wa ashhadu anna Muhammadan 'abduhu wa rasuluh, arsalahu bil-haqqi bashiran wa nadhiran bayna yadayis-sa'ah.</span>
+          <p class="nj-meaning">"I bear witness that there is no god except Allah alone, without partner, and I bear witness that Muhammad is His servant and Messenger, sent by Him in truth as a bearer of glad tidings and a warner before the Hour."</p>
         </div>
       </div>
 
@@ -191,10 +203,16 @@
           <span class="nj-translit">Allahu Akbar</span>
         </div>
         <div class="nj-phrase">
-          <span class="nj-label">Then recite — Salawat</span>
+          <span class="nj-level nj-level-ob">Obligatory</span>
           <span class="nj-ar">اللهم صل على محمد وآل محمد</span>
-          <span class="nj-translit">Allahumma salli 'ala Muhammadin wa Aali Muhammad</span>
+          <span class="nj-translit">Allahumma salli 'ala Muhammadin wa Aali Muhammad.</span>
           <p class="nj-meaning">"O Allah, send Your blessings upon Muhammad and the Family of Muhammad."</p>
+        </div>
+        <div class="nj-phrase">
+          <span class="nj-level nj-level-mu">Mustahab — recommended</span>
+          <span class="nj-ar">اللهم صل على محمد وآل محمد وارحم محمدًا وآل محمد كأفضل ما صليت وباركت وترحمت على إبراهيم وآل إبراهيم إنك حميد مجيد وصل على جميع الأنبياء والمرسلين</span>
+          <span class="nj-translit">Allahumma salli 'ala Muhammadin wa Aali Muhammad, warham Muhammadan wa Aala Muhammad, ka'afdali ma sallayta wa barakta wa tarahhamta 'ala Ibrahima wa Aali Ibrahim, innaka Hamidun Majid, wa salli 'ala jami'il-anbiya'i wal-mursalin.</span>
+          <p class="nj-meaning">"O Allah, bless Muhammad and the Family of Muhammad, and have mercy on Muhammad and the Family of Muhammad, as the best of what You blessed, favoured, and showed mercy to Ibrahim and the Family of Ibrahim — You are Praiseworthy, Glorious. And send blessings upon all the prophets and messengers."</p>
         </div>
       </div>
 
@@ -207,10 +225,16 @@
           <span class="nj-translit">Allahu Akbar</span>
         </div>
         <div class="nj-phrase">
-          <span class="nj-label">Then pray for all believers</span>
-          <span class="nj-ar">اللهم اغفر للمؤمنين والمؤمنات والمسلمين والمسلمات الأحياء منهم والأموات</span>
-          <span class="nj-translit">Allahummaghfir lil-mu'minina wal-mu'minat wal-muslimina wal-muslimat al-ahya'i minhum wal-amwat.</span>
-          <p class="nj-meaning">"O Allah, forgive the believing men and women, the Muslim men and women, the living among them and the deceased."</p>
+          <span class="nj-level nj-level-ob">Obligatory</span>
+          <span class="nj-ar">اللهم اغفر للمؤمنين والمؤمنات</span>
+          <span class="nj-translit">Allahummaghfir lil-mu'minina wal-mu'minat.</span>
+          <p class="nj-meaning">"O Allah, forgive the believing men and women."</p>
+        </div>
+        <div class="nj-phrase">
+          <span class="nj-level nj-level-mu">Mustahab — recommended</span>
+          <span class="nj-ar">اللهم اغفر للمؤمنين والمؤمنات والمسلمين والمسلمات الأحياء منهم والأموات تابع بيننا وبينهم بالخيرات إنك مجيب الدعوات إنك على كل شيء قدير</span>
+          <span class="nj-translit">Allahummaghfir lil-mu'minina wal-mu'minati wal-muslimina wal-muslimati al-ahya'i minhum wal-amwat, tabi' baynana wa baynahum bil-khayrat, innaka mujibud-da'awat, innaka 'ala kulli shay'in qadir.</span>
+          <p class="nj-meaning">"O Allah, forgive the believing men and women, the Muslim men and women, the living among them and the deceased. Join us with them in good. You answer supplications. You have power over all things."</p>
         </div>
       </div>
 
@@ -223,13 +247,28 @@
           <span class="nj-translit">Allahu Akbar</span>
         </div>
         <div class="nj-phrase">
-          <span class="nj-label">Then pray specifically for the deceased — for a male</span>
-          <span class="nj-ar">اللهم إن هذا عبدك وابن عبدك وابن أمتك نزل بك وأنت خير منزول به، اللهم إنا لا نعلم منه إلا خيراً وأنت أعلم به منا، اللهم إن كان محسناً فزد في إحسانه وإن كان مسيئاً فتجاوز عن سيئاته واغفر له وارحمه</span>
-          <span class="nj-translit">Allahumma inna hadha 'abduka wabnu 'abdika wabnu amatika, nazala bika wa anta khayru manzulin bih. Allahumma inna la na'lamu minhu illa khayran wa anta a'lamu bihi minna. Allahumma in kana muhsinan fazid fi ihsanihi, wa in kana musi'an fatajawaz 'an sayyi'atihi waghfir lahu warhamhu.</span>
-          <p class="nj-meaning">"O Allah, this is Your servant and the son of Your servant and Your maidservant. He has come before You, and You are the best host. We know nothing of him except good, and You know him better than we do. If he was righteous, increase him in righteousness, and if he erred, overlook his faults. Forgive him and have mercy on him."</p>
+          <span class="nj-level nj-level-ob">Obligatory — for a male</span>
+          <span class="nj-ar">اللهم اغفر لهذا الميت</span>
+          <span class="nj-translit">Allahummaghfir li-hadhal-mayyit.</span>
+          <p class="nj-meaning">"O Allah, forgive this deceased."</p>
         </div>
-        <div class="nj-variant">
-          <b>For a female:</b> replace هذا عبدك with هذه أمتك, and له with لها.
+        <div class="nj-phrase">
+          <span class="nj-level nj-level-ob">Obligatory — for a female</span>
+          <span class="nj-ar">اللهم اغفر لهذه الميتة</span>
+          <span class="nj-translit">Allahummaghfir li-hadhihil-mayyitah.</span>
+          <p class="nj-meaning">"O Allah, forgive this deceased."</p>
+        </div>
+        <div class="nj-phrase">
+          <span class="nj-level nj-level-mu">Mustahab — recommended, for a male</span>
+          <span class="nj-ar">اللهم إن هذا عبدك وابن عبدك وابن أمتك نزل بك وأنت خير منزول به اللهم إنا لا نعلم منه إلا خيرًا وأنت أعلم به منا اللهم إن كان محسنًا فزد في إحسانه وإن كان مسيئًا فتجاوز عنه واغفر له اجعله عندك في أعلى عليين واخلف على أهله في الغابرين وارحمه برحمتك يا أرحم الراحمين</span>
+          <span class="nj-translit">Allahumma inna hadha 'abduka wabnu 'abdika wabnu amatika, nazala bika wa anta khayru manzulin bih. Allahumma inna la na'lamu minhu illa khayran wa anta a'lamu bihi minna. Allahumma in kana muhsinan fazid fi ihsanihi, wa in kana musi'an fatajawaz 'anhu waghfir lah. Ij'alhu 'indaka fi a'la 'illiyyin, wakhluf 'ala ahlihi fil-ghabirin, warhamhu birahmatika ya arhamar-rahimin.</span>
+          <p class="nj-meaning">"O Allah, this is Your servant, son of Your servant and Your maidservant. He has come to You, and You are the best one to be come to. O Allah, we know nothing of him but good, and You know him better than we do. O Allah, if he was righteous, increase his righteousness, and if he erred, overlook his faults and forgive him. Place him with You in the highest 'Illiyyin, be a successor to his family he leaves behind, and have mercy on him with Your mercy, O Most Merciful of the merciful."</p>
+        </div>
+        <div class="nj-phrase">
+          <span class="nj-level nj-level-mu">Mustahab — recommended, for a female</span>
+          <span class="nj-ar">اللهم إن هذه أمتك وابنة عبدك وابنة أمتك نزلت بك وأنت خير منزول به اللهم إنا لا نعلم منها إلا خيرًا وأنت أعلم بها منا اللهم إن كانت محسنة فزد في إحسانها وإن كانت مسيئة فتجاوز عنها واغفر لها اجعلها عندك في أعلى عليين واخلف على أهلها في الغابرين وارحمها برحمتك يا أرحم الراحمين</span>
+          <span class="nj-translit">Allahumma inna hadhihi amatuka wabnatu 'abdika wabnatu amatika, nazalat bika wa anta khayru manzulin bih. Allahumma inna la na'lamu minha illa khayran wa anta a'lamu biha minna. Allahumma in kanat muhsinatan fazid fi ihsaniha, wa in kanat musi'atan fatajawaz 'anha waghfir laha. Ij'alha 'indaka fi a'la 'illiyyin, wakhluf 'ala ahliha fil-ghabirin, warhamha birahmatika ya arhamar-rahimin.</span>
+          <p class="nj-meaning">"O Allah, this is Your maidservant, daughter of Your servant and Your maidservant. She has come to You, and You are the best one to be come to. O Allah, we know nothing of her but good, and You know her better than we do. O Allah, if she was righteous, increase her righteousness, and if she erred, overlook her faults and forgive her. Place her with You in the highest 'Illiyyin, be a successor to her family she leaves behind, and have mercy on her with Your mercy, O Most Merciful of the merciful."</p>
         </div>
       </div>
 
@@ -244,8 +283,8 @@
         <p class="nj-meaning" style="margin-top:.8rem;">The prayer is complete. There is no Salam.</p>
       </div>
 
-      <h2>A Shorter Common Version</h2>
-      <p>Many believers recite the minimum recommended form:</p>
+      <h2>The Obligatory Form at a Glance</h2>
+      <p>The obligatory (wajib) wording from each Takbir above, gathered in one place — this alone is sufficient to fulfil the prayer:</p>
       <div class="nj-table-wrap">
         <table class="nj-table">
           <thead>
@@ -255,7 +294,7 @@
             <tr>
               <td>First</td>
               <td class="nj-translit-cell">Allahu Akbar</td>
-              <td>Shahadatayn</td>
+              <td class="nj-translit-cell">Ashhadu an la ilaha illallah wa anna Muhammadan Rasulullah</td>
             </tr>
             <tr>
               <td>Second</td>
@@ -270,7 +309,11 @@
             <tr>
               <td>Fourth</td>
               <td class="nj-translit-cell">Allahu Akbar</td>
-              <td><span class="nj-translit-cell" style="display:block;">Allahummaghfir lihadha al-mayyit</span>(O Allah, forgive this deceased.)</td>
+              <td>
+                <span class="nj-translit-cell" style="display:block;">Male: Allahummaghfir li-hadhal-mayyit</span>
+                <span class="nj-translit-cell" style="display:block;">Female: Allahummaghfir li-hadhihil-mayyitah</span>
+                (O Allah, forgive this deceased.)
+              </td>
             </tr>
             <tr>
               <td>Fifth</td>
