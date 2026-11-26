@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Short, accessible write-ups on Shia Islamic belief, history, and practice — from Zainabia.Online.">
+<title>Articles &amp; Lessons — Zainabia.Online</title>
+<link rel="icon" type="image/png" href="../assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* ---- Articles & Lessons hub — scoped styles (prefixed .ar-) ---- */
+  .ar-page{ max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+  .ar-cover{ padding: 3rem 0 2.5rem; text-align:center; }
+  .ar-back-link{ display:inline-flex; align-items:center; gap:.4rem; font-size:.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+  .ar-back-link:hover{ color: var(--accent-soft); }
+  .ar-kicker{ color: var(--accent-soft); letter-spacing:.08em; text-transform:uppercase; font-size:.8rem; font-weight:700; margin-bottom:.8rem; }
+  .ar-cover h1{ font-size: clamp(2rem, 4.5vw, 3rem); color: var(--text); margin-bottom:.5em; }
+  .ar-cover .lede{ max-width: 680px; margin: 0 auto; font-size: 1.05rem; }
+
+  .ar-section{ padding: 1rem 0 4rem; }
+  .ar-topic-label{ font-size:.78rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: var(--accent-soft); margin-bottom:.4rem; display:block; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="Zainabia.Online — home">
+      <img class="brand-mark" src="../assets/logo-mark.png" alt="Zainabia.Online" width="48" height="48">
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html#resources">Resources</a>
+      <a href="../index.html#duas">Duas &amp; Ziarat</a>
+      <a href="../index.html#events">Events</a>
+      <a href="../index.html#community">Community</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav-mobile" class="mobile-nav" aria-label="Mobile">
+        <a href="../index.html">← Back to Zainabia.Online</a>
+        <a href="../index.html#resources">Resources</a>
+        <a href="../index.html#duas">Duas &amp; Ziarat</a>
+        <a href="../index.html#events">Events</a>
+        <a href="../index.html#community">Community</a>
+        <a href="../index.html#contact">Contact</a>
+        <div class="mobile-theme">
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-haspopup="true" aria-expanded="false" title="Change theme">
+            <span class="theme-dot" aria-hidden="true"></span>
+            <span class="theme-label">Theme</span>
+          </button>
+          <div id="theme-menu" class="theme-menu" hidden>
+            <button class="theme-swatch theme-swatch-white" data-theme-choice="white" title="White — Saffron" aria-label="White — Saffron theme"></button>
+            <button class="theme-swatch theme-swatch-zaitoon" data-theme-choice="zaitoon" title="Zaitoon — Green &amp; Gold" aria-label="Zaitoon — Green and Gold theme"></button>
+            <button class="theme-swatch theme-swatch-night" data-theme-choice="night" title="Night — Midnight" aria-label="Night — Midnight theme"></button>
+            <button class="theme-swatch theme-swatch-cherry" data-theme-choice="cherry" title="Cherry — Maroon &amp; Gold" aria-label="Cherry — Maroon and Gold theme"></button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="ar-page">
+    <section class="ar-cover">
+      <a class="ar-back-link" href="../index.html#resources">← Back to Zainabia.Online</a>
+      <p class="ar-kicker">Articles &amp; Lessons</p>
+      <h1>Articles &amp; Lessons</h1>
+      <p class="lede">Short, accessible write-ups on belief, history, and practice — a growing library to read in a few minutes and carry with you.</p>
+    </section>
+
+    <section class="ar-section">
+      <div class="card-grid">
+        <a class="card" href="understanding-adhan-and-iqamah.html">
+          <span class="card-icon" aria-hidden="true">🕌</span>
+          <span class="ar-topic-label">Prayer &amp; Practice</span>
+          <h3>Understanding Adhan and Iqamah</h3>
+          <p>The Call to Prayer and the immediate call to stand for prayer — their meanings, and what each phrase asks of the believer.</p>
+          <span class="card-cta">Read article →</span>
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Dedicated to the memory of <strong>Sayeda Zainab (SA)</strong>, in the path of <strong>Imam-e-Zamana (AJ)</strong> — may this humble effort be accepted.</p>
+    <p class="footer-fateha">Please recite Surah Fateha for <strong>Syed Ali Mohammed ibn Syed Ahsan</strong> and <strong>all our Marhumeen</strong>.<br>Through the honour and salutation of <strong>Prophet Muhammad ﷺ and his purified family (ع)</strong>, may <strong>Allah</strong> grant them Maghfirah and elevate their ranks, Insha’Allah.</p>
+    <p class="footer-year">&copy; <span id="year"></span> Zainabia.Online</p>
+  </div>
+</footer>
+
+<script src="../js/theme.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>
